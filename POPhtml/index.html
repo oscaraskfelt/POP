@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="CSS/style.css" rel="stylesheet" type="text/css">
-
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script src="./javascript/scripts.js" defer></script>
 
     </head>
     <body>
@@ -19,6 +21,12 @@
             </header>
             <main>
                 <div id="start_form">
+                    <button class="butt" data-butts="login_form">
+                        Login 
+                    </button>
+                    <button class="butt" data-butts="reg_form">
+                        Register
+                    </button>
                     <form action="/kalender"id="login_form" class="square">
                         <caption>
                             Logga in
