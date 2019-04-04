@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title>POP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="CSS/style.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script src="./javascript/board.js" defer></script>
+
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1>
+                    POP!
+                </h1>
+                <p> inspirerande text - planera - organisera - prokrastinera</p>
+            </header>
+            <main>
+
+                <form id="add_task_form" action="#" method="POST">
+                        <label for="new_task_header">
+                            To do:
+                        </label>
+                        <input type="text" id="new_task_header" name="task_head" />
+                        <label for="new_task_content">
+                            Content:
+                        </label>
+                        <input type="text" id="new_task_content" name="task_content" />
+                        <label for="new_task_content">
+                                Prioritering:
+                            </label>
+                        <select id="new_task_prio" name="task_prio">
+                            <option value="Grön">
+                                Grön
+                            </option>
+                            <option value="Gul">
+                                Gul
+                            </option>
+                            <option value="Röd">
+                                Röd
+                            </option>
+                        </select>
+                        <input type="date" name="new_task_date"/>
+                        <input type="submit" id="add_task_item" value="add task" />
+                      </form>
+                </form>
+
+
+
+
+                
+            </main>
+        </div>
+
+    </body>
+</html>

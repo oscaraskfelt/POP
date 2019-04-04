@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title>POP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="CSS/style.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script src="./javascript/board.js" defer></script>
+
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1>
+                    POP!
+                </h1>
+                <p> inspirerande text - planera - organisera - prokrastinera</p>
+            </header>
+            <main>
+
+                <div id="board">
+                    <div id="first">
+                        <h4>
+                            Första 1
+                        </h4>
+                        <div class="board_item" id="activity1" >
+                            <button class="backward" data-act="activity1"><<<</button>
+                               <div class="task" data-act="activity1"> Item1 </div>
+                            <button class="forward" data-act="activity1">>>></button>
+                            <div class="info" data-act="activity1">
+                                Hemlisar?
+                            </div>
+                        </div>
+                        <div class="board_item" id="activity2">
+                            <button class="backward" data-act="activity2"><<<</button>
+                                <div class="task" data-act="activity2"> Item2 </div>
+                            <button class="forward" data-act="activity2">>>></button>
+                            <div class="info" data-act="activity2">
+                                Hemlisar?
+                            </div>
+                        </div>
+                    </div>
+                    <div id="second">
+                        <h4>
+                            Andra 2
+                        </h4>
+                        
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </body>
+</html>
