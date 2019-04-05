@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 /logs/*.txt.DS_Store
+=======
+/logs/*.txt
+/POPhtml/__pycache__
+>>>>>>> bb0f95cead5106f074b1e767edccae34283fe84d
+.DS_Store
+.DS_Store
