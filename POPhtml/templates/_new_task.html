@@ -25,11 +25,11 @@
                         <label for="new_task_header">
                             To do:
                         </label>
-                        <input type="text" id="new_task_header" name="task_head" />
+                        <input type="text" id="new_task_header" name="new_task_header" required/>
                         <label for="new_task_content">
                             Content:
                         </label>
-                        <input type="text" id="new_task_content" name="task_content" />
+                        <input type="text" id="new_task_content" name="task_content" required/>
                         <label for="new_task_content">
                                 Prioritering:
                             </label>
@@ -44,7 +44,8 @@
                                 Röd
                             </option>
                         </select>
-                        <input type="date" name="new_task_date"/>
+                        <input type="date" name="new_task_date" required/>
+                        <input type="date" name="new_task_enddate" required/>
                         <input type="submit" id="add_task_item" value="add task" />
                       </form>
                 </form>
