@@ -10,3 +10,18 @@ def get_user():
     user = cursor.fetchall()
     cursor.close()
     return user
+
+def check_user(username, pwd):
+    user = get_user()
+
+    for u in user:
+        if username == u[0] and pwd == u[2]:
+            return True
+
+def get_user_name(username):
+    user = get_user()
+
+    for i in user:
+        if i[0] == username:
+            namn = i[1]
+            return namn
