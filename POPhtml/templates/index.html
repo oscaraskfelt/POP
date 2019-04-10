@@ -27,6 +27,8 @@
                     <button class="butt" data-butts="reg_form">
                         Register
                     </button>
+
+
                     <form id="login_form" class="square" action="/login_form" method="POST">
                         <caption>
                             Logga in
@@ -34,13 +36,15 @@
                         <label for="username">
                             Användarnamn:
                         </label>
-                        <input id="username" type="text">
+                        <input id="username" name="username" type="text">
                         <label for="password">
                             Lösenord:
                         </label>
-                        <input id="password" type="text">
+                        <input id="password" name="password" type="text">
                         <input type="submit" value="Logga in">
                     </form>
+
+                    
                     <form id="reg_form" class="square" action="/signup_form" method="POST">
                         <caption>
                             Sign up
