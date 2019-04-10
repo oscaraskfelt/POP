@@ -21,15 +21,14 @@
             </header>
             <main>
                 <div id="start_form">
-                    <button class="butt" data-butts="login_form">
+                    <button id="login_butt" class="butt">
                         Login 
                     </button>
-                    <button class="butt" data-butts="reg_form">
+                    <button id="register_butt" class="butt">
                         Register
                     </button>
 
-
-                    <form id="login_form" class="square" action="/login_form" method="POST">
+                    <form id="login_form" class="hide" action="/login_form" method="POST">
                         <caption>
                             Logga in
                         </caption>
@@ -44,7 +43,7 @@
                         <input type="submit" value="Logga in">
                     </form>
 
-                    <form id="reg_form" class="square" action="/signup_form" method="POST">
+                    <form id="reg_form" class="hide" action="/signup_form" method="POST">
                         <caption>
                             Sign up
                         </caption>

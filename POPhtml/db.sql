@@ -24,7 +24,7 @@ CREATE TABLE task
 title       TEXT,
 content     TEXT,
 prio        VARCHAR(10),
-startdatum  DATE,
+startdatum  DATE default now(),
 slutdatum   DATE,
 popper      varchar(100),
 PRIMARY KEY (id),
