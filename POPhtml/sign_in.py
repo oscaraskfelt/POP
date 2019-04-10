@@ -1,3 +1,5 @@
+import psycopg2
+
 def get_user():
     '''Hämtar info om användare'''
 

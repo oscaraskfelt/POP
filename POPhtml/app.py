@@ -16,7 +16,7 @@ def check_login():
     username = getattr(request.form['username'])
     password = getattr(request.form['password'])
 
-    user = example.get_user()
+    user = dbconn.get_user()
 
     for u in user:
         if username == u[0]:
