@@ -1,3 +1,4 @@
+# coding: utf-8
 import psycopg2
 
 def get_tasks():
@@ -8,6 +9,7 @@ def get_tasks():
     data = cursor.fetchall()
     cursor.close()
     return data
+
 
 
 #ok = get_data()
