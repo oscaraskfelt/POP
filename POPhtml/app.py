@@ -20,7 +20,7 @@ def check_login():
 
     for u in user:
         if username == u[0]:
-            return("who!")
+            return("woho!")
         else:
             return("det finns ingen med det användarnamnet")
 
