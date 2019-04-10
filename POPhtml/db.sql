@@ -8,13 +8,15 @@ create database pop;
 
 revoke all privileges on database pop from public;
 
-
+drop table if exists user cascade;
 drop table if exists task cascade;
+
 
 CREATE TABLE task 
 (id         SERIAL,
-titel       TEXT,
-innehåll    TEXT,
+title       TEXT,
+content     TEXT,
+prio        VARCHAR(10),
 startdatum  DATE,
 slutdatum   DATE,
 PRIMARY KEY (id));
@@ -24,10 +26,10 @@ CREATE TABLE user
 losenord    VARCHAR
 PRIMARY KEY (epost));
 
-INSERT INTO task (titel, innehåll)
-VALUES ('Task1', 'Content1'),
-('Task2', 'Content2'),
-('Task3', 'Content3');
+INSERT INTO task (title, prio, content)
+VALUES ('Task1', 'Grön', 'Content1'),
+('Task2', 'Gul', 'Content2'),
+('Task3', 'Röd', 'Content3');
 
 INSERT INTO USER (epost, losenord)
 VALUES ('exempel@exempel.com', '123456'),
