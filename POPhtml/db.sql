@@ -8,8 +8,9 @@ create database pop;
 
 revoke all privileges on database pop from public;
 
-drop table if exists user cascade;
+
 drop table if exists task cascade;
+drop table if exists popper cascade;
 
 
 CREATE TABLE task 
@@ -21,9 +22,9 @@ startdatum  DATE,
 slutdatum   DATE,
 PRIMARY KEY (id));
 
-CREATE TABLE user
-(epost      VARCHAR,
-losenord    VARCHAR
+CREATE TABLE popper
+(epost      VARCHAR(100),
+losenord    VARCHAR(20),
 PRIMARY KEY (epost));
 
 INSERT INTO task (title, prio, content)
@@ -31,6 +32,6 @@ VALUES ('Task1', 'Grön', 'Content1'),
 ('Task2', 'Gul', 'Content2'),
 ('Task3', 'Röd', 'Content3');
 
-INSERT INTO USER (epost, losenord)
+INSERT INTO popper (epost, losenord)
 VALUES ('exempel@exempel.com', '123456'),
 ('goran@persson.se', 'sosse123');
