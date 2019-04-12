@@ -24,7 +24,7 @@ def check_login():
     name = sign_in.get_user_name(username)
 
     if user == True:
-        return redirect(url_for('welcome_user', pagename = name))
+        return redirect(url_for('welcome_user', pagename = username), username=name)
     else:
         return("Felaktigt användarnamn eller lösenord")
 

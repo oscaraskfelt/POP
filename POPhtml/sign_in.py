@@ -2,7 +2,7 @@
 import psycopg2
 
 def get_user():
-    '''Hämtar info om användare'''
+    '''Hämtar info om alla användare i databasen'''
 
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
@@ -12,6 +12,7 @@ def get_user():
     return user
 
 def check_user(username, pwd):
+    '''Kontrollerar användares input i formulär gentemot uppgifter i databasen'''
     user = get_user()
 
     for u in user:
@@ -19,6 +20,7 @@ def check_user(username, pwd):
             return True
 
 def get_user_name(username):
+    '''Söker fram användares namn med användarnamnet som användaren fyllt i i formulär'''
     user = get_user()
 
     for i in user:
