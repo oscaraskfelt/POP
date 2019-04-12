@@ -3,6 +3,7 @@ from flask import Flask, request, render_template
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 import dbconn
+import sign_in
 
 @app.route('/')
 def login():
@@ -13,16 +14,16 @@ def login():
 def check_login():
     '''Kontrollerar uppgifter användaren skriver in i "/" gentemot databasen'''
 
-    username = getattr(request.form['username'])
-    password = getattr(request.form['password'])
+    username = request.form['username']
+    password = request.form['password']
 
-    user = example.get_user()
+    user = sign_in.get_user()
 
     for u in user:
-        if username == u[0]:
-            return("who!")
+        if username == u[0] and password == u[2]:
+            return("woho!")
         else:
-            return("det finns ingen med det användarnamnet")
+            return("Användarnamnet eller lösenordet är fel")
 
 @app.route('/signup_form', methods=["POST"])
 def check_signup():

@@ -26,11 +26,6 @@ main {
     grid-area: main;
 }
 
-
-#start_form *{
-    display: block;
-}
-
 .square {
     border: 1px solid black;
     border-radius: 20%;
@@ -80,6 +75,17 @@ aside {
 
 /************************************** TASKFORM ****************************************/
 
-#add_task_form * {
+
+
+
+
+
+
+/*********************************** GENERAL ***********************************/
+.hide {
+    display: none;
+}
+
+.block *{
     display: block;
 }
