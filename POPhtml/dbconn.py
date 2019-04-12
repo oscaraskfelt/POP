@@ -1,3 +1,4 @@
+# coding: utf-8 
 import psycopg2
 
 def get_tasks():
