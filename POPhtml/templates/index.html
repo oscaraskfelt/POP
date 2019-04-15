@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="sv">
     <head>
+        <!-- Om title skickas med från backend visas det i title-taggen, annars bara POP-->
+        {% if title%}
+        <title>POP | {{title}}</title>
+        {% else %}
         <title>POP</title>
+        {% endif %}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
