@@ -24,9 +24,10 @@ def check_login():
     name = sign_in.get_user_name(username)
 
     if user == True:
-        return redirect(url_for('welcome_user', pagename = username), username=name)
+        return redirect(url_for('welcome_user', pagename=username, username=name))
     else:
-        return("Felaktigt användarnamn eller lösenord")
+        message = "Felaktigt användarnamn eller lösenord"
+        return render_template('error.html', error=message, title="ERROR")
 
 @app.route('/welcome_user/<pagename>') 
 def welcome_user(pagename):

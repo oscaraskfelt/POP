@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# coding: utf-8 
-=======
 # coding: utf-8
->>>>>>> 5d26d7132e18d423ffc9674d93fcaed02fe82b29
 import psycopg2
 
 def get_tasks():
