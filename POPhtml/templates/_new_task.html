@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <title>POP</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/static/JS/board.js" defer></script>
+
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h1>
+                    POP!
+                </h1>
+                <p> inspirerande text - planera - organisera - prokrastinera</p>
+            </header>
+            <main>
+                <div id="task_form">        
+                    <form id="add_task_form" action="/new_task" method="POST">
+                            <label for="new_task_header">
+                                Uppgiftsnamn:
+                            </label>
+                            <input type="text" id="new_task_header" name="new_task_header" required/>
+                            <label for="new_task_content">
+                                Vad som ska göras:
+                            </label>
+                            <input type="text" id="new_task_content" name="task_content" required/>
+                            <label for="new_task_content">
+                                    Prioritering:
+                            </label>
+                            <select id="new_task_prio" name="task_prio">
+                                <option value="Grön">
+                                    Grön
+                                </option>
+                                <option value="Gul">
+                                    Gul
+                                </option>
+                                <option value="Röd">
+                                    Röd
+                                </option>
+                            </select>
+                            <label for="new_task_date">
+                                Startdatum:
+                            </label>
+                            <input type="date" name="new_task_date" id="new_task_date" required/>
+                            <label for="new_task_enddate">
+                                Slutdatum:
+                            </label>
+                            <input type="date" name="new_task_enddate" id="new_task_enddate" required/>
+                            <input type="submit" id="add_task_item" value="add task" />
+                    </form>
+                </div>    
+
+
+
+                
+            </main>
+        </div>
+
+    </body>
+</html>
