@@ -1,6 +1,8 @@
+# coding: utf-8
 import psycopg2
 
-def get_user():
+
+def get_epost():
     ''' hämtar alla användare från db'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
@@ -9,24 +11,20 @@ def get_user():
     cursor.close()
     return epost
 
-def epost_validation(epost):
-    ''''kontrollerar att epostadressen inte är upptagen'''
-    reg = request.form['reg']
-    for e in reg:
-        if e == epost:
-            pass
-        
+
+def epost_validation(epost, new_epost):
+    ''''kontrollerar att epostadressen inte är upptagen, returnerar False om den finns'''
+    for e in epost:
+        if e[0] == new_epost:
+            return False
+    return True
 
 
-
-def reg_user(epost, losenord):
+def reg_user(epost, popper_name, losenord):
     '''Registrerar användare'''
-
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute('''INSERT INTO popper (epost, popper_name, losenord)
                         VALUES ('{}', '{}', '{}' )'''.format(epost, popper_name, losenord))
     conn.commit()
 
-
-print(get_user())
