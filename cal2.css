@@ -1,0 +1,200 @@
+body { 
+    font-family: "Open sans", sans-serif; 
+    background: #e0edf0; 
+}
+.calender {
+    color: #424242;   
+    width: 860px; 
+    height: 550px; 
+    border-radius: 0 15px 15px 0; 
+    margin: 0px auto; 
+    margin-top: 100px; 
+}
+.dates {
+    width:500px; 
+    height:550px; 
+    background: #fff; 
+    float:left; 
+    border-radius: 15px 0 0 15px ; 
+}
+
+.time {
+    width: 378px; 
+    display: block; 
+    margin: 0px auto; 
+    padding-top: 40px; 
+    padding-bottom: 40px;
+}
+ .time > span {
+    float: left; 
+    font-size: 14px; 
+    margin-right: 10px;  
+}
+.time > h2 {
+    float: left; 
+    margin: 0px; 
+    padding: 0px; 
+    font-size: 16px; 
+    font-weight: 600; 
+ }
+
+.week{
+    margin: 0px auto; 
+    font-size: 12px; 
+    display: block; 
+    width: 378px; 
+    height: 40px; 
+    clear: both; 
+}
+ 
+.week > ul{
+    list-style:none; 
+    margin: 0px; 
+    padding: 0px; 
+} 
+
+
+.week > ul > li{
+    float: left; 
+    width: 50px;
+    height: 40px; 
+    line-height: 40px; 
+    text-align: center; 
+    margin: 2px; 
+}
+.days{
+    margin: 0px auto; 
+}
+.days > ul {
+    margin:0px auto; 
+    list-style: none; 
+    padding:0px; 
+    width: 378px; 
+}
+.days > ul > li{
+    float: left; 
+    width: 50px; 
+    height: 50px; 
+    line-height: 50px; 
+    text-align: center; 
+    margin: 2px; 
+}
+
+
+.days > ul > li:hover {
+    background: #7baaf7; 
+    color: #fff; 
+    border-radius:50%; 
+    opacity: 0.5; 
+    cursor: pointer; 
+}
+.active:hover {
+    background: #7baaf7; 
+    color: #fff; 
+    border-radius:50%; 
+    opacity: 0.5; 
+    cursor: pointer; 
+} 
+.active {
+    background: #7baaf7;
+    border-radius: 50%; 
+    opacity: 0.5; 
+    color: #fff; 
+
+    
+} 
+.current-data{
+        width: 378px; 
+        display: block; 
+        margin: 0px auto; 
+        clear: both; 
+        font-size: 35px; 
+        font-weight: 300; 
+        padding-top: 30px; 
+         
+}
+.events{
+    background: linear-gradient( 45deg, #7baaf7 0%, #f083da 100%); 
+    float: left; 
+    color: #fff; 
+    height: 550px; 
+    width: 360px; 
+    border-radius: 0 15px 15px 0; 
+}
+.profile{
+    height: 100px; 
+    width: 100px; 
+    margin: 0px auto; 
+    margin-top: 80px; 
+    margin-bottom: 80px; 
+}
+.profile > img {
+        border-radius: 15px; 
+        width: 100%; 
+        height: auto; 
+    }
+.events > p{
+    width: 100%;  
+    text-align: center; 
+    font-size: 13px; 
+    margin-bottom: 60px; 
+}
+
+.events > ul{
+    list-style: none; 
+    width: 250px; 
+    margin: 0px auto; 
+    padding: 0px; 
+}
+    
+
+
+.list > li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.678); 
+    padding: 5px 1px; 
+}
+
+.date-header {
+    margin: 0px auto; 
+    font-size: 12px; 
+    display: block; 
+    width: 378px; 
+    height: 40px; 
+    clear: both;
+}
+.month {
+    padding: 25px 25px;
+    background: #fff;
+    text-align: center;
+    border-radius: 15px 0 0 0 ; 
+  }
+  
+  .month ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .month ul li {
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    list-style-type: none;
+  }
+  
+  .month .prev {
+    float: left;
+    padding-top: 10px;
+  }
+  
+  .month .next {
+    float: right;
+    padding-top: 10px;
+  }
+  .month .prev:hover {
+     cursor: pointer; 
+  }
+  .month .next:hover{
+      cursor:pointer;
+  }
+  
