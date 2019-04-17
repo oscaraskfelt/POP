@@ -3,8 +3,6 @@ from flask import Flask, request, render_template, redirect, url_for
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 import sys
-#reload(sys)
-#sys.setdefaultencoding('utf-8')
 import dbconn
 import sign_in
 import reg_user
@@ -57,8 +55,12 @@ def check_signup():
 @app.route('/kalender')
 def calendar():
     '''Returnerar kalendervy'''
-    return render_template('kalender.html')
+    return render_template('cal2.html')
 
+@app.route('/tidslinje')
+def timeline():
+    '''Returnerar vy över tidslinje'''
+    return render_template('timelinet.html')
 
 @app.route('/test')
 def test():
