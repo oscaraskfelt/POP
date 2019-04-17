@@ -11,12 +11,12 @@ def get_tasks():
     return data
 
 
-def add_task(title, content, prio, date, enddate):
+def add_task(title, content, prio, date, enddate, user):
     '''sparar ner datan till db'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
-    cursor.execute('''INSERT INTO task (title, content, prio, startdatum, slutdatum)
-                        VALUES ('{}', '{}', '{}', '{}', '{}' )'''.format(title, content, prio, date, enddate))
+    cursor.execute('''INSERT INTO task (title, content, prio, startdatum, slutdatum, popper)
+                        VALUES ('{}', '{}', '{}', '{}', '{}', '{}' )'''.format(title, content, prio, date, enddate, user))
     conn.commit()
     cursor.close()
 
