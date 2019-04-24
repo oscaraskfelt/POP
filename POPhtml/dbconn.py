@@ -23,6 +23,7 @@ def get_tasks_per_user(popper):
 
 
 def add_task(title, content, prio, date, enddate):
+def add_task(title, content, prio, date, enddate, user):
     '''sparar ner datan till db'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
