@@ -62,7 +62,10 @@ def calendar():
 @app.route('/tidslinje')
 def timeline():
     '''Returnerar vy över tidslinje'''
-    return render_template('timelinet.html')
+    popper = request.cookies.get('user_id')
+    data = dbconn.get_tasks_per_user(popper)
+    return render_template('timelinet.html', tasks = data) 
+
 
 @app.route('/test')
 def test():
@@ -86,5 +89,4 @@ def get_data():
     else:
         data = dbconn.get_tasks()
         return render_template('test.html', lista=data)
-
 
