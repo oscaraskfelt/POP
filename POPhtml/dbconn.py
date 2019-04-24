@@ -11,9 +11,6 @@ def get_tasks():
     return data
 
 
-<<<<<<< HEAD
-def add_task(title, content, prio, date, enddate, user):
-=======
 def get_tasks_per_user(popper):
     '''Hämtar task från databasen för specifika användare'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
@@ -24,8 +21,7 @@ def get_tasks_per_user(popper):
     return data
 
 
-def add_task(title, content, prio, date, enddate):
->>>>>>> time
+def add_task(title, content, prio, date, enddate, user):
     '''sparar ner datan till db'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
