@@ -39,8 +39,6 @@ footer {
     grid-area: footer;
 }
 
-
-
 #container2 {
     display: grid;
     grid-template-columns: 20% auto 20%;
@@ -51,7 +49,6 @@ footer {
         "footer footer footer"
         ;  
 }
-
 
 aside {
     grid-area: aside;
@@ -71,17 +68,10 @@ aside {
     padding: 4px 5px;
 }
 
-
-
 /************************************** TASKFORM ****************************************/
 #task_form *{
     display: block;
 }
-
-
-
-
-
 
 /*********************************** GENERAL ***********************************/
 .hide {
@@ -92,25 +82,24 @@ aside {
     display: block;
 }
 
-
-
 /**************************** SAGAS IMPORT *********************/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-body
-{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
-.timeline{
+
+.timeline {
     position: relative;
     margin: 50px auto;
     padding: 40px 0;
     width: 1000px;
     box-sizing: border-box;
 }
-.timeline:before{
+
+.timeline:before {
     content: '';
     position: absolute;
     left: 50%;
@@ -119,7 +108,7 @@ body
     background: #c5c5c5;
 }
 .timeline ul{
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 .timeline ul li{
@@ -180,8 +169,7 @@ body
     margin: 10px 0 0;
     padding: 0;
 }
-.timeline ul li .time h4
-{
+.timeline ul li .time h4 {
     margin: 0;
     padding: 0;
     font-size: 14px;

@@ -128,27 +128,27 @@ body {
     margin-top: 80px; 
     margin-bottom: 80px; 
 }
+
 .profile > img {
-        border-radius: 15px; 
-        width: 100%; 
-        height: auto; 
-    }
-.events > p{
+    border-radius: 15px; 
+    width: 100%; 
+    height: auto; 
+}
+
+.events > p {
     width: 100%;  
     text-align: center; 
     font-size: 13px; 
     margin-bottom: 60px; 
 }
 
-.events > ul{
+.events > ul {
     list-style: none; 
     width: 250px; 
     margin: 0px auto; 
     padding: 0px; 
 }
-    
-
-
+   
 .list > li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.678); 
     padding: 5px 1px; 
@@ -194,7 +194,7 @@ body {
   .month .prev:hover {
      cursor: pointer; 
   }
-  .month .next:hover{
+  .month .next:hover {
       cursor:pointer;
   }
   

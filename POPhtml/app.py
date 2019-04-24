@@ -1,10 +1,8 @@
 # coding: utf-8
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, make_response
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 import sys
-#reload(sys)
-#sys.setdefaultencoding('utf-8')
 import dbconn
 import sign_in
 import reg_user
@@ -27,7 +25,9 @@ def check_login():
     name = sign_in.get_user_name(username)
 
     if user == True:
-        return redirect(url_for('welcome_user', pagename=username, username=name))
+        add_cookie = make_response(redirect(url_for('welcome_user', pagename=username, username=name)))
+        add_cookie.set_cookie('user_id', username)
+        return add_cookie
     else:
         message = "Felaktigt användarnamn eller lösenord"
         return render_template('error.html', error=message, title="ERROR")
@@ -57,8 +57,12 @@ def check_signup():
 @app.route('/kalender')
 def calendar():
     '''Returnerar kalendervy'''
-    return render_template('kalender.html')
+    return render_template('cal2.html')
 
+@app.route('/tidslinje')
+def timeline():
+    '''Returnerar vy över tidslinje'''
+    return render_template('timelinet.html')
 
 @app.route('/test')
 def test():
@@ -73,8 +77,9 @@ def get_data():
         task_prio = request.form['task_prio']
         task_date = request.form['new_task_date']
         task_enddate = request.form['new_task_enddate']
+        user = request.cookies.get('user_id')
 
-        dbconn.add_task(task_title, task_content, task_prio, task_date, task_enddate)
+        dbconn.add_task(task_title, task_content, task_prio, task_date, task_enddate, user)
         data = dbconn.get_tasks()
         return render_template('test.html', lista=data)
 
