@@ -13,4 +13,17 @@ $(document).ready(() => {
         $(login).addClass('hide');
         $(login).removeClass('block');
     });
+
+    $('#reg').on('keyup', function(){
+        var format = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var email = $(this).val();
+
+        if(format.test(email)) {
+            $('#reg').css('backgroundColor', '#1cc930')
+            $('#reg_submit').attr('disabled', false);
+        }
+        else {
+            $('#reg').css('backgroundColor', '#f9f9f9');
+        }
+    });
 });
