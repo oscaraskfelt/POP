@@ -1,8 +1,12 @@
+#!/usr/bin/python3
 # coding: utf-8
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, make_response
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
-import sys
+# import sys
+# if sys.version_info.major < 3:
+#     reload(sys)
+# sys.setdefaultencoding('utf8')
 import dbconn
 import sign_in
 import reg_user
@@ -14,7 +18,7 @@ def login():
     return render_template('index.html')
 
 
-@app.route('/login_form', methods=["POST"])
+@app.route('/login', methods=["POST"])
 def check_login():
     '''Kontrollerar uppgifter användaren skriver in i "/" gentemot databasen'''
 
@@ -23,9 +27,11 @@ def check_login():
 
     user = sign_in.check_user(username, password)
     name = sign_in.get_user_name(username)
-
+    
     if user == True:
-        return redirect(url_for('welcome_user', pagename=username, username=name))
+        add_cookie = make_response(redirect(url_for('welcome_user', pagename=name)))
+        add_cookie.set_cookie('user_id', username)
+        return add_cookie
     else:
         message = "Felaktigt användarnamn eller lösenord"
         return render_template('error.html', error=message, title="ERROR")
@@ -36,7 +42,7 @@ def welcome_user(pagename):
     return render_template('welcome_user.html', pagename=pagename)
 
 
-@app.route('/signup_form', methods=["POST"])
+@app.route('/signup', methods=["POST"])
 def check_signup():
     '''Tar in uppgifter och skapar ny användare'''
     epost = reg_user.get_epost()
