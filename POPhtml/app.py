@@ -87,6 +87,6 @@ def add_data():
         data = task.get_tasks_per_user(popper)
         return render_template('timelinet.html', tasks = data)
     else:
-        data = get_tasks_per_user(popper)
+        data = task.get_tasks_per_user(popper)
         return render_template('timelinet.html', tasks = data)
 
