@@ -19,50 +19,30 @@
     <body>
         <div id="container">
             <header>
-                <h1>
-                    POP!
-                </h1>
+                <h1>POP!</h1>
                 <p> inspirerande text - planera - organisera - prokrastinera</p>
             </header>
             <main>
                 <div id="start_form">
-                    <button id="login_butt" class="butt">
-                        Login 
-                    </button>
-                    <button id="register_butt" class="butt">
-                        Register
-                    </button>
+                    <button id="login_butt" class="butt">Login</button>
+                    <button id="register_butt" class="butt">Register</button>
 
                     <form id="login_form" class="hide" action="/login" method="POST">
-                        <caption>
-                            Logga in
-                        </caption>
-                        <label for="username">
-                            Epost-adress:
-                        </label>
+                        <caption>Logga in</caption>
+                        <label for="username">E-post:</label>
                         <input id="username" name="username" type="text">
-                        <label for="password">
-                            Lösenord:
-                        </label>
+                        <label for="password">Lösenord:</label>
                         <input id="password" name="password" type="text">
                         <input type="submit" value="Logga in">
                     </form>
 
                     <form id="reg_form" class="hide" action="/signup" method="POST">
-                        <caption>
-                            Sign up
-                        </caption>
-                        <label for="reg_epost">
-                            epostadress
-                        </label>
-                        <input id="reg" type="email" name="reg_epost" required>
-                        <label for="popper_name">
-                            Användarnamn: 
-                        </label>
+                        <caption>Sign up</caption>
+                        <label for="popper_name">Användarnamn:</label>
                         <input id="popper_name" type="text" name="popper_name" required>
-                        <label for="pw_reg">
-                            Lösenord:
-                        </label>
+                        <label for="reg_epost">E-post:</label>
+                        <input id="reg" type="email" name="reg_epost" required>
+                        <label for="pw_reg">Lösenord:</label>
                         <input id="pw_reg" type="text" name="pw_reg" required>
                         <input type="submit" id="reg_submit" value="Registrera" disabled>
                     </form>    

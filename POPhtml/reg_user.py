@@ -3,17 +3,17 @@ import psycopg2
 
 
 def get_epost():
-    ''' hämtar alla användare från db'''
+    '''Hämtar alla resultat från kolumn epost användare från db'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
-    cursor.execute("select epost from popper")
+    cursor.execute('''select epost from popper''')
     epost = cursor.fetchall()
     cursor.close()
     return epost
 
 
 def epost_validation(epost, new_epost):
-    ''''kontrollerar att epostadressen inte är upptagen, returnerar False om den finns'''
+    ''''Kontrollerar att epostadressen inte är upptagen, returnerar False om den finns'''
     for e in epost:
         if e[0] == new_epost:
             return False

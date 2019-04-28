@@ -7,7 +7,7 @@ app = Flask(__name__.split('.')[0])
 # if sys.version_info.major < 3:
 #     reload(sys)
 # sys.setdefaultencoding('utf8')
-import dbconn
+import task
 import sign_in
 import reg_user
 
@@ -53,7 +53,6 @@ def check_signup():
     if reg_user.epost_validation(epost, reg_epost) == True:
         reg_user.reg_user(reg_epost, reg_popper_name, reg_pw)
         return render_template('test.html', lista=epost)
-
     else:
         return render_template('error.html', error="Eposten redan registrerad")
 
@@ -63,21 +62,19 @@ def calendar():
     '''Returnerar kalendervy'''
     return render_template('cal2.html')
 
+
 @app.route('/tidslinje')
 def timeline():
     '''Returnerar vy över tidslinje'''
     popper = request.cookies.get('user_id')
-    data = dbconn.get_tasks_per_user(popper)
+    data = task.get_tasks_per_user(popper)
     return render_template('timelinet.html', tasks = data) 
 
 
-@app.route('/test')
-def test():
-    return render_template('_new_task.html')
-
 @app.route('/new_task', methods=["POST", "GET"])
-def get_data():
+def add_data():
     '''Laddar data från databas'''
+    popper = request.cookies.get('user_id')
     if request.method == "POST":
         task_title = request.form['new_task_header']
         task_content = request.form['task_content']
@@ -86,11 +83,10 @@ def get_data():
         task_enddate = request.form['new_task_enddate']
         user = request.cookies.get('user_id')
 
-        dbconn.add_task(task_title, task_content, task_prio, task_date, task_enddate, user)
-        data = dbconn.get_tasks()
-        return render_template('test.html', lista=data)
-
+        task.add_task(task_title, task_content, task_prio, task_date, task_enddate, user)
+        data = task.get_tasks_per_user(popper)
+        return render_template('timelinet.html', tasks = data)
     else:
-        data = dbconn.get_tasks()
-        return render_template('test.html', lista=data)
+        data = get_tasks_per_user(popper)
+        return render_template('timelinet.html', tasks = data)
 
