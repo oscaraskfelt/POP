@@ -1,4 +1,4 @@
-$(document).ready(() => {
+    $(document).ready(() => {
     email_validation = false;
     password_validation = false;
     user_name = false;
