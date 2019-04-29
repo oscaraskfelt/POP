@@ -1,15 +1,24 @@
 #!/usr/bin/python3
 # coding: utf-8
 from flask import Flask, request, render_template, redirect, url_for, make_response
-app = Flask("POPhtml", static_url_path='/static')
-app = Flask(__name__.split('.')[0])
-# import sys
-# if sys.version_info.major < 3:
-#     reload(sys)
-# sys.setdefaultencoding('utf8')
+from flask_mail import Mail, Message
 import task
 import sign_in
 import reg_user
+import reset
+app = Flask("POPhtml", static_url_path='/static')
+app = Flask(__name__.split('.')[0])
+app.config.update(
+    DEBUGGER=True,
+    #email settings
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 465,
+    MAIL_USE_SSL = True,
+    MAIL_DEFAULT_SENDER = 'pop.pop.it1@gmail.com',
+    MAIL_USERNAME = 'pop.pop.it1@gmail.com',
+    MAIL_PASSWORD = 'Poppers1'
+)
+mail = Mail(app)
 
 
 @app.route('/')
@@ -89,4 +98,42 @@ def add_data():
     else:
         data = task.get_tasks_per_user(popper)
         return render_template('timelinet.html', tasks = data)
+
+
+@app.route('/reset')
+def reset_page():
+    '''Returnerar formulär för att ange epost till lösenordsåterställning'''
+    return render_template('reset.html')
+
+
+@app.route('/reset_pw', methods=["POST"])
+def send_reset_email():
+    '''Hämtar epostadress och skrickar en HTML-länk för att skapa nytt lösenord'''
+    try:
+        user_email = request.form['pw_reset']
+        msg = reset.send_email(user_email)
+        mail.send(msg)
+        return render_template('index.html')
+    except:
+        message = "Mail kommunikationen fungerade inte"
+        return render_template('error.html', error=message)
+
+
+@app.route('/reset/<user>')
+def reset_handler(user):
+    '''Hanterar lösenordsåterställning'''
+    add_cookie = make_response(render_template('new_password.html'))
+    add_cookie.set_cookie('user', user)
+    return add_cookie
+
+
+@app.route('/update_password', methods=["POST"])
+def update_password():
+    '''Hämtar nytt lösenord för användaren och skickar det till DB'''
+    user = request.cookies.get('user')
+    new_pw = request.form['new_pw']
+    if reset.reset_password(new_pw, user) == True:
+        return render_template('index.html', title="uppdaterat pw")
+    else:
+        return render_template('error.html', error="Lösenordet blev inte uppdaterat")
 
