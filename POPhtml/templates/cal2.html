@@ -3,85 +3,49 @@
 	<head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>POP</title>
-        <link href="cal2.css" type="text/css" rel="stylesheet" />
+        <title>POP</title>
+        
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="/static/CSS/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/CSS/all.css">
+
+        <script async src="/static/JS/all.js"></script>
     </head>
-
-<div class="calender">
-    <div class ="dates">
-        
-            
-                <div class="month">
-                    <ul> 
-                        <li class="prev">&#10094;</li>
-                        <li class="next">&#10095;</li>
-                        <li>April<br> <span style="font-size:18px">2019</span></li>
-                    </ul>
-
-
+<body>
+        <div class="calendar disable-selection" id="calendar">
+                <div class="left-side">
+                    <div class="current-day text-center">
+                        <h1 class="calendar-left-side-day"></h1>
+                        <div class="calendar-left-side-day-of-week"></div>
+                    </div>
+                    <div class="current-day-events">
+                        <div>Dagens tasks:</div>
+                        <ul class="current-day-events-list"></ul>
+                    </div>
+                    <div class="add-event-day">
+                        <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
+                    </div>
                 </div>
-        
-        <div class ="week">
-            <ul>
-                <li>Mån</li>
-                <li>Tis</li>
-                <li>Ons</li>
-                <li>Tor</li>
-                <li>Fre</li>
-                <li>Lör</li>
-                <li>Sön</li>
-            </ul>
-        </div>
-        <div class="days">
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li class="active">9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li>13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-                <li>20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
-                <li>27</li>
-                <li>28</li>
-                <li>29</li>
-                <li>30</li>
-                <li>31</li>
-                
-            </ul>
-        </div>
-        <div class="current-data">
-            9 April 2019
-        </div>
-    </div>
-    <div class="events">
-        <div class="profile">
-            <img src="/static/ballong1.jpg"  alt="Profilbild">
-        </div>
-            <p> Dagens tasks </p>
-        <ul class="list">
-            <li> Tenta kl. 13.00 </li>
-            <li> Ruts födeldedag </li>
-        </ul>
-    </div>
-</div>
-
+                <div class="right-side">
+                    <div class="text-right calendar-change-year">
+                        <div class="calendar-change-year-slider">
+                            <span class="cursor-pointer calendar-change-year-slider-prev">&#8249;</span>
+                            <span class="calendar-current-year"></span>
+                            <span class="cursor-pointer calendar-change-year-slider-next">&#8250;</span>
+                        </div>
+                    </div>
+                    <div class="calendar-month-list">
+                        <ul class="calendar-month"></ul>
+                    </div>
+                    <div class="calendar-week-list">
+                        <ul class="calendar-week"></ul>
+                    </div>
+                    <div class="calendar-day-list">
+                        <ul class="calendar-days"></ul>
+                    </div>
+                </div>
+            </div>
+            
+</body>
+</html>
 
