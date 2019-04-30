@@ -30,3 +30,13 @@ def get_user_name(username):
         if u[0] == username:
             namn = u[1]
             return namn
+
+
+def check_email(user_email):
+    '''Kontrollerar att eposten är registrerad i DB'''
+    email = get_user()
+
+    for i in email:
+        if user_email == i[0]:
+            return True
+    return False

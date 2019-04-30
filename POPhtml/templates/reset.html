@@ -2,7 +2,7 @@
 <html lang="sv">
     <head>
         <!-- Om title skickas med från backend visas det i title-taggen, annars bara POP-->
-        {% if title%}
+        {% if title %}
         <title>POP | {{title}}</title>
         {% else %}
         <title>POP</title>
@@ -23,12 +23,15 @@
                 <p> inspirerande text - planera - organisera - prokrastinera</p>
             </header>
             <main>
-                    <form id="reset_form" action="/reset_pw" method="POST">
-                        <caption>Glömt lösenord?</caption>
-                        <label for="pw_reset">Ange e-post:</label>
-                        <input type="email" id="pw_reset" name="pw_reset">
-                        <input type="submit" id="reset" value="Återställ lösenord">
-                    </form>
+                <form id="reset_form" action="/reset_pw" method="POST">
+                    <caption>Glömt lösenord?</caption>
+                    <label for="pw_reset">Ange e-post:</label>
+                    <input type="text" id="pw_reset" name="pw_reset">
+                    <input type="submit" id="reset" value="Återställ lösenord">
+                </form>
+                {% if error %}
+                <p id="email_exists">Epost-adressen finns inte i vår databas,</p>
+                {% endif %}
             </main>
         </div>
     </body>
