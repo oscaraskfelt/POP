@@ -50,8 +50,29 @@ aside {
 }
 
 /************************************** TASKFORM ****************************************/
+#task_form {
+    background-color: #fffb26;
+    width: 40%;
+    height: 40%;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #b6b31d;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 1;
+    padding: 50px;
+}
+
 #task_form *{
     display: block;
+    max-width: 100%;
+}
+
+#plus {
+    width: 5%;
 }
 
 /*********************************** GENERAL ***********************************/
@@ -61,6 +82,14 @@ aside {
 
 .block *{
     display: block;
+}
+
+.visible {
+    visibility: hidden;
+}
+
+.rotate {
+    transform: rotate(45deg);
 }
 
 /**************************** SAGAS IMPORT *********************/

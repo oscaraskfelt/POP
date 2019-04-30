@@ -7,31 +7,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
-        
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="/static/JS/timeline.js" defer></script>
+        <script type="text/javascript" src="/static/JS/task.js" defer></script>
     </head>
 
-        <body> 
-            <header>
-                <h1>
-                    POP!
-                </h1>
-                <p> inspirerande text - planera - organisera - prokrastinera</p>
-            </header> 
-            {% include '_new_task.html'%}
-                <div class="timeline"> 
-                    {% for i in tasks %}
-                    <ul>
-                        <li>
-                            <div>
-                                <h3>{{i[1]}}</h3>
-                                <p>{{i[2]}}</p>
-                            </div>
-                            <button class="btn" type="button" onclick="onClickHandler(this)">{{i[5]}}</button>
-                        </li>
-                        <div style="clear: both;"></div>
-                    </ul>
-                    {% endfor %} 
-                </div>        
-            </body>
+    <body> 
+        <header>
+            <h1>POP!</h1>
+            <p> inspirerande text - planera - organisera - prokrastinera</p>
+        </header> 
+        {% include '_new_task.html'%}
+        <div class="timeline"> 
+            {% for i in tasks %}
+            <ul>
+                <li>
+                    <div>
+                        <h3>{{i[1]}}</h3>
+                        <p>{{i[2]}}</p>
+                    </div>
+                    <button class="btn" type="button" onclick="onClickHandler(this)">{{i[5]}}</button>
+                </li>
+                <div style="clear: both;"></div>
+            </ul>
+            {% endfor %} 
+        </div>      
+    </body>
 </html>
