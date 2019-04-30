@@ -233,6 +233,11 @@ body {
     width: 50%;
 }
 
-#pw_info {
-  
+#email_exists {
+    color: #fafafa;
+    background-color: #d61c1c;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
 }

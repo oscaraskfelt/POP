@@ -111,11 +111,14 @@ def send_reset_email():
     '''Hämtar epostadress och skrickar en HTML-länk för att skapa nytt lösenord'''
     try:
         user_email = request.form['pw_reset']
-        msg = reset.send_email(user_email)
-        mail.send(msg)
-        return render_template('index.html')
+        if sign_in.check_email(user_email) == True:
+            msg = reset.send_email(user_email)
+            mail.send(msg)
+            return render_template('index.html')
+        else:
+            return render_template('reset.html', error=True)
     except:
-        message = "Mail kommunikationen fungerade inte"
+        message = "Mail-kommunikationen fungerade inte"
         return render_template('error.html', error=message)
 
 
@@ -136,4 +139,3 @@ def update_password():
         return render_template('index.html', title="uppdaterat pw")
     else:
         return render_template('error.html', error="Lösenordet blev inte uppdaterat")
-
