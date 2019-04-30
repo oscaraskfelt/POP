@@ -1,12 +1,7 @@
 body {
     background-color: white;
     margin: 0;
-    /*background: #3883d8; /* Old browsers */
-    /*background: -moz-linear-gradient(top, #3883d8 0%, #519fe3 50%, #64a9e2 100%, #a2cdee 100%); /* FF3.6-15 */
-    /*background: -webkit-linear-gradient(top, #3883d8 0%,#519fe3 50%,#64a9e2 100%,#a2cdee 100%); /* Chrome10-25,Safari5.1-6 */
-    /*background: linear-gradient(to bottom, #3883d8 0%,#519fe3 50%,#64a9e2 100%,#a2cdee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3883d8', endColorstr='#a2cdee',GradientType=0 ); /* IE6-9 */
-}
+  }
 
 #container {
     display: grid;
@@ -52,20 +47,6 @@ footer {
 
 aside {
     grid-area: aside;
-}
-
-/*********************************** BOARD ***********************************/
-#board { 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: white;
-}
-.board_item {
-    display: flex
-}
-.task {
-    padding: 4px 5px;
 }
 
 /************************************** TASKFORM ****************************************/
@@ -237,3 +218,21 @@ body {
     color: #fff;
     border-radius: 18px;
     box-shadow: 0 0 0 3px rgba(233,33,99,0.3);
+}
+
+
+/**************************** INFO FÖR VALIDERING *********************/
+
+.info{
+    display: none;
+    color: #fafafa;
+    background-color: #0ea122;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+#pw_info {
+  
+}

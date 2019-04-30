@@ -25,12 +25,14 @@
         if(format.test(email)) {
             $('#reg').css('backgroundColor', '#1cc930');
             email_validation = true;
-            validate();                 
+            validate();  
+            $('#mail_info').hide(500)               
         }
         else {
             $('#reg').css('backgroundColor', '#f9f9f9');
             email_validation = false;  
             validate();
+            $('#mail_info').show(500)
         }
     });
 
@@ -60,11 +62,13 @@
             $('#pw_reg').css('backgroundColor', '#1cc930');
             password_validation = true;
             validate();
+            $('#pw_info').hide(500)
         }
         else {
             $('#pw_reg').css('backgroundColor', '#f9f9f9');
             password_validation = false;
             validate();
+            $('#pw_info').show(500)
         };
     });
 });
