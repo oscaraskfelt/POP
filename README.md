@@ -1,7 +1,11 @@
 ﻿# POP
 POP POP
 
-Installera Flask-Mail också
+Behöver installera:
+Flask
+Flask-Mail
+psycopg2
+
 
 Databas:
 popper (epost, popper_name, losenord)
