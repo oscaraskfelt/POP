@@ -7,10 +7,12 @@ $(document).ready(() => {
         if(format.test(pw)) {
             $('#new_pw').css('backgroundColor', '#1cc930');
             $('#new_pw_submit').attr('disabled', false);
+            $('#pw_info').hide(500)
         }
         else {
             $('#new_pw').css('backgroundColor', '#f9f9f9');
             $('#new_pw_submit').attr('disabled', true);
+            $('#pw_info').show(500)
         };
     });
 });
