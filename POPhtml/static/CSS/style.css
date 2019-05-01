@@ -9,7 +9,7 @@ body {
     grid-auto-rows: auto;
     grid-template-areas: 
         ". header ."
-        ". main ."
+        "aside main ."
         "footer footer footer"
         ;  
 }
@@ -19,6 +19,10 @@ header{
 }
 main {
     grid-area: main;
+}
+
+aside {
+    grid-area: aside;
 }
 
 .square {
@@ -72,7 +76,7 @@ aside {
 }
 
 #plus {
-    width: 5%;
+    width: 20%;
 }
 
 /*********************************** GENERAL ***********************************/
@@ -80,6 +84,7 @@ aside {
     display: none;
 }
 
+.block,
 .block *{
     display: block;
 }
@@ -92,6 +97,26 @@ aside {
     transform: rotate(45deg);
 }
 
+.butt {
+    border-radius: 15px;
+    box-shadow: 0.5px 0.5px 0.5px #000;
+    width: 25%;
+    height: 30px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.Röd {
+    background-color: red;
+}
+
+.Grön {
+    background-color: green;
+}
+
+.Gul {
+    background-color: yellow;
+}
 /**************************** SAGAS IMPORT *********************/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -189,15 +214,16 @@ body {
     padding: 8px 16px;
     font-size: 14px;
     border-radius: 18px;
-    color: #fff;
-    background: rgb(33, 233, 140);
+    /*background: rgb(33, 233, 140);*/
     box-shadow: 0 0 0 3px rgba(233,33,99,0.3);
     position: absolute;
     top: 12px;
     right: -165px;
-    color: #fff;
+    color: #333;
+    font-size: 16px;
     border-radius: 18px;
     box-shadow: 0 0 0 3px rgba(36, 223, 30, 0.3);
+    cursor: pointer;
     
 }
 
@@ -218,11 +244,11 @@ body {
 }
 
 .btn:hover{
-    background: green;
+    /*background: green;*/
 }
 
 .leftbtn:hover{
-    background: green;   
+    /*background: green;   */
 }
 
 .timeline ul li:nth-child(odd) .time {
