@@ -33,7 +33,16 @@
                     </ul>
                     {% endfor %} 
                 </div> 
+
+                <a href="/welcome_user/{{user}}">Gå till välkomstsidan</a>
+                <a href="/kalender">Gå till kalendern</a>
+                
+                <div class="log_out_btn">   
+                    <form action="/log_out" method="POST">
+                    <input type="submit"  class="butt" value="Logga ut">
+                    </form>
+                </div>  
             </main>
-        </div>      
+        </div> 
     </body>
 </html>

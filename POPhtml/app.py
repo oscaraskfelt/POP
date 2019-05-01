@@ -40,6 +40,8 @@ def check_login():
     if user == True:
         add_cookie = make_response(redirect(url_for('welcome_user', pagename=name)))
         add_cookie.set_cookie('user_id', username)
+        add_cookie.set_cookie('logged_in', "True")
+        add_cookie.set_cookie('popper_name', name)
         return add_cookie
     else:
         message = "Felaktigt användarnamn eller lösenord"
@@ -75,10 +77,13 @@ def calendar():
 @app.route('/tidslinje')
 def timeline():
     '''Returnerar vy över tidslinje'''
-    popper = request.cookies.get('user_id')
-    data = task.get_tasks_per_user(popper)
-    return render_template('timelinet.html', tasks = data) 
-
+    if logged_in_status() == True:
+        popper = request.cookies.get('user_id')
+        popper_name = request.cookies.get('popper_name')
+        data = task.get_tasks_per_user(popper)
+        return render_template('timelinet.html', user= popper_name, tasks = data)
+    else:
+        return render_template('error.html', error = "Logga in först")
 
 @app.route('/new_task', methods=["POST", "GET"])
 def add_data():
@@ -136,6 +141,28 @@ def update_password():
     user = request.cookies.get('user')
     new_pw = request.form['new_pw']
     if reset.reset_password(new_pw, user) == True:
-        return render_template('index.html', title="uppdaterat pw")
+        return render_template('index.html')
     else:
         return render_template('error.html', error="Lösenordet blev inte uppdaterat")
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    '''404 hanterare'''
+    return render_template('error.html', error="404 - sidan finns inte")
+
+
+@app.route('/log_out', methods=["POST"])
+def log_out():
+    log_out = make_response(render_template('index.html', title="Utloggad"))
+    log_out.set_cookie('logged_in', "False")
+    return log_out
+
+
+
+def logged_in_status():
+    logged_in = request.cookies.get('logged_in')
+    if logged_in == "True":
+        return True
+    else:
+        return False
