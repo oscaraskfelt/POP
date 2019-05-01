@@ -24,8 +24,8 @@
             </header>
             <main>
                 <div id="start_form">
-                    <button id="login_butt" class="butt">Login</button>
-                    <button id="register_butt" class="butt">Register</button>
+                    <button id="login_butt" class="butt block">Login</button>
+                    <button id="register_butt" class="butt block">Register</button>
 
                     <form id="login_form" class="hide" action="/login" method="POST">
                         <caption>Logga in</caption>
@@ -33,7 +33,7 @@
                         <input id="username" name="username" type="text">
                         <label for="password">Lösenord:</label>
                         <input id="password" name="password" type="text">
-                        <input type="submit" value="Logga in">
+                        <input type="submit" value="Logga in" class="butt">
                         <a href="/reset">Glömt lösenord?</a>
                     </form>
 
@@ -47,7 +47,7 @@
                         <label for="pw_reg">Lösenord:</label>
                         <input id="pw_reg" type="text" name="pw_reg" required>
                         <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
-                        <input type="submit" id="reg_submit" value="Registrera" disabled>
+                        <input type="submit" id="reg_submit" value="Registrera" disabled class="butt">
                     </form>    
                 </div>
             </main>

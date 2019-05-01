@@ -22,10 +22,10 @@
             </header>
             <main>
                 <h2>Välkommen {{ pagename }}!</h2>
-                {% include '_new_task.html' %} 
                 <a href="/tidslinje">Gå till tidslinjen</a>
                 <a href="/kalender">Gå till kalendern</a>
             </main>
+            <aside>{% include '_new_task.html' %}</aside>
         </div>
     </body>
 </html>

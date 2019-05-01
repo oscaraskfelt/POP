@@ -13,25 +13,27 @@
         <script type="text/javascript" src="/static/JS/task.js" defer></script>
     </head>
 
-    <body> 
-        <header>
-            <h1>POP!</h1>
-            <p> inspirerande text - planera - organisera - prokrastinera</p>
-        </header> 
-        {% include '_new_task.html'%}
-        <div class="timeline"> 
-            {% for i in tasks %}
-            <ul>
-                <li>
-                    <div>
-                        <h3>{{i[1]}}</h3>
-                        <p>{{i[2]}}</p>
-                    </div>
-                    <button class="btn" type="button" onclick="onClickHandler(this)">{{i[5]}}</button>
-                </li>
-                <div style="clear: both;"></div>
-            </ul>
-            {% endfor %} 
+    <body>
+        <div id="container">
+            <header>
+                <h1>POP!</h1>
+                <p> inspirerande text - planera - organisera - prokrastinera</p>
+            </header> 
+            <aside>{% include '_new_task.html'%}</aside>
+            <main>
+                <div class="timeline"> 
+                    {% for i in tasks %}
+                    <ul>
+                        <li>
+                            <h3>{{i[1]}}</h3>
+                            <p class="hide task_content">{{i[2]}}</p>
+                            <button class="btn {{i[3]}}" type="button">{{i[5]}}</button>
+                        </li>
+                        <div style="clear: both;"></div>
+                    </ul>
+                    {% endfor %} 
+                </div> 
+            </main>
         </div>      
     </body>
 </html>
