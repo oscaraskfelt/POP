@@ -21,12 +21,12 @@ def get_tasks_per_user(popper):
     return data
 
 
-def add_task(title, content, prio, date, enddate, user):
+def add_task(title, content, prio, enddate, user):
     '''Sparar datan till db'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
-    cursor.execute('''INSERT INTO task (title, content, prio, startdatum, slutdatum, popper)
-                        VALUES ('{}', '{}', '{}', '{}', '{}', '{}' )'''.format(title, content, prio, date, enddate, user))
+    cursor.execute('''INSERT INTO task (title, content, prio, slutdatum, popper)
+                        VALUES ('{}', '{}', '{}', '{}', '{}')'''.format(title, content, prio, enddate, user))
     conn.commit()
     cursor.close()
 

@@ -35,6 +35,7 @@ def check_login():
     user = sign_in.check_user(username, password)
     name = sign_in.get_user_name(username)
     
+    
     if user == True:
         add_cookie = make_response(redirect(url_for('welcome_user', pagename=name)))
         add_cookie.set_cookie('user_id', username)
@@ -87,22 +88,22 @@ def timeline():
 
 @app.route('/new_task', methods=["POST", "GET"])
 def add_data():
-    '''Laddar data från databas'''
+    '''Lägger till data från databas'''
     popper = request.cookies.get('user_id')
+    popper_name = request.cookies.get('popper_name')
     if request.method == "POST":
         task_title = request.form['new_task_header']
         task_content = request.form['task_content']
         task_prio = request.form['task_prio']
-        task_date = request.form['new_task_date']
         task_enddate = request.form['new_task_enddate']
         user = request.cookies.get('user_id')
 
-        task.add_task(task_title, task_content, task_prio, task_date, task_enddate, user)
+        task.add_task(task_title, task_content, task_prio, task_enddate, user)
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', tasks = data)
+        return render_template('timelinet.html', tasks = data , user = popper_name)
     else:
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', tasks = data)
+        return render_template('timelinet.html', tasks = data, user = popper_name)
 
 
 @app.route('/reset')
@@ -166,3 +167,4 @@ def logged_in_status():
         return True
     else:
         return False
+
