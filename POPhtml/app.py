@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, make_response
 from flask_mail import Mail, Message
 import task
-import dbconn
 import sign_in
 import reg_user
 import reset
