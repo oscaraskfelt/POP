@@ -1,7 +1,8 @@
-<img id="plus" src="/static/IMG/plus.png" alt="plus"> 
+<img class="plus" src="/static/IMG/plus.png" alt="plus"> 
 <div>lägg till task</div>
 <div id="task_form" class="visible">      
     <form id="add_task_form" action="/new_task" method="POST">
+        <img class="plus inside_plus" src="/static/IMG/plus.png" alt="plus">
             <label for="new_task_header">Uppgiftsnamn:</label>
             <input type="text" id="new_task_header" name="new_task_header" required/>
             <label for="new_task_content">Vad som ska göras:</label>
@@ -12,10 +13,8 @@
                 <option value="Gul">Gul</option>
                 <option value="Röd">Röd</option>
             </select>
-            <label for="new_task_date">Startdatum:</label>
-            <input type="date" name="new_task_date" id="new_task_date" required/>
-            <label for="new_task_enddate">Slutdatum:</label>
-            <input type="date" name="new_task_enddate" id="new_task_enddate" required/>
+            <label for="new_task_enddate">Deadline:</label>
+            <input type="date" name="new_task_enddate" id="new_task_enddate"/>
             <input type="submit" id="add_task_item" value="Add task" class="butt"/>
     </form>
 </div>
