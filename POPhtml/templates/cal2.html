@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="sv">
-	<head>
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>POP</title>
         
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="/static/CSS/font-awesome.min.css">
         <link rel="stylesheet" href="/static/CSS/all.css">
+        <link rel="stylesheet" href="/static/CSS/style.css" type="text/css">
 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/JS/task.js" defer></script>
         <script async src="/static/JS/all.js"></script>
     </head>
-<body>
+    <body>
+        <header>
+            <h1>POP!</h1>
+            <p> inspirerande text - planera - organisera - prokrastinera</p>
+        </header> 
+            <aside>{% include '_new_task.html'%}</aside>
+            <main>
+                <a href="/welcome_user/{{user}}">Gå till välkomstsidan</a>
+                <a href="/tidslinje">Gå till Tidslinjen</a>
+                
+                <div class="log_out_btn">   
+                    <form action="/log_out" method="POST">
+                    <input type="submit"  class="butt" value="Logga ut">
+                    </form>
+                </div>  
+            </main>
         <div class="calendar disable-selection" id="calendar">
                 <div class="left-side">
                     <div class="current-day text-center">
@@ -46,6 +63,6 @@
                 </div>
             </div>
             
-</body>
+    </body>
 </html>
 
