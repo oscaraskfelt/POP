@@ -1,5 +1,5 @@
-# coding: utf-8
 import psycopg2
+
 
 def get_tasks():
     '''Hämtar task från databasen'''

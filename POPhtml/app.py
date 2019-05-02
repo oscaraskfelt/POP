@@ -1,12 +1,6 @@
-#!/usr/bin/python3
-# coding: utf-8
 from flask import Flask, request, render_template, redirect, url_for, make_response
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
-# import sys
-# if sys.version_info.major < 3:
-#     reload(sys)
-# sys.setdefaultencoding('utf8')
 import dbconn
 import sign_in
 import reg_user
@@ -23,7 +17,7 @@ def check_login():
     '''Kontrollerar uppgifter användaren skriver in i "/" gentemot databasen'''
 
     username = request.form['username']
-    password = request.form['password']
+    password = request.form['passw']
 
     user = sign_in.check_user(username, password)
     name = sign_in.get_user_name(username)
@@ -32,6 +26,7 @@ def check_login():
         add_cookie = make_response(redirect(url_for('welcome_user', pagename=name)))
         add_cookie.set_cookie('user_id', username)
         return add_cookie
+
     else:
         message = "Felaktigt användarnamn eller lösenord"
         return render_template('error.html', error=message, title="ERROR")
@@ -63,6 +58,7 @@ def calendar():
     '''Returnerar kalendervy'''
     return render_template('cal2.html')
 
+
 @app.route('/tidslinje')
 def timeline():
     '''Returnerar vy över tidslinje'''
@@ -74,6 +70,7 @@ def timeline():
 @app.route('/test')
 def test():
     return render_template('_new_task.html')
+
 
 @app.route('/new_task', methods=["POST", "GET"])
 def get_data():
