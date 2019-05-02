@@ -53,7 +53,6 @@
         }
     });
 
-<<<<<<< HEAD
 
     $('#pw_reg').on('keyup', function(){
         var format = /^(?=.*\d)(?=.*[a-zåäö])(?=.*[A-ZÅÄÖ])[0-9a-zA-ZåäöÅÄÖ]{8,}$/;
@@ -72,7 +71,6 @@
             $('#pw_info').show(500)
         };
     });
-});
 
 
 function validate(){
@@ -83,7 +81,6 @@ function validate(){
         $('#reg_submit').attr('disabled', true);   
     }
 }
-=======
     $('#showpwd').on('click', function() {
         
         if ($('#passw').attr('psswd-shown') == 'false') {
@@ -110,4 +107,3 @@ function validate(){
     });
 
 });
->>>>>>> hidepwd
