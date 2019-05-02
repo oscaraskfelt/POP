@@ -53,6 +53,7 @@
         }
     });
 
+<<<<<<< HEAD
 
     $('#pw_reg').on('keyup', function(){
         var format = /^(?=.*\d)(?=.*[a-zåäö])(?=.*[A-ZÅÄÖ])[0-9a-zA-ZåäöÅÄÖ]{8,}$/;
@@ -82,3 +83,31 @@ function validate(){
         $('#reg_submit').attr('disabled', true);   
     }
 }
+=======
+    $('#showpwd').on('click', function() {
+        
+        if ($('#passw').attr('psswd-shown') == 'false') {
+            
+            $('#passw').removeAttr('type');
+            $('#passw').attr('type', 'text');
+            
+            $('#passw').removeAttr('psswd-shown');
+            $('#passw').attr('psswd-shown', 'true');
+            
+            $('#showpwd').html('Dölj lösenord');
+            
+        }else {
+            
+            $('#passw').removeAttr('type');
+            $('#passw').attr('type', 'password');
+            
+            $('#passw').removeAttr('psswd-shown');
+            $('#passw').attr('psswd-shown', 'false');
+            
+            $('#showpwd').html('Visa lösenord');
+            
+        }
+    });
+
+});
+>>>>>>> hidepwd

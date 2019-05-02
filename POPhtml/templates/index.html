@@ -31,10 +31,19 @@
                         <caption>Logga in</caption>
                         <label for="username">E-post:</label>
                         <input id="username" name="username" type="text">
+<<<<<<< HEAD
                         <label for="password">Lösenord:</label>
                         <input id="password" name="password" type="text">
                         <input type="submit" value="Logga in" class="butt">
                         <a href="/reset">Glömt lösenord?</a>
+=======
+                        <label for="password">
+                            Lösenord:
+                        </label>
+                        <input type="password" id="passw" name="passw" psswd-shown="false" required>
+                        <button type="button" id="showpwd" name="showpwd">Visa lösenord</button>
+                        <input type="submit" value="Logga in">
+>>>>>>> hidepwd
                     </form>
 
                     <form id="reg_form" class="hide" action="/signup" method="POST">

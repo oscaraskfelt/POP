@@ -1,8 +1,7 @@
-#!/usr/bin/python3
-# coding: utf-8
 from flask import Flask, request, render_template, redirect, url_for, make_response
 from flask_mail import Mail, Message
 import task
+import dbconn
 import sign_in
 import reg_user
 import reset
@@ -32,7 +31,7 @@ def check_login():
     '''Kontrollerar uppgifter användaren skriver in i "/" gentemot databasen'''
 
     username = request.form['username']
-    password = request.form['password']
+    password = request.form['passw']
 
     user = sign_in.check_user(username, password)
     name = sign_in.get_user_name(username)
@@ -43,6 +42,7 @@ def check_login():
         add_cookie.set_cookie('logged_in', "True")
         add_cookie.set_cookie('popper_name', name)
         return add_cookie
+
     else:
         message = "Felaktigt användarnamn eller lösenord"
         return render_template('error.html', error=message, title="ERROR")
@@ -84,6 +84,7 @@ def timeline():
         return render_template('timelinet.html', user= popper_name, tasks = data)
     else:
         return render_template('error.html', error = "Logga in först")
+
 
 @app.route('/new_task', methods=["POST", "GET"])
 def add_data():
