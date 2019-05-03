@@ -21,7 +21,12 @@
                 <p> inspirerande text - planera - organisera - prokrastinera</p>
             </header>
             <main>
-                <h2>Välkommen {{ pagename }}!</h2>
+                {% if msg == "1" %}
+                    <p>Du är inloggad!</p>
+                {% elif msg == "2" %}
+                    <p>Du har blivit registrerad!</p>
+                {% endif %}
+
                 <a href="/tidslinje">Gå till tidslinjen</a>
                 <a href="/kalender">Gå till kalendern</a>
             </main>
