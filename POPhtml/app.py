@@ -52,9 +52,14 @@ def check_login():
 
 @app.route('/welcome_user/<pagename>') 
 def welcome_user(pagename):
-    msg = request.cookies.get('msg')
-    return render_template('welcome_user.html', pagename=pagename, msg=msg)
-
+    if logged_in_status() == True:
+        popper = request.cookies.get('user_id')
+        popper_name = request.cookies.get('popper_name')
+        data = task.get_tasks_per_user(popper)
+        msg = request.cookies.get('msg')
+        return render_template('welcome_user.html', pagename=pagename, msg=msg, user=popper_name, tasks=data)
+    else:
+        return render_template('error.html', error = "Logga in först")
 
 @app.route('/signup', methods=["POST"])
 def check_signup():
@@ -90,7 +95,7 @@ def timeline():
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', user= popper_name, tasks = data)
+        return render_template('timelinet.html', user = popper_name, tasks = data)
     else:
         return render_template('error.html', error = "Logga in först")
 
@@ -176,4 +181,3 @@ def logged_in_status():
         return True
     else:
         return False
-
