@@ -73,14 +73,16 @@
     });
 
 
-function validate(){
-    if (email_validation == true && password_validation == true && user_name == true){
-        $('#reg_submit').attr('disabled', false);
+    function validate(){
+        if (email_validation == true && password_validation == true && user_name == true){
+            $('#reg_submit').attr('disabled', false);
+        }
+        else {
+            $('#reg_submit').attr('disabled', true);   
+        }
     }
-    else {
-        $('#reg_submit').attr('disabled', true);   
-    }
-}
+
+
     $('#showpwd').on('click', function() {
         
         if ($('#passw').attr('psswd-shown') == 'false') {
@@ -105,5 +107,9 @@ function validate(){
             
         }
     });
+
+    $('.setting_choice').on('click', function() {
+        $(this).siblings('.settings_content').toggle();
+      });
 
 });

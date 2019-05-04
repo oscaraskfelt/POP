@@ -22,14 +22,20 @@
             </header>
             <main>
                 <h1>Inställningar</h1>
-                <h4>Profil</h4>
-                <h4>Notiser</h4>
-                <h4>Logga ut</h4>
+                <div>
+                    <button class="butt setting_choice" type="button">Profil</button>
+                    <p class="hide settings_content">Något om profil</p>
+                </div> 
+                <div>
+                    <button class="butt setting_choice" type="button">Notiser</button>
+                    <p class="hide settings_content"> Något om notiser</p>
+                </div>
                 <div class="log_out_btn">   
                     <form action="/log_out" method="POST">
                         <input type="submit"  class="butt" value="Logga ut">
                     </form>
                 </div>  
+                <a href="/welcome_user/{{pagename}}">Gå till välkomstsidan</a>
             </main>
         </div>
     </body>

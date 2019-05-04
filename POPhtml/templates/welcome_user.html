@@ -19,7 +19,6 @@
                     POP!
                 </h1>
                 <p> inspirerande text - planera - organisera - prokrastinera</p>
-                <p>{{pagename}}</p>
             </header>
             <main>
                 {% if msg == "1" %}
@@ -30,6 +29,7 @@
 
                 <a href="/tidslinje">Gå till tidslinjen</a>
                 <a href="/kalender">Gå till kalendern</a>
+                <a href="/settings/{{pagename}}">Gå till inställningar</a>
             </main>
             <aside>
                 {% include '_new_task.html' %}
