@@ -55,11 +55,12 @@ def welcome_user(pagename):
     if logged_in_status() == True:
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
-        data = task.get_tasks_per_user(popper)
+        data = task.get_tasks_near_deadline(popper)
         msg = request.cookies.get('msg')
         return render_template('welcome_user.html', pagename=pagename, msg=msg, user=popper_name, tasks=data)
     else:
         return render_template('error.html', error = "Logga in först")
+
 
 @app.route('/signup', methods=["POST"])
 def check_signup():
@@ -174,10 +175,15 @@ def log_out():
     return log_out
 
 
-
 def logged_in_status():
     logged_in = request.cookies.get('logged_in')
     if logged_in == "True":
         return True
     else:
         return False
+
+
+@app.route('/settings/<pagename>') 
+def settings(pagename):
+    username = request.cookies.get('popper_name')
+    return render_template('settings.html', pagename=username)
