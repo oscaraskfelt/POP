@@ -24,8 +24,8 @@ CREATE TABLE task
 title       TEXT,
 content     TEXT,
 prio        VARCHAR(10),
-startdatum  DATE default now(),
-slutdatum   DATE,
+startdatum  TIMESTAMP default now(),
+slutdatum   TIMESTAMP,
 popper      varchar(100),
 PRIMARY KEY (id),
 FOREIGN KEY (popper) REFERENCES popper(epost));

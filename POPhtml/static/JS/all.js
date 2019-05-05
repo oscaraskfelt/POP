@@ -1,4 +1,4 @@
-const AVAILABLE_WEEK_DAYS = ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'];
+const AVAILABLE_WEEK_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const localStorageName = 'calendar-events';
 
 class CALENDAR {
@@ -18,8 +18,8 @@ class CALENDAR {
             nextYear: this.getFirstElementInsideIdByClassName('calendar-change-year-slider-next')
         };
 
-        this.eventList = JSON.parse(localStorage.getItem(localStorageName)) || {};
-
+        this.eventList = tasks || {};
+        //console.log("1: ", this.eventList)
         this.date = +new Date();
         this.options.maxDays = 37;
         this.init();
@@ -44,7 +44,77 @@ class CALENDAR {
 
     drawEvents() {
         let calendar = this.getCalendar();
-        let eventList = this.eventList[calendar.active.formatted] || ['Du har inga tasks idag'];
+        let eventList = []
+        let activeDay = calendar.active['day']
+        if (activeDay < 10){
+            activeDay = "0" + activeDay.toString()
+        }
+        else{
+            activeDay.toString()
+        }
+        let activeMonth = calendar.active['month'] 
+        let activeYear = (calendar.active['year']).toString()
+
+        for (var prop in tasks){
+            let day = tasks[prop][5].split(" ")[1]
+            let month = tasks[prop][5].split(" ")[2]
+            let year = tasks[prop][5].split(" ")[3]
+            let title = tasks[prop][1]
+            let content = tasks[prop][2]
+
+            if (month == "Jan"){
+                month = 0
+            }
+            else if (month == "Feb"){
+                month = 1
+            }
+            else if (month == "Mar"){
+                month = 2
+            }
+            else if (month == "Apr"){
+                month = 3
+            }
+            else if (month == "May"){
+                month = 4
+            }
+            else if (month == "Jun"){
+                month = 5
+            }
+            else if (month == "Jul"){
+                month = 6
+            }
+            else if (month == "Aug"){
+                month = 7
+            }
+            else if (month == "Sep"){
+                month = 8
+            }
+            else if (month == "Oct"){
+                month = 9
+            }
+            else if (month == "Nov"){
+                month = 10
+            }
+            else if (month == "Dec"){
+                month = 11
+            }
+            
+            //console.log("år: ", year)
+            //console.log("dag: ", day)
+            //console.log("månad: ", month)
+            //console.log("task: ", title)
+            //console.log("content: ", content)
+            if ( activeDay == day && activeMonth == month && year == activeYear){
+            eventList.push(title)
+            };
+
+        
+        };
+        if (eventList === undefined || eventList.length == 0){
+            eventList.push("Du har inga tasks idag! Prokrastinera!")
+        }
+        console.log("2: ", calendar.active)
+        console.log("!: ", eventList)
         let eventTemplate = "";
         eventList.forEach(item => {
             eventTemplate += `<li>${item}</li>`;
@@ -103,6 +173,7 @@ class CALENDAR {
             let newDayParams = day;
             let formatted = this.getFormattedDate(new Date(`${Number(day.month) + 1}/${day.dayNumber}/${day.year}`));
             newDayParams.hasEvent = this.eventList[formatted];
+            //console.log("test: ", newDayParams)
             return newDayParams;
         });
 
@@ -115,7 +186,7 @@ class CALENDAR {
     }
 
     drawMonths() {
-        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
+        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let monthTemplate = "";
         let calendar = this.getCalendar();
         availableMonths.forEach((month, idx) => {

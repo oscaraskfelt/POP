@@ -4,6 +4,7 @@ import task
 import sign_in
 import reg_user
 import reset
+import json
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 app.config.update(
@@ -71,7 +72,22 @@ def check_signup():
 @app.route('/kalender')
 def calendar():
     '''Returnerar kalendervy'''
-    return render_template('cal2.html')
+    if logged_in_status() == True:
+        popper = request.cookies.get('user_id')
+        popper_name = request.cookies.get('popper_name')
+        data = task.get_tasks_per_user(popper)
+
+        columns = ('id', 'title', 'content', 'prio', 'startdatum', 'slutdatum', 'popper')
+        results = []
+        for row in data:
+            results.append(dict(zip(columns, row)))
+        for i in results:
+            i["startdatum"] = i["startdatum"].isoformat()
+            i["slutdatum"] = i["slutdatum"].isoformat()
+
+        return render_template('cal2.html', tasks = data, user = popper_name)
+    else:
+        return render_template('error.html', error = "Vänligen logga in först")
 
 
 @app.route('/tidslinje')
@@ -160,11 +176,9 @@ def log_out():
     return log_out
 
 
-
 def logged_in_status():
     logged_in = request.cookies.get('logged_in')
     if logged_in == "True":
         return True
     else:
         return False
-

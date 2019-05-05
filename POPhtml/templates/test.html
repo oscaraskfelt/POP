@@ -5,10 +5,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/static/CSS/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/CSS/all.css">
+        <link rel="stylesheet" href="/static/CSS/style.css" type="text/css">
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
-        <script src="/static/JS/board.js" defer></script>
+        <script type="text/javascript" src="/static/JS/task.js" defer></script>
+        <script async src="/static/JS/all.js"></script>
 
     </head>
     <body>
@@ -20,14 +23,27 @@
                 <p> inspirerande text - planera - organisera - prokrastinera</p>
             </header>
             <main>
-
-                {%for i in lista%} 
-  
-                <p>{{i}}</p> 
-                
-                {%endfor%} 
-                
+                {%for i in tasks%}
+                    <p>{{i}}</p>
+                {%endfor%}
+            
+                <br>
+                <p>{{tasks}}</p>
             </main>
+
+
+            <script>
+                    var tasksJSON = '{{tasks|tojson}}';
+                    console.log('tasksJSON', tasksJSON)
+                    let tasks = JSON.stringify(tasksJSON);
+                    console.log('tasks', tasks);
+                    let newTasks= JSON.parse(tasks)
+                    console.log('newTasks', newTasks)
+                    let Obj = JSON.parse(tasksJSON)
+                    console.log("Obj", Obj)
+                    
+                </script>
+            
         </div>
 
     </body>

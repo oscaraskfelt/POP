@@ -257,14 +257,6 @@ body {
     box-shadow: 0 0 0 3px rgba(36, 223, 30, 0.3);  
 }
 
-.btn:hover{
-    /*background: green;*/
-}
-
-.leftbtn:hover{
-    /*background: green;   */
-}
-
 .timeline ul li:nth-child(odd) .time {
     position: absolute;
     top: 12px;

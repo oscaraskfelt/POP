@@ -14,55 +14,65 @@
         <script async src="/static/JS/all.js"></script>
     </head>
     <body>
-        <header>
-            <h1>POP!</h1>
-            <p> inspirerande text - planera - organisera - prokrastinera</p>
-        </header> 
+        <div id=container>
+            <header>
+                <h1>POP!</h1>
+                <p> inspirerande text - planera - organisera - prokrastinera</p>
+            </header> 
             <aside>{% include '_new_task.html'%}</aside>
             <main>
-                <a href="/welcome_user/{{user}}">Gå till välkomstsidan</a>
-                <a href="/tidslinje">Gå till Tidslinjen</a>
-                
-                <div class="log_out_btn">   
-                    <form action="/log_out" method="POST">
-                    <input type="submit"  class="butt" value="Logga ut">
-                    </form>
-                </div>  
-            </main>
-        <div class="calendar disable-selection" id="calendar">
-                <div class="left-side">
-                    <div class="current-day text-center">
-                        <h1 class="calendar-left-side-day"></h1>
-                        <div class="calendar-left-side-day-of-week"></div>
-                    </div>
-                    <div class="current-day-events">
-                        <div>Dagens tasks:</div>
-                        <ul class="current-day-events-list"></ul>
-                    </div>
-                    <div class="add-event-day">
-                        <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <div class="text-right calendar-change-year">
-                        <div class="calendar-change-year-slider">
-                            <span class="cursor-pointer calendar-change-year-slider-prev">&#8249;</span>
-                            <span class="calendar-current-year"></span>
-                            <span class="cursor-pointer calendar-change-year-slider-next">&#8250;</span>
+                <div class="calendar disable-selection" id="calendar">
+                    <div class="left-side">
+                        <div class="current-day text-center">
+                            <h1 class="calendar-left-side-day"></h1>
+                            <div class="calendar-left-side-day-of-week"></div>
+                        </div>
+                        <div class="current-day-events">
+                            <div>Dagens tasks:</div>
+                            <ul class="current-day-events-list"></ul>
+                        </div>
+                        <div class="add-event-day">
+                            <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
                         </div>
                     </div>
-                    <div class="calendar-month-list">
-                        <ul class="calendar-month"></ul>
-                    </div>
-                    <div class="calendar-week-list">
-                        <ul class="calendar-week"></ul>
-                    </div>
-                    <div class="calendar-day-list">
-                        <ul class="calendar-days"></ul>
+                    <div class="right-side">
+                        <div class="text-right calendar-change-year">
+                            <div class="calendar-change-year-slider">
+                                <span class="cursor-pointer calendar-change-year-slider-prev">&#8249;</span>
+                                <span class="calendar-current-year"></span>
+                                <span class="cursor-pointer calendar-change-year-slider-next">&#8250;</span>
+                            </div>
+                        </div>
+                        <div class="calendar-month-list">
+                            <ul class="calendar-month"></ul>
+                        </div>
+                        <div class="calendar-week-list">
+                            <ul class="calendar-week"></ul>
+                        </div>
+                        <div class="calendar-day-list">
+                            <ul class="calendar-days"></ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+                <a href="/welcome_user/{{user}}">Gå till välkomstsidan</a>
+                <a href="/tidslinje">Gå till Tidslinjen</a>
+                        
+                <div class="log_out_btn">   
+                    <form action="/log_out" method="POST">
+                        <input type="submit"  class="butt" value="Logga ut">
+                    </form>
+                </div> 
+            </main>
+            <div class="hide">{{tasks}}</div>
+            <script>
+                //let tasksJSON = '{{tasks|tojson}}';
+                //console.log('tasksJSON', tasksJSON)
+                let tasks = JSON.parse('{{tasks|tojson}}');
+                //console.log('tasks', tasks);
+                //let newTasks= JSON.parse(tasksJSON)
+                //console.log('newTasks', newTasks)   
+            </script>
+        </div>
     </body>
 </html>
 
