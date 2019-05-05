@@ -21,25 +21,22 @@
                 <p> inspirerande text - planera - organisera - prokrastinera</p>
             </header>
             <main>
-                {% if msg == "1" %}
-                    <p>Du är inloggad!</p>
-                {% elif msg == "2" %}
-                    <p>Du har blivit registrerad!</p>
-                {% endif %}
-
-                <a href="/tidslinje">Gå till tidslinjen</a>
-                <a href="/kalender">Gå till kalendern</a>
-                <a href="/settings/{{pagename}}">Gå till inställningar</a>
+                <h1>Inställningar</h1>
+                <div>
+                    <button class="butt setting_choice" type="button">Profil</button>
+                    <p class="hide settings_content">Något om profil</p>
+                </div> 
+                <div>
+                    <button class="butt setting_choice" type="button">Notiser</button>
+                    <p class="hide settings_content"> Något om notiser</p>
+                </div>
+                <div class="log_out_btn">   
+                    <form action="/log_out" method="POST">
+                        <input type="submit"  class="butt" value="Logga ut">
+                    </form>
+                </div>  
+                <a href="/welcome_user/{{pagename}}">Gå till välkomstsidan</a>
             </main>
-            <aside>
-                {% include '_new_task.html' %}
-                <h4>Kommande deadlines:</h4>
-                <ul>
-                    {% for i in tasks %}
-                        <li class="{{i[3]}}"><p>{{i[1]}}</p><p>{{i[5]}}</p></li>
-                    {% endfor %}
-                </ul>
-            </aside>
         </div>
     </body>
 </html>

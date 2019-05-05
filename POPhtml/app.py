@@ -32,6 +32,7 @@ def check_login():
 
     username = request.form['username']
     password = request.form['passw']
+    msg = "1"
 
     user = sign_in.check_user(username, password)
     name = sign_in.get_user_name(username)
@@ -42,6 +43,7 @@ def check_login():
         add_cookie.set_cookie('user_id', username)
         add_cookie.set_cookie('logged_in', "True")
         add_cookie.set_cookie('popper_name', name)
+        add_cookie.set_cookie('msg', msg)
         return add_cookie
 
     else:
@@ -51,7 +53,14 @@ def check_login():
 
 @app.route('/welcome_user/<pagename>') 
 def welcome_user(pagename):
-    return render_template('welcome_user.html', pagename=pagename)
+    if logged_in_status() == True:
+        popper = request.cookies.get('user_id')
+        popper_name = request.cookies.get('popper_name')
+        data = task.get_tasks_near_deadline(popper)
+        msg = request.cookies.get('msg')
+        return render_template('welcome_user.html', pagename=pagename, msg=msg, user=popper_name, tasks=data)
+    else:
+        return render_template('error.html', error = "Logga in först")
 
 
 @app.route('/signup', methods=["POST"])
@@ -61,10 +70,16 @@ def check_signup():
     reg_epost = request.form['reg_epost']
     reg_popper_name = request.form['popper_name']
     reg_pw = request.form['pw_reg']
+    msg = "2"
 
     if reg_user.epost_validation(epost, reg_epost) == True:
         reg_user.reg_user(reg_epost, reg_popper_name, reg_pw)
-        return render_template('test.html', lista=epost)
+        add_cookie_reg = make_response(redirect(url_for('welcome_user', pagename=reg_popper_name)))
+        add_cookie_reg.set_cookie('user_id', reg_epost)
+        add_cookie_reg.set_cookie('popper_name', reg_popper_name)
+        add_cookie_reg.set_cookie('msg', msg)
+        return add_cookie_reg
+
     else:
         return render_template('error.html', error="Eposten redan registrerad")
 
@@ -97,7 +112,7 @@ def timeline():
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', user= popper_name, tasks = data)
+        return render_template('timelinet.html', user = popper_name, tasks = data)
     else:
         return render_template('error.html', error = "Logga in först")
 
@@ -182,3 +197,9 @@ def logged_in_status():
         return True
     else:
         return False
+
+
+@app.route('/settings/<pagename>') 
+def settings(pagename):
+    username = request.cookies.get('popper_name')
+    return render_template('settings.html', pagename=username)
