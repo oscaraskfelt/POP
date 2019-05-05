@@ -113,8 +113,8 @@ class CALENDAR {
         if (eventList === undefined || eventList.length == 0){
             eventList.push("Du har inga tasks idag! Prokrastinera!")
         }
-        console.log("2: ", calendar.active)
-        console.log("!: ", eventList)
+        //console.log("2: ", calendar.active)
+        //console.log("!: ", eventList)
         let eventTemplate = "";
         eventList.forEach(item => {
             eventTemplate += `<li>${item}</li>`;
