@@ -29,6 +29,12 @@
                             <h3>{{i[1]}}</h3>
                             <p class="hide task_content">{{i[2]}}</p>
                             <button class="btn {{i[3]}}" type="button">{{i[5]}}</button>
+                            <div>
+                                <h3>{{i[1]}}</h3>
+                                <p>{{i[2]}}</p>
+                            </div>
+                            <button class="btn" type="button" onclick="onClickHandler(this)">{{i[5]}}</button>
+                            <button class="deleteknapp" type="button" onclick="remove_task(id)">Ta bort</button>
                         </li>
                         <div style="clear: both;"></div>
                     </ul>
