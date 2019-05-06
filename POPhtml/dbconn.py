@@ -29,5 +29,3 @@ def add_task(title, content, prio, date, enddate, user):
                         VALUES ('{}', '{}', '{}', '{}', '{}', '{}' )'''.format(title, content, prio, date, enddate, user))
     conn.commit()
     cursor.close()
-
-
