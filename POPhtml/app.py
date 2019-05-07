@@ -59,7 +59,7 @@ def welcome_user(pagename):
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_near_deadline(popper)
         msg = request.cookies.get('msg')
-        return render_template('welcome_user.html', pagename=pagename, msg=msg,  tasks=data)
+        return render_template('welcome_user.html', pagename=pagename, msg=msg,  tasks=data, user=popper_name)
     else:
         return render_template('error.html', error="Logga in först")
 
@@ -101,7 +101,7 @@ def calendar():
             i["startdatum"] = i["startdatum"].isoformat()
             i["slutdatum"] = i["slutdatum"].isoformat()
 
-        return render_template('cal2.html', tasks=data, user=popper_name)
+        return render_template('cal2.html', tasks=data, user=popper_name, pagename=popper_name)
     else:
         return render_template('error.html', error="Vänligen logga in först")
 
@@ -113,7 +113,7 @@ def timeline():
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', user=popper_name, tasks=data)
+        return render_template('timelinet.html', user=popper_name, tasks=data, pagename=popper_name)
     else:
         return render_template('error.html', error="Logga in först")
 
@@ -132,10 +132,10 @@ def add_data():
 
         task.add_task(task_title, task_content, task_prio, task_enddate, user)
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', tasks=data , user=popper_name)
+        return redirect(url_for('timeline'))
     else:
         data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', tasks=data, user=popper_name)
+        return redirect(url_for('timeline'))
 
 
 @app.route('/reset')

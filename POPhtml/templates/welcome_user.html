@@ -15,12 +15,7 @@
     </head>
     <body>
         <div id="container">
-            <header>
-                <h1>
-                    POP!
-                </h1>
-                <p> inspirerande text - planera - organisera - prokrastinera</p>
-            </header>
+            {% include '_header.html' %}
             <main>
                 {% if msg == "1" %}
                     <p>Du är inloggad!</p>
