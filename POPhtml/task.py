@@ -38,7 +38,7 @@ def get_tasks_near_deadline(popper):
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
 
-    datum_nu = datetime.now()
+    datum_nu = (datetime.now() - timedelta(days=1))
     datum_sen = (datetime.now() + timedelta(days=3))  
 
     cursor.execute('''select * from task where popper = '{}' and slutdatum between '{}' and '{}' order by slutdatum;'''.format(popper, datum_nu, datum_sen))
