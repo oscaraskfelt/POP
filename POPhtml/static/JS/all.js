@@ -171,9 +171,9 @@ class CALENDAR {
 
         days = days.map(day => {
             let newDayParams = day;
-            let formatted = this.getFormattedDate(new Date(`${Number(day.month) + 1}/${day.dayNumber}/${day.year}`));
-            newDayParams.hasEvent = this.eventList[formatted];
-            //console.log("test: ", newDayParams)
+            let formatted = new Date(`${Number(day.month) + 1}/${day.dayNumber}/${day.year}`).toLocaleDateString();
+            let eventDates = this.eventList.map(event => new Date(event[5]).toLocaleDateString());
+            newDayParams.hasEvent = eventDates.includes(formatted);
             return newDayParams;
         });
 
