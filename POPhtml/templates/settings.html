@@ -23,18 +23,22 @@
             </header>
             <main>
                 <h1>Inställningar</h1>
-                <div>
-                    <button class="butt setting_choice" type="button">Profil</button>
-                    <p class="hide settings_content">Något om profil</p>
-                </div> 
-                <div>
-                    <button class="butt setting_choice" type="button">Notiser</button>
-                    <p class="hide settings_content"> Något om notiser</p>
-                </div>
-                <div class="log_out_btn">   
-                    <form action="/log_out" method="POST">
-                        <input type="submit"  class="butt" value="Logga ut">
-                    </form>
+                <div id="setting_container">
+                    <div>
+                        <button class="butt setting_choice" type="button">Profil</button>
+                        <p class="hide settings_content">Användarnamn</p>
+                        <p class="hide settings_content">Epost</p>
+                        <p class="hide settings_content">Byt lösenord</p>
+                    </div> 
+                    <div>
+                        <button class="butt setting_choice" type="button">Notiser</button>
+                        <p class="hide settings_content"> Något om notiser</p>
+                    </div>
+                    <div class="log_out_btn">   
+                        <form action="/log_out" method="POST">
+                            <input type="submit"  class="butt" value="Logga ut">
+                        </form>
+                    </div>
                 </div>  
                 <a href="/welcome_user/{{pagename}}">Gå till välkomstsidan</a>
             </main>

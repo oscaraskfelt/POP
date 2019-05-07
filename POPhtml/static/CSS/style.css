@@ -302,3 +302,14 @@ body {
     border-radius: 10px;
     width: 50%;
 }
+
+/******************************* Settings Birger ****************************/
+
+#setting_container {
+    
+    width: 90%;
+    padding: 30px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 5px rgb(180, 180, 180) ;
+}
