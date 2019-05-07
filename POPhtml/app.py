@@ -77,6 +77,7 @@ def check_signup():
         add_cookie_reg = make_response(redirect(url_for('welcome_user', pagename=reg_popper_name)))
         add_cookie_reg.set_cookie('user_id', reg_epost)
         add_cookie_reg.set_cookie('popper_name', reg_popper_name)
+        add_cookie_reg.set_cookie('logged_in', "True")
         add_cookie_reg.set_cookie('msg', msg)
         return add_cookie_reg
 
@@ -120,8 +121,6 @@ def timeline():
 @app.route('/new_task', methods=["POST", "GET"])
 def add_data():
     '''Lägger till data från databas'''
-    popper = request.cookies.get('user_id')
-    popper_name = request.cookies.get('popper_name')
     if request.method == "POST":
         task_title = request.form['new_task_header']
         task_content = request.form['task_content']
@@ -130,10 +129,8 @@ def add_data():
         user = request.cookies.get('user_id')
 
         task.add_task(task_title, task_content, task_prio, task_enddate, user)
-        data = task.get_tasks_per_user(popper)
         return redirect(url_for('timeline'))
     else:
-        data = task.get_tasks_per_user(popper)
         return redirect(url_for('timeline'))
 
 

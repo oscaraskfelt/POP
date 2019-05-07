@@ -1,13 +1,13 @@
 <header id="header">
-        <h1 id="header_title">POP!</h1>
-        <div id="task">{% include '_new_task.html'%}</div>
-        <a id="welcome_user" href="/welcome_user/{{user}}">Hem</a>
-        <a id="go_timeline" href="/tidslinje">Tidslinjen</a>
-        <a id="go_calender" href="/kalender">Kalendern</a>
-        <a href="/settings/{{pagename}}">Inställningar</a>
-        <div class="log_out_btn" id="log_out">   
-            <form action="/log_out" method="POST">
-            <input type="submit" value="Logga ut">
-            </form>
-        </div>  
-    </header>
+    <h1 id="header_title">POP!</h1>
+    <div id="task">{% include '_new_task.html'%}</div>
+    <a id="welcome_user" href="/welcome_user/{{user}}">Hem</a>
+    <a id="go_timeline" href="/tidslinje">Tidslinjen</a>
+    <a id="go_calender" href="/kalender">Kalendern</a>
+    <a href="/settings/{{pagename}}">Inställningar</a>
+    <div class="log_out_btn" id="log_out">   
+        <form action="/log_out" method="POST">
+        <input type="submit" value="Logga ut">
+        </form>
+    </div>  
+</header>
