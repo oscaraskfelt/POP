@@ -4,6 +4,7 @@ import task
 import sign_in
 import reg_user
 import reset
+import remove_task
 import json
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
@@ -203,3 +204,14 @@ def logged_in_status():
 def settings(pagename):
     username = request.cookies.get('popper_name')
     return render_template('settings.html', pagename=username)
+
+
+@app.route('/poptask', methods=["POST"])
+def task_remove():
+    task_id = request.form['task_id']
+    remove_task.pop_task(task_id)
+
+    popper = request.cookies.get('user_id')
+    popper_name = request.cookies.get('popper_name')
+    data = task.get_tasks_per_user(popper)
+    return render_template('timelinet.html', user=popper_name, tasks=data)
