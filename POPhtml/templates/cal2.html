@@ -13,6 +13,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="/static/JS/task.js" defer></script>
         <script async src="/static/JS/all.js"></script>
+        <script src="/static/JS/highlight.js" defer></script>
     </head>
     <body>
         <div id=container>    
@@ -51,23 +52,10 @@
                         </div>
                     </div>
                 </div>
-                <a href="/welcome_user/{{user}}">Gå till välkomstsidan</a>
-                <a href="/tidslinje">Gå till Tidslinjen</a>
-                        
-                <div class="log_out_btn">   
-                    <form action="/log_out" method="POST">
-                        <input type="submit"  class="butt" value="Logga ut">
-                    </form>
-                </div> 
             </main>
             <div class="hide">{{tasks}}</div>
             <script>
-                //let tasksJSON = '{{tasks|tojson}}';
-                //console.log('tasksJSON', tasksJSON)
-                let tasks = JSON.parse('{{tasks|tojson}}');
-                //console.log('tasks', tasks);
-                //let newTasks= JSON.parse(tasksJSON)
-                //console.log('newTasks', newTasks)   
+                let tasks = JSON.parse('{{tasks|tojson}}'); 
             </script>
         </div>
     </body>

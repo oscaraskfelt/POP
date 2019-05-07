@@ -5,7 +5,6 @@ import sign_in
 import reg_user
 import reset
 import remove_task
-import json
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 app.config.update(
@@ -202,8 +201,10 @@ def logged_in_status():
 
 @app.route('/settings/<pagename>') 
 def settings(pagename):
-    username = request.cookies.get('popper_name')
-    return render_template('settings.html', pagename=username)
+    if logged_in_status() == True:
+        return render_template('settings.html', pagename=pagename, user=pagename)
+    else:
+        return render_template('error.html', error="Logga in först")
 
 
 @app.route('/poptask', methods=["POST"])

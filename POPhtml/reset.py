@@ -1,4 +1,3 @@
-# coding: utf-8
 from flask import Flask, render_template, redirect
 from flask_mail import Mail, Message
 import psycopg2
