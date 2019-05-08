@@ -67,7 +67,7 @@ def welcome_user(pagename):
 def check_signup():
     '''Tar in uppgifter och skapar ny användare'''
     epost = reg_user.get_epost()
-    reg_epost = request.form['reg_epost']
+    reg_epost = request.form['reg_epost'].strip()
     reg_popper_name = request.form['popper_name']
     reg_pw = request.form['pw_reg']
     msg = "2"
@@ -80,7 +80,6 @@ def check_signup():
         add_cookie_reg.set_cookie('logged_in', "True")
         add_cookie_reg.set_cookie('msg', msg)
         return add_cookie_reg
-
     else:
         return render_template('error.html', error="Eposten redan registrerad")
 
