@@ -3,21 +3,38 @@
     password_validation = false;
     user_name = false;
 
-
+    //Visar inloggningsform
     $('#login_butt').on('click', function(){
         $("#login_form").toggleClass('hide block');
         $("#reg_form").addClass('hide');
         $("#reg_form").removeClass('block');
     });
 
-
+    //Visar registreringsform
     $('#register_butt').on('click', function(){
         $("#reg_form").toggleClass('hide block');
         $("#login_form").addClass('hide');
         $("#login_form").removeClass('block');
     });
 
-
+    // Validerar att användarnamn finns
+    $('#popper_name').on('keyup', function(){
+        var format = /^\s*$/;
+        var popper_name = $(this).val();
+            
+        if(!format.test(popper_name)) {
+            $('#popper_name').css('backgroundColor', '#1cc930');
+            user_name = true;
+            validate();
+        }
+        else {
+            $('#popper_name').css('backgroundColor', '#f9f9f9');
+            user_name = false;
+            validate();
+        }
+    });
+        
+    // Validerar format för email
     $('#reg').on('keyup', function(){
         var format = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})/;
         var email = $(this).val();
@@ -36,24 +53,7 @@
         }
     });
 
-
-    $('#popper_name').on('keyup', function(){
-        var format = /^\s*$/;
-        var popper_name = $(this).val();
-            
-        if(!format.test(popper_name)) {
-            $('#popper_name').css('backgroundColor', '#1cc930');
-            user_name = true;
-            validate();
-        }
-        else {
-            $('#popper_name').css('backgroundColor', '#f9f9f9');
-            user_name = false;
-            validate();
-        }
-    });
-
-
+    // Validerar format för lösenord
     $('#pw_reg').on('keyup', function(){
         var format = /^(?=.*\d)(?=.*[a-zåäö])(?=.*[A-ZÅÄÖ])[0-9a-zA-ZåäöÅÄÖ]{8,}$/;
         var pw = $(this).val();
@@ -72,7 +72,7 @@
         };
     });
 
-
+    // Validerar användarnamn, epost-, lösenordformat är korrekt
     function validate(){
         if (email_validation == true && password_validation == true && user_name == true){
             $('#reg_submit').attr('disabled', false);
@@ -82,7 +82,7 @@
         }
     }
 
-
+    // Visar och döljer lösenord för inmloggning
     $('#showpwd').on('click', function() {
         
         if ($('#passw').attr('psswd-shown') == 'false') {
@@ -108,8 +108,21 @@
         }
     });
 
+    // Visar och döljer lösenord för registrering
+    $('#showpw').on('click', function() {
+        if('password' == $('#pw_reg').attr('type')){
+            $('#pw_reg').prop('type', 'text');
+            $('#showpw').html('Dölj lösenord');
+        }
+        else{
+            $('#pw_reg').prop('type', 'password');
+            $('#showpw').html('Visa lösenord');
+    }
+    }); 
+
+    //Visar och döljer alternativ för settings
     $('.setting_choice').on('click', function() {
         $(this).siblings('.settings_content').toggle();
-      });
+    });
 
 });
