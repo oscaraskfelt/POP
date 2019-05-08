@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="sv">
-    <head>
-        <!-- Om title skickas med från backend visas det i title-taggen, annars bara POP-->
-        {% if title%}
-        <title>POP | {{title}}</title>
-        {% else %}
-        <title>POP</title>
-        {% endif %}
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
-        <link rel="icon" href="/static/IMG/pop_balloon.jpg">
-        
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="/static/JS/scripts.js" defer></script>
+  <head>
+    <!-- Om title skickas med från backend visas det i title-taggen, annars bara POP-->
+    {% if title%}
+    <title>POP | {{title}}</title>
+    {% else %}
+    <title>POP</title>
+    {% endif %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
-    <body>
-        <div id="container">
-            <header>
-                <h1>POP!</h1>
-                <p> inspirerande text - planera - organisera - prokrastinera</p>
-            </header>
-            <main>
-                <div id="start_form">
-                    <button id="login_butt" class="butt block">Login</button>
-                    <button id="register_butt" class="butt block">Register</button>
+    <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/static/IMG/pop_balloon.jpg">
 
-                    <form id="login_form" class="hide" action="/login" method="POST">
-                        <caption>Logga in</caption>
-                        <label for="username">E-post:</label>
-                        <input id="username" name="username" type="text">
-                        <label for="passw">Lösenord:</label>
-                        <input type="password" id="passw" name="passw" psswd-shown="false" required>
-                        <button type="button" id="showpwd" class="small_butt" name="showpwd">Visa lösenord</button>
-                        <input type="submit" value="Logga in" class="butt">
-                        <a href="/reset">Glömt lösenord?</a>
-                    </form>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/JS/scripts.js" defer></script>
 
-                    <form id="reg_form" class="hide" action="/signup" method="POST">
-                        <caption>Sign up</caption>
-                        <label for="popper_name">Användarnamn:</label>
-                        <input id="popper_name" type="text" name="popper_name" required>
-                        <label for="reg_epost">E-post:</label>
-                        <input id="reg" type="email" name="reg_epost" required>
-                        <p id="mail_info" class="info">Det måste vara en giltig epost-adress (exempel@exempel.se)</p>
-                        <label for="pw_reg">Lösenord:</label>
-                        <input id="pw_reg" type="password" name="pw_reg" required>
-                        <button type="button" id="showpwd" class="small_butt" name="showpwd">Visa lösenord</button>
-                        <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
-                        <input type="submit" id="reg_submit" value="Registrera" disabled class="butt">
-                    </form>    
-                </div>
-            </main>
+  </head>
+
+  <body>
+    <div id="container">
+      <header>
+        <h1>POP!</h1>
+        <p> inspirerande text - planera - organisera - prokrastinera</p>
+      </header>
+      <main>
+        <div id="start_form">
+          <button id="login_butt" class="butt block">Login</button>
+          <button id="register_butt" class="butt block">Register</button>
+
+          <form id="login_form" class="hide" action="/login" method="POST">
+            <caption>Logga in</caption>
+            <label for="username">E-post:</label>
+            <input id="username" name="username" type="text">
+            <label for="passw">Lösenord:</label>
+            <input type="password" id="passw" name="passw" psswd-shown="false" required>
+            <button type="button" id="showpwd" class="small_butt" name="showpwd">Visa lösenord</button>
+            <input type="submit" value="Logga in" class="butt">
+            <a href="/reset">Glömt lösenord?</a>
+          </form>
+
+          <form id="reg_form" class="hide" action="/signup" method="POST">
+            <caption>Sign up</caption>
+            <label for="popper_name">Användarnamn:</label>
+            <input id="popper_name" type="text" name="popper_name" required>
+            <label for="reg_epost">E-post:</label>
+            <input id="reg" type="email" name="reg_epost" required>
+            <p id="mail_info" class="info">Det måste vara en giltig epost-adress (exempel@exempel.se)</p>
+            <label for="pw_reg">Lösenord:</label>
+            <input id="pw_reg" type="password" name="pw_reg" psswd-shown="false" required>
+            <button type="button" id="showregpwd" class="small_butt" name="showpwd">Visa lösenord</button>
+            <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
+            <input type="submit" id="reg_submit" value="Registrera" disabled class="butt">
+          </form>
         </div>
-    </body>
+      </main>
+    </div>
+  </body>
+
 </html>
