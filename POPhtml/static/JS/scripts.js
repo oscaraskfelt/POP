@@ -19,7 +19,7 @@
 
 
     $('#reg').on('keyup', function(){
-        var format = /^([a-zA-ZåäöÅÄÖ0-9_\.\-\+])+\@(([a-zA-ZåäöÅÄÖ0-9\-])+\.)+([a-zA-ZåäöÅÄÖ0-9]{2,4})/;
+        var format = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})/;
         var email = $(this).val();
 
         if(format.test(email)) {
