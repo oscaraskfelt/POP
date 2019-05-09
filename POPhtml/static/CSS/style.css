@@ -481,7 +481,7 @@ header{
     font-size: 1em;
 }
 
-span {
+.balloon_span {
     font-family: 'PT Sans Narrow', sans-serif;
     font-size: 5em;
     color: white;
