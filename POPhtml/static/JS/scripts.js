@@ -82,7 +82,7 @@
         }
     }
 
-    // Visar och döljer lösenord för inmloggning
+    // Visar och döljer lösenord för inloggning
     $('#showpwd').on('click', function() {
         
         if ($('#passw').attr('psswd-shown') == 'false') {
