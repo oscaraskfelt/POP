@@ -2,7 +2,7 @@
 <html lang="sv">
     <head>
         <!-- Om title skickas med från backend visas det i title-taggen, annars bara POP-->
-        {% if title %}
+        {% if title%}
         <title>POP | {{title}}</title>
         {% else %}
         <title>POP</title>
@@ -11,6 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
         <link rel="icon" href="/static/IMG/pop_balloon.jpg">
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,20 +21,37 @@
     </head>
     <body>
         <div id="container">
-            <header>
-                <h1>POP!</h1>
-                <p> inspirerande text - planera - organisera - prokrastinera</p>
+            <header class="index_head">
+                <h1>Halloj!</h1>
+                <p>POP är ett planeringverktyg tänkt för studenter som kämpar med prokrastinering.</p>
             </header>
+            <aside>
+                <div id="ballcont">
+                    <div class="balloon">
+                        <div>
+                            <span class="balloon_span">P</span>
+                        </div>
+                        <div>
+                            <span class="balloon_span">O</span>
+                        </div>
+                        <div>
+                            <span class="balloon_span">P</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
             <main>
-                <form id="reset_form" action="/reset_pw" method="POST">
-                    <caption>Glömt lösenord?</caption>
+                <div id="reset_main">
+                <form class="block" id="reset_form" action="/reset_pw" method="POST">
+                    <caption>Glömt lösenord?</caption> 
                     <label for="pw_reset">Ange e-post:</label>
                     <input type="text" id="pw_reset" name="pw_reset">
-                    <input type="submit" id="reset" value="Återställ lösenord" class="butt">
+                    <input type="submit" id="reset" value="Återställ lösenord" class="reset_butt2">
                 </form>
                 {% if error %}
                 <p id="email_exists">Epost-adressen finns inte i vår databas,</p>
                 {% endif %}
+            </div>
             </main>
         </div>
     </body>

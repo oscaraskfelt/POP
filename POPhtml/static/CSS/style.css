@@ -623,3 +623,36 @@ header{
         transform: translate(-15px, 10px) rotate(10deg);
     }
 }
+
+#reset_main{
+    grid-area: main;
+    display: grid;
+    width: 100%;
+    padding: 10px;
+    
+    grid-template-columns: 50% auto 10%;
+    grid-template-areas: 
+        ". form  .";
+}
+
+.reset_butt2{
+    border-radius: 15px;
+    box-shadow: 0.5px 0.5px 0.5px #000;
+    height: 30px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: #A6D6A9;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85em;
+}
+
+#reset_form{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #A6ADB4;  
+    grid-area: form;
+    background-color: rgb(240, 240, 240);
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 5px rgb(180, 180, 180);
+    padding: 30px; 
+}
