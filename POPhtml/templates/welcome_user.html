@@ -33,7 +33,7 @@
                 <h4>Kommande deadlines:</h4>
                 <ul>
                     {% for i in tasks %}
-                        <li class="{{i[3]}}"><p>{{i[1]}}</p><p>{{i[5]}}</p></li>
+                        <li class="{{i[3]}}"><p>{{i[1]}}</p><p>{{i[5].strftime("%d-%m-%y")}}</p></li>
                     {% endfor %}
                 </ul>
             </aside>
