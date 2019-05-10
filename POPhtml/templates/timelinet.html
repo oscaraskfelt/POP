@@ -15,13 +15,13 @@
         <script src="/static/JS/highlight.js" defer></script>
     </head>
 
-    <body>
+    <body id="timeline_body">
         <div id="container">
             {% include '_header.html' %}
             <main>
                 <div class="timeline"> 
-                    {% for i in tasks %}
                     <ul>
+                    {% for i in tasks %}
                         <li>
                             <h3>{{i[1]}}</h3>
                             <p class="hide task_content">{{i[2]}}</p>
@@ -29,12 +29,11 @@
                                 <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
                                 <input type="submit" value="Ta bort">
                             </form>
-                            <button class="btn {{i[3]}}" type="button">{{i[5]}}</button>
-                            
+                            <button class="btn {{i[3]}}" type="button">{{i[5].strftime("%d-%m-%y")}}</button>
                         </li>
                         <div style="clear: both;"></div>
-                    </ul>
                     {% endfor %} 
+                    </ul>
                 </div> 
             </main>
         </div> 
