@@ -30,7 +30,7 @@ def login():
 def check_login():
     '''Kontrollerar uppgifter användaren skriver in i "/" gentemot databasen'''
 
-    username = request.form['username']
+    username = request.form['username'].lower()
     password = request.form['passw']
     msg = "1"
 
@@ -45,7 +45,6 @@ def check_login():
         add_cookie.set_cookie('popper_name', name)
         add_cookie.set_cookie('msg', msg)
         return add_cookie
-
     else:
         message = "Felaktigt användarnamn eller lösenord"
         return render_template('error.html', error=message, title="ERROR")
@@ -67,8 +66,8 @@ def welcome_user(pagename):
 def check_signup():
     '''Tar in uppgifter och skapar ny användare'''
     epost = reg_user.get_epost()
-    reg_epost = request.form['reg_epost'].strip()
-    reg_popper_name = request.form['popper_name']
+    reg_epost = request.form['reg_epost'].lower()
+    reg_popper_name = request.form['popper_name'].strip()
     reg_pw = request.form['pw_reg']
     msg = "2"
 
@@ -147,7 +146,7 @@ def send_reset_email():
         if sign_in.check_email(user_email) == True:
             msg = reset.send_email(user_email)
             mail.send(msg)
-            return render_template('index.html')
+            return redirect(url_for('login'))
         else:
             return render_template('reset.html', error=True)
     except:
@@ -169,7 +168,7 @@ def update_password():
     user = request.cookies.get('user')
     new_pw = request.form['new_pw']
     if reset.reset_password(new_pw, user) == True:
-        return render_template('index.html')
+        return redirect(url_for('login'))
     else:
         return render_template('error.html', error="Lösenordet blev inte uppdaterat")
 
@@ -182,7 +181,7 @@ def page_not_found(e):
 
 @app.route('/log_out', methods=["POST"])
 def log_out():
-    log_out = make_response(render_template('index.html', title="Utloggad"))
+    log_out = make_response(redirect(url_for('login')))
     log_out.set_cookie('logged_in', "False")
     return log_out
 
