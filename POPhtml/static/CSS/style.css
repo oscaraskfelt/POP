@@ -1,6 +1,8 @@
 body {
     background-color: #f5f5f5;
     margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+
   }
 
 #container {
@@ -110,6 +112,9 @@ footer {
     height: 30px;
     margin: 8px;
     cursor: pointer;
+    background-color: #A6D6A9;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
 }
 
 .small_butt {
@@ -411,6 +416,9 @@ header{
     height: 30px;
     margin: 8px;
     cursor: pointer;
+    background-color: #A6D6A9;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
 }
 
 .index_head {
