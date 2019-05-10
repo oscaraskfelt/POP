@@ -93,7 +93,7 @@
             $('#passw').removeAttr('psswd-shown');
             $('#passw').attr('psswd-shown', 'true');
             
-            $('#showpwd').html('Dölj lösenord');
+            $('#showpwd').attr('src','/static/IMG/hide.png');
             
         }else {
             
@@ -103,7 +103,7 @@
             $('#passw').removeAttr('psswd-shown');
             $('#passw').attr('psswd-shown', 'false');
             
-            $('#showpwd').html('Visa lösenord');
+            $('#showpwd').attr('src','/static/IMG/eye.png');
             
         }
     });
@@ -112,11 +112,11 @@
     $('#showpw').on('click', function() {
         if('password' == $('#pw_reg').attr('type')){
             $('#pw_reg').prop('type', 'text');
-            $('#showpw').html('Dölj lösenord');
+            $('#showpw').attr('src','/static/IMG/hide.png');
         }
         else{
             $('#pw_reg').prop('type', 'password');
-            $('#showpw').html('Visa lösenord');
+            $('#showpw').attr('src','/static/IMG/eye.png');
     }
     }); 
 
