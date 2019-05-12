@@ -50,7 +50,7 @@ def check_login():
         return render_template('error.html', error=message, title="ERROR")
 
 
-@app.route('/welcome_user/<pagename>') 
+@app.route('/welcome_user/<pagename>')
 def welcome_user(pagename):
     if logged_in_status() == True:
         popper = request.cookies.get('user_id')
@@ -83,29 +83,22 @@ def check_signup():
         return render_template('error.html', error="Eposten redan registrerad")
 
 
+@app.route('/calendar')
 @app.route('/kalender')
-def calendar():
+def kalender():
     '''Returnerar kalendervy'''
     if logged_in_status() == True:
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
-
-        columns = ('id', 'title', 'content', 'prio', 'startdatum', 'slutdatum', 'popper')
-        results = []
-        for row in data:
-            results.append(dict(zip(columns, row)))
-        for i in results:
-            i["startdatum"] = i["startdatum"].isoformat()
-            i["slutdatum"] = i["slutdatum"].isoformat()
-
         return render_template('cal2.html', tasks=data, user=popper_name, pagename=popper_name)
     else:
         return render_template('error.html', error="Vänligen logga in först")
 
 
+@app.route('/timeline')
 @app.route('/tidslinje')
-def timeline():
+def tidslinje():
     '''Returnerar vy över tidslinje'''
     if logged_in_status() == True:
         popper = request.cookies.get('user_id')
@@ -116,20 +109,34 @@ def timeline():
         return render_template('error.html', error="Logga in först")
 
 
-@app.route('/new_task', methods=["POST", "GET"])
+@app.route('/new_task', methods=["POST"])
 def add_data():
-    '''Lägger till data från databas'''
-    if request.method == "POST":
-        task_title = request.form['new_task_header']
-        task_content = request.form['task_content']
-        task_prio = request.form['task_prio']
-        task_enddate = request.form['new_task_enddate']
-        user = request.cookies.get('user_id')
+    '''Lägger till data från databas och returnerar till ursprungssidan annars welcome_user'''
+    if logged_in_status() == True:
+        try:
+            task_title = request.form['new_task_header']
+            task_content = request.form['task_content']
+            task_prio = request.form['task_prio']
+            task_enddate = request.form['new_task_enddate']
+            user = request.cookies.get('user_id')
 
-        task.add_task(task_title, task_content, task_prio, task_enddate, user)
-        return redirect(url_for('timeline'))
+            origin_path = request.referrer.split("/")[3]
+            task.add_task(task_title, task_content, task_prio, task_enddate, user)
+            if origin_path == 'timeline' or origin_path == 'tidslinje':
+                return redirect(url_for('tidslinje'))
+            elif origin_path =='calendar' or origin_path == 'kalender':
+                return redirect(url_for('kalender'))
+            elif origin_path == 'settings':
+                popper = request.cookies.get('user_id')
+                return redirect(url_for('settings', pagename=popper))
+            else:
+                popper = request.cookies.get('user_id')
+                return redirect(url_for('welcome_user', pagename=popper))
+        except:
+            popper = request.cookies.get('user_id')
+            return redirect(url_for('welcome_user', pagename=popper))
     else:
-        return redirect(url_for('timeline'))
+        return render_template('error.html', error="Logga in först")
 
 
 @app.route('/reset')
@@ -204,10 +211,13 @@ def settings(pagename):
 
 @app.route('/poptask', methods=["POST"])
 def task_remove():
-    task_id = request.form['task_id']
-    remove_task.pop_task(task_id)
+    if logged_in_status() == True:
+        task_id = request.form['task_id']
+        remove_task.pop_task(task_id)
 
-    popper = request.cookies.get('user_id')
-    popper_name = request.cookies.get('popper_name')
-    data = task.get_tasks_per_user(popper)
-    return render_template('timelinet.html', user=popper_name, tasks=data)
+        popper = request.cookies.get('user_id')
+        popper_name = request.cookies.get('popper_name')
+        data = task.get_tasks_per_user(popper)
+        return render_template('timelinet.html', user=popper_name, tasks=data)
+    else:
+        return render_template('error.html', error="Logga in först")
