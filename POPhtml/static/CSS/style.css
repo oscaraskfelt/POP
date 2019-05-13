@@ -725,3 +725,27 @@ header{
     box-shadow: 1px 1px 5px 5px rgb(180, 180, 180);
     padding: 30px; 
 }
+
+.deadline_list {
+    list-style: none;
+    padding: 0;
+}
+
+.deadline_list_l {
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 5px; 
+    background-color: rgb(218, 218, 218);
+    border-radius: 5px;
+}
+
+.deadline_list_l > img {
+    float: left;
+    display: block;
+    height: 120px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.deadline_list_l > p {
+    padding-left: 35px;
+}

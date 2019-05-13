@@ -31,17 +31,19 @@
             <aside>
                 <img class="plus" src="/static/IMG/plus.png" alt="plus">
                 <h4>Kommande & passerade deadlines:</h4>
-                <ul>
+                <ul class="deadline_list">
                     {% for i in tasks %}
-                        <li class="{{i[1]}}">
+                        <li class="deadline_list_l">
+                            <img src="/static/IMG/{{i[1]}}.png">
                             <p>{{i[0]}}</p>
                             <p>{{i[4].strftime("%d-%m-%y")}}</p>
-                            <em>Passerat med {{i[5]}} dagar</em>
+                            <p><em>Passerat med {{i[5]}} dagar</em></p>
                         </li>
                     {% endfor %}
 
                     {% for i in data %}
-                        <li class="{{i[3]}}">
+                        <li class="deadline_list_l">
+                            <img src="/static/IMG/{{i[3]}}.png">
                             <p>{{i[1]}}</p>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                         </li>
