@@ -30,10 +30,21 @@
             </main>
             <aside>
                 <img class="plus" src="/static/IMG/plus.png" alt="plus">
-                <h4>Kommande deadlines:</h4>
+                <h4>Kommande & passerade deadlines:</h4>
                 <ul>
                     {% for i in tasks %}
-                        <li class="{{i[3]}}"><p>{{i[1]}}</p><p>{{i[5].strftime("%d-%m-%y")}}</p></li>
+                        <li class="{{i[1]}}">
+                            <p>{{i[0]}}</p>
+                            <p>{{i[4].strftime("%d-%m-%y")}}</p>
+                            <em>Passerat med {{i[5]}} dagar</em>
+                        </li>
+                    {% endfor %}
+
+                    {% for i in data %}
+                        <li class="{{i[3]}}">
+                            <p>{{i[1]}}</p>
+                            <p>{{i[5].strftime("%d-%m-%y")}}</p>
+                        </li>
                     {% endfor %}
                 </ul>
             </aside>
