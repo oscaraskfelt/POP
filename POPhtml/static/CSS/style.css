@@ -353,78 +353,105 @@ footer {
     border-radius: 3px;
     box-shadow: 1px 1px 5px 5px rgb(180, 180, 180) ;
 }
+
+.popup-overlay{
+    /*Hides pop-up when there is no "active" class*/
+    visibility:hidden;
+    position:absolute;
+    background:#ffffff;
+    border:3px solid #666666;
+    width:50%;
+    height:50%;
+    left:25%; 
+}
+.popup-overlay.active{
+    /*displays pop-up when "active" class is present*/
+    visibility:visible;
+    text-align:center;
+}
+
+.popup-content {
+    /*Hides pop-up content when there is no "active" class */
+    visibility:hidden;
+}
+
+.popup-content.active {
+    /*Shows pop-up content when "active" class is present */
+    visibility:visible;
+}
+
 /**************************** HEADER *********************/
 
 header{
-    grid-area: header;
+grid-area: header;
 }
 #header {
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    border-bottom: 4px solid #fff;
+grid-area: header;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+border-bottom: 4px solid #fff;
 }
 
 #header_title {
-    flex-basis: 40%;
-    color: #85cc9f;
-    text-shadow: 0.5px 0.5px 1px #333;
+flex-basis: 40%;
+color: #85cc9f;
+text-shadow: 0.5px 0.5px 1px #333;
 }
 
 #task {
-    flex-basis: 10%;
-    margin-top: 10px;
+flex-basis: 10%;
+margin-top: 10px;
 }
 
 #welcome_user {
-    flex-basis: 10%;
-    
+flex-basis: 10%;
+
 }
 
 #go_timeline {
-    flex-basis: 10%;
-    margin-top: 20px;
+flex-basis: 10%;
+margin-top: 20px;
 }
 
 #go_calender {
-    flex-basis: 10%;
-    margin-top: 20px;
+flex-basis: 10%;
+margin-top: 20px;
 }
 
 #log_out {
-    flex-basis: 10%;
-    margin-top: 10px;
+flex-basis: 10%;
+margin-top: 10px;
 }
 
 #header a {
-    margin-top: 20px; 
+margin-top: 20px; 
 }
 
 #header a {
-    color: black;
-    text-decoration: none;
+color: black;
+text-decoration: none;
 }
 
 #header a:hover {
-    font-weight: bold;
+font-weight: bold;
 }
 
 #log_out input{
-    border-radius: 15px;
-    box-shadow: 0.5px 0.5px 0.5px #000;
-    height: 30px;
-    margin: 8px;
-    cursor: pointer;
-    background-color: #A6D6A9;
-    font-family: 'Roboto Condensed', sans-serif;
-    color: white;
+border-radius: 15px;
+box-shadow: 0.5px 0.5px 0.5px #000;
+height: 30px;
+margin: 8px;
+cursor: pointer;
+background-color: #A6D6A9;
+font-family: 'Roboto Condensed', sans-serif;
+color: white;
 }
 
 .index_head {
-    font-family: 'Roboto Condensed', sans-serif;
-    margin: 50px 0 0 100px;
-    color: #A6ADB4;
+font-family: 'Roboto Condensed', sans-serif;
+margin: 50px 0 0 100px;
+color: #A6ADB4;
 }
 
 
