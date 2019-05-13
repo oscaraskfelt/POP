@@ -1,5 +1,4 @@
 import psycopg2
-from datetime import datetime, timedelta
 
 
 def get_tasks():
@@ -37,11 +36,20 @@ def get_tasks_near_deadline(popper):
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
 
-    datum_nu = (datetime.now() - timedelta(days=1))
-    datum_sen = (datetime.now() + timedelta(days=3))  
-
-    cursor.execute('''select * from task where popper = '{}' and slutdatum between '{}' and '{}' order by slutdatum;'''.format(popper, datum_nu, datum_sen))
+    cursor.execute('''select * from task where popper = '{}' and slutdatum between (now() - interval '1 day') and (now() + interval '3 day') order by slutdatum;'''.format(popper))
     data = cursor.fetchall()
     cursor.close()
     return data 
+
+
+def get_tasks_passed_deadline(popper):
+    '''Hämtar de tasks som har passerat deadline'''
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    cursor = conn.cursor()
+
+    cursor.execute('''select title, prio, content, popper, slutdatum, DATE_PART('day', now() - slutdatum)::integer from task where popper = '{}' and slutdatum < (now() - interval '1 day') order by slutdatum;'''.format(popper))
+    tasks = cursor.fetchall()
+    cursor.close()
+    return tasks
+
 

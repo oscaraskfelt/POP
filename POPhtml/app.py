@@ -57,8 +57,9 @@ def welcome_user(pagename):
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_near_deadline(popper)
+        tasks = task.get_tasks_passed_deadline(popper)
         msg = request.cookies.get('msg')
-        return render_template('welcome_user.html', pagename=pagename, msg=msg,  tasks=data, user=popper_name)
+        return render_template('welcome_user.html', pagename=pagename, msg=msg,  data=data, tasks=tasks, user=popper_name)
     else:
         return render_template('error.html', error="Logga in först")
 
