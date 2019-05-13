@@ -15,4 +15,15 @@ $(document).ready(() => {
             $('#pw_info').show(500)
         };
     });
+
+    $('.showpw').on('click', function() {
+        if('password' == $('#new_pw').attr('type')){
+            $('#new_pw').prop('type', 'text');
+            $('.showpw').attr('src','/static/IMG/hide.png');
+        }
+        else{
+            $('#new_pw').prop('type', 'password');
+            $('.showpw').attr('src','/static/IMG/eye.png');
+    }
+    }); 
 });

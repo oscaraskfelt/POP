@@ -737,6 +737,7 @@ header{
     margin: 5px; 
     background-color: rgb(218, 218, 218);
     border-radius: 5px;
+    box-shadow: 1px 0.5px 0.5px 0.5px #888;
 }
 
 .deadline_list_l > img {
@@ -748,4 +749,28 @@ header{
 
 .deadline_list_l > p {
     padding-left: 35px;
+}
+
+#new_pwd_center {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #A6ADB4;  
+
+}
+
+#new_pwd_form {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #A6ADB4;  
+    background-color: rgb(240, 240, 240);
+    width: 45%;
+    border-radius: 3px;
+    box-shadow: 0.5px 0.5px 2px 2px rgb(180, 180, 180);
+    padding: 30px; 
+}
+
+footer > #ballcont {
+    text-align: start
+}
+
+footer > #ballcont > .balloon {
+    padding-top: 0;
 }

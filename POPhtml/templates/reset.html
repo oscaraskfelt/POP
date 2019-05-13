@@ -42,16 +42,16 @@
             </aside>
             <main>
                 <div id="reset_main">
-                <form class="block" id="reset_form" action="/reset_pw" method="POST">
-                    <caption>Glömt lösenord?</caption> 
-                    <label for="pw_reset">Ange e-post:</label>
-                    <input type="text" id="pw_reset" name="pw_reset">
-                    <input type="submit" id="reset" value="Återställ lösenord" class="reset_butt2">
-                </form>
-                {% if error %}
-                <p id="email_exists">Epost-adressen finns inte i vår databas,</p>
-                {% endif %}
-            </div>
+                    <form class="block" id="reset_form" action="/reset_pw" method="POST">
+                        <caption>Glömt lösenord?</caption> 
+                        <label for="pw_reset">Ange e-post:</label>
+                        <input type="text" id="pw_reset" name="pw_reset">
+                        <input type="submit" id="reset" value="Återställ lösenord" class="reset_butt2">
+                    </form>
+                    {% if error %}
+                    <p id="email_exists">Epost-adressen finns inte i vår databas,</p>
+                    {% endif %}
+                </div>
             </main>
         </div>
     </body>
