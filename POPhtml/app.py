@@ -5,6 +5,7 @@ import sign_in
 import reg_user
 import reset
 import remove_task
+import remove_user
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 app.config.update(
@@ -219,5 +220,18 @@ def task_remove():
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
         return render_template('timelinet.html', user=popper_name, tasks=data)
+    else:
+        return render_template('error.html', error="Logga in först")
+
+
+@app.route('/remove_user', methods=["POST"])
+def user_remove():
+    if logged_in_status() == True:
+        user_id = request.cookies.get('user_id')
+        remove_user.delete_user(user_id)
+
+        remove_account = make_response(redirect(url_for('login')))
+        remove_account.set_cookie('logged_in', "False")
+        return remove_account
     else:
         return render_template('error.html', error="Logga in först")

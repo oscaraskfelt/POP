@@ -22,19 +22,35 @@
                 <div id="setting_container">
                     <div>
                         <button class="butt setting_choice" type="button">Profil</button>
-                        <p class="hide settings_content">Användarnamn</p>
-                        <p class="hide settings_content">Epost</p>
-                        <p class="hide settings_content">Byt lösenord</p>
+                        <label for="user_name" class="hide settings_content">Användarnamn:</p>
+                        <input type="text" name="user_name" id="new_user_name" required placeholder="Visa befintligt användarnamn här">
+                        <label for="epost" class="hide settings_content">Epost</p>
+                        <input type="text" name="epost" id="new_epost" required placeholder="Visa befintlig epost här">
+                        <label for="new_pw" class="hide settings_content">Byt lösenord</p>
+                        <input type="text" name="new_pw" id="new_password" required placeholder="*********">
                     </div> 
                     <div>
                         <button class="butt setting_choice" type="button">Notiser</button>
-                        <p class="hide settings_content"> Något om notiser</p>
+                        <p class="hide settings_content">Vill du få notiser skickade till din mail?</p>
                     </div>
                     <div class="log_out_btn">   
                         <form action="/log_out" method="POST">
                             <input type="submit"  class="butt" value="Logga ut">
                         </form>
                     </div>
+                    <div class="popup-overlay">
+                        <!--Creates the popup content-->
+                        <div class="popup-content">
+                            <h2>Är du säker på att du vill ta bort kontot?</h2>
+                            <form id="remove_user_form" action="/remove_user" method="POST">
+                                <input type="submit" value="Ta bort användare">
+                            </form>
+                            <!--popup's close button-->
+                            <button class="closepopup">Stäng</button>    
+                        </div>
+                    </div>
+                    <!--Content shown when popup is not displayed-->
+                    <button class="butt openpopup">Ta bort användare</button>    
                 </div>  
             </main>
         </div>

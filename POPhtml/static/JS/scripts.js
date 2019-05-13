@@ -127,4 +127,14 @@ $(document).ready(() => {
         $(this).siblings('.settings_content').toggle();
     });
 
+    //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
+    $(".openpopup").on("click", function(){
+        $(".popup-overlay, .popup-content").addClass("active");
+    });
+  
+    //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+    $(".closepopup, .popup-overlay").on("click", function(){
+        $(".popup-overlay, .popup-content").removeClass("active");
+    });
+
 });
