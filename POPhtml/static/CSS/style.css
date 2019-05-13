@@ -50,6 +50,7 @@ footer {
 
 .aside2 {
     grid-area: aside2;
+    font-family: 'Roboto', sans-serif;
 }
 
 /************************************** TASKFORM ****************************************/
@@ -132,6 +133,14 @@ footer {
     font-size: 0.85em;
 }
 
+.buttwidegray {
+    width: 50%;
+    background-color: #A6ADB4;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85em;
+}
+
 .backbutt {
     background-color: #A6D6A9;
     box-shadow: 0.5px 0.5px 0.5px #000;
@@ -149,7 +158,6 @@ footer {
     font-size: 0.95em;
 
 }
-
 
 .Röd {
     background-color: #E84646;
@@ -196,10 +204,12 @@ footer {
     height: 100%;
     background: #c5c5c5;
 }
+
 .timeline ul{
     margin: 0;
     padding: 0;
 }
+
 .timeline ul li{
     list-style: none;
     line-height: normal;
@@ -209,21 +219,23 @@ footer {
     box-sizing: border-box;
 
 }
-.timeline ul li:nth-child(odd)
-{
+
+.timeline ul li:nth-child(odd) {
     float:left;
     text-align: right;
     clear: both;
 }
-.timeline ul li:nth-child(even)
-{
+
+.timeline ul li:nth-child(even) {
     float:right;
     text-align: left;
     clear: both;
 }
+
 .content{
     padding-bottom: 20px;
 }
+
 .timeline ul li:nth-child(odd):before{
     content: '';
     position: absolute;
@@ -235,6 +247,7 @@ footer {
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(233,33,99,0.2);
 }
+
 .timeline ul li:nth-child(even):before{
     content: '';
     position: absolute;
@@ -245,8 +258,8 @@ footer {
     background: rgba(233,33,99,1);
     border-radius: 50%;
     box-shadow: 0 0 0 3px rgba(233,33,99,0.2);
-   
 }
+
 .timeline ul li h3{
     margin: 0;
     padding: 0;
@@ -258,11 +271,13 @@ footer {
     margin: 10px 0 0;
     padding: 0;
 }
+
 .timeline ul li .time h4 {
     margin: 0;
     padding: 0;
     font-size: 14px;
 }
+
 .btn{
     margin: 0;
     padding: 8px 16px;
@@ -277,8 +292,7 @@ footer {
     font-size: 16px;
     border-radius: 18px;
     box-shadow: 0 0 0 3px rgba(36, 223, 30, 0.3);
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 
 .leftbtn{
@@ -309,6 +323,7 @@ footer {
     box-shadow: 0 0 0 3px rgba(233,33,99,0.3);
 
 }
+
 .timeline ul li:nth-child(even) .time {
     position: absolute;
     top: 12px;
@@ -357,6 +372,7 @@ footer {
 header{
     grid-area: header;
 }
+
 #header {
     grid-area: header;
     display: flex;
