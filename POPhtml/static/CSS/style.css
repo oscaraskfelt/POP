@@ -49,6 +49,7 @@ footer {
 
 .aside2 {
     grid-area: aside2;
+    font-family: 'Roboto', sans-serif;
 }
 
 /************************************** TASKFORM ****************************************/
@@ -128,6 +129,14 @@ footer {
     font-size: 0.85em;
 }
 
+.buttwidegray {
+    width: 50%;
+    background-color: #A6ADB4;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 0.85em;
+}
+
 .backbutt {
     background-color: #A6D6A9;
     box-shadow: 0.5px 0.5px 0.5px #000;
@@ -138,6 +147,7 @@ footer {
     width: 15%;
     height: 30px;
 }
+
 #container > header > button > a {
     text-decoration: none;
     color: white;
@@ -145,7 +155,6 @@ footer {
     font-size: 0.95em;
 
 }
-
 
 .Röd {
     background-color: red;

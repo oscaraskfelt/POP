@@ -6,6 +6,7 @@
     //Visar inloggningsform
     $('#login_butt').on('click', function(){
         $("#login_form").toggleClass('hide block');
+        $('#login_butt').toggleClass('buttwidegray')
         $("#reg_form").addClass('hide');
         $("#reg_form").removeClass('block');
     });
@@ -13,6 +14,7 @@
     //Visar registreringsform
     $('#register_butt').on('click', function(){
         $("#reg_form").toggleClass('hide block');
+        $('#register_butt').toggleClass('buttwidegray')
         $("#login_form").addClass('hide');
         $("#login_form").removeClass('block');
     });
