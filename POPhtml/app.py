@@ -171,8 +171,8 @@ def reset_handler(user):
     return add_cookie
 
 
-@app.route('/update_password', methods=["POST"])
-def update_password():
+@app.route('/reset_password', methods=["POST"])
+def reset_password():
     '''Hämtar nytt lösenord för användaren och skickar det till DB'''
     user = request.cookies.get('user')
     new_pw = request.form['new_pw']
@@ -206,7 +206,9 @@ def logged_in_status():
 @app.route('/settings/<pagename>') 
 def settings(pagename):
     if logged_in_status() == True:
-        return render_template('settings.html', pagename=pagename, user=pagename)
+        popper = request.cookies.get('user_id')
+        data = sign_in.get_one_user(popper)
+        return render_template('settings.html', pagename=pagename, user=pagename, data=data)
     else:
         return render_template('error.html', error="Logga in först")
 
@@ -234,5 +236,18 @@ def user_remove():
         remove_account = make_response(redirect(url_for('login')))
         remove_account.set_cookie('logged_in', "False")
         return remove_account
+    else:
+        return render_template('error.html', error="Logga in först")
+
+
+@app.route('/update_pw', methods=["POST"])
+def update_user():
+    if logged_in_status() == True:
+        popper_name = request.cookies.get('popper_name')
+        id = request.cookies.get('user_id')
+        new_pw = request.form['pw_reg']
+
+        reset.reset_password(new_pw, id)
+        return redirect(url_for('settings', pagename=popper_name))
     else:
         return render_template('error.html', error="Logga in först")

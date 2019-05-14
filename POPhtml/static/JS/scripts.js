@@ -124,7 +124,8 @@ $(document).ready(() => {
 
     //Visar och döljer alternativ för settings
     $('.setting_choice').on('click', function() {
-        $(this).siblings('.settings_content').toggle();
+        $(this).siblings('.settings_content').toggleClass('hide');
+        $(this).siblings('.settings_content').toggleClass('block');
     });
 
     //appends an "active" class to .popup and .popup-content when the "Open" button is clicked

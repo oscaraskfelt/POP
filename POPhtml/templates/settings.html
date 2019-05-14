@@ -20,14 +20,19 @@
             <main>
                 <h1>Inställningar</h1>
                 <div id="setting_container">
-                    <div>
-                        <button class="butt setting_choice" type="button">Profil</button>
-                        <label for="user_name" class="hide settings_content">Användarnamn:</p>
-                        <input type="text" name="user_name" id="new_user_name" required placeholder="Visa befintligt användarnamn här">
-                        <label for="epost" class="hide settings_content">Epost</p>
-                        <input type="text" name="epost" id="new_epost" required placeholder="Visa befintlig epost här">
-                        <label for="new_pw" class="hide settings_content">Byt lösenord</p>
-                        <input type="text" name="new_pw" id="new_password" required placeholder="*********">
+                    <button class="butt setting_choice" type="button">Profil</button>
+                    <div class="block settings_content">
+                        <label for="user_name" class=" settings_content">Användarnamn:</label>
+                        <input type="text" name="user_name" id="new_user_name" required value="{{data[0][1]}}">
+                        <label for="epost" class="settings_content">Epost</label>
+                        <input type="text" name="epost" id="new_epost" required value="{{data[0][0]}}">
+                        <form action="/update_pw" method="POST">
+                            <label for="pw_reg" class="settings_content">Byt lösenord</label>
+                            <input type="password" name="pw_reg" id="pw_reg" required value="{{data[0][2]}}">
+                            <img src="/static/IMG/eye.png" alt="öga" id="showpw">
+                            <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
+                            <input type="submit" value="Uppdatera lösenord" class="butt">
+                        </form>
                     </div> 
                     <div>
                         <button class="butt setting_choice" type="button">Notiser</button>
