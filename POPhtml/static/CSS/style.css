@@ -753,8 +753,9 @@ header{
 
 #new_pwd_center {
     font-family: 'Roboto Condensed', sans-serif;
-    color: #A6ADB4;  
-
+    color: #A6ADB4;
+    margin: auto;  
+    text-align: center;
 }
 
 #new_pwd_form {
@@ -765,12 +766,42 @@ header{
     border-radius: 3px;
     box-shadow: 0.5px 0.5px 2px 2px rgb(180, 180, 180);
     padding: 30px; 
+    margin: 10% auto 5% auto;
+}
+
+#new_pwd_form > * {
+
+}
+
+#new_pwd_form > img {
+    height: 15px;
+    width: 15px;
+    display: inline;
+}
+
+#new_pwd_form > submit {
+    width: 50%;
+}
+
+#new_pwd_form > #pw_info {
+    margin: 0.4em auto auto auto;
+}
+
+#new_pw {
+    display: inline;
+    margin: 0.4em auto auto auto;
+}
+
+#new_pw_submit {
+    margin: 0.4em auto auto auto;
 }
 
 footer > #ballcont {
-    text-align: start
+    text-align: start;
+    margin: auto;
 }
 
 footer > #ballcont > .balloon {
     padding-top: 0;
+    margin: 0 0 0 27%;
 }
