@@ -24,6 +24,6 @@ def reg_user(epost, popper_name, losenord):
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute('''INSERT INTO popper (epost, popper_name, losenord)
-                        VALUES ('{}', '{}', '{}' )'''.format(epost, popper_name, losenord))
+                        VALUES (%s, %s, %s )''', (epost, popper_name, losenord,))
     conn.commit()
 

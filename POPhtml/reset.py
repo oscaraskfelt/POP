@@ -7,7 +7,7 @@ def reset_password(password, user):
     '''Skickar query för att uppdatera lösenord'''
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
-    cursor.execute('''UPDATE popper SET losenord = '{}' where epost = '{}' '''.format(password, user))
+    cursor.execute('''UPDATE popper SET losenord = %s where epost = %s ''', (password, user,))
     cursor.close()
     conn.commit()
     return True
