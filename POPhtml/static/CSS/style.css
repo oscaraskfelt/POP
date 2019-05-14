@@ -485,7 +485,7 @@ header{
     margin: 0 80px;
     padding-top: 80px;
     position: relative;
-  }
+}
 
 .balloon > div {
     width: 104px;
@@ -693,6 +693,35 @@ header{
     }
 }
 
+/**************************** Deadline-lista - Welcome_user *********************/
+
+.deadline_list {
+    list-style: none;
+    padding: 0;
+}
+
+.deadline_list_l {
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 5px; 
+    background-color: rgb(218, 218, 218);
+    border-radius: 5px;
+    box-shadow: 1px 0.5px 0.5px 0.5px #888;
+}
+
+.deadline_list_l > img {
+    float: left;
+    display: block;
+    height: 120px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.deadline_list_l > p {
+    padding-left: 35px;
+}
+
+/**************************** RESET ****************************/
+
 #reset_main{
     grid-area: main;
     display: grid;
@@ -726,30 +755,7 @@ header{
     padding: 30px; 
 }
 
-.deadline_list {
-    list-style: none;
-    padding: 0;
-}
-
-.deadline_list_l {
-    box-sizing: border-box;
-    overflow: hidden;
-    margin: 5px; 
-    background-color: rgb(218, 218, 218);
-    border-radius: 5px;
-    box-shadow: 1px 0.5px 0.5px 0.5px #888;
-}
-
-.deadline_list_l > img {
-    float: left;
-    display: block;
-    height: 120px;
-    border-radius: 5px 0px 0px 5px;
-}
-
-.deadline_list_l > p {
-    padding-left: 35px;
-}
+/**************************** RESET/<user> *********************/
 
 #new_pwd_center {
     font-family: 'Roboto Condensed', sans-serif;
@@ -767,10 +773,6 @@ header{
     box-shadow: 0.5px 0.5px 2px 2px rgb(180, 180, 180);
     padding: 30px; 
     margin: 10% auto 5% auto;
-}
-
-#new_pwd_form > * {
-
 }
 
 #new_pwd_form > img {
