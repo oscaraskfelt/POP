@@ -214,9 +214,9 @@ footer {
     line-height: normal;
     position: relative;
     width: 50%;
+    height: 150px;
     padding: 20px 40px;
     box-sizing: border-box;
-
 }
 
 .timeline ul li:nth-child(odd) {
@@ -282,15 +282,11 @@ footer {
     padding: 8px 16px;
     font-size: 14px;
     border-radius: 18px;
-    /*background: rgb(33, 233, 140);*/
-    box-shadow: 0 0 0 3px rgba(233,33,99,0.3);
     position: absolute;
-    top: 12px;
-    right: -165px;
-    color: #333;
+    top: 0px;
+    right: -140px;
     font-size: 16px;
     border-radius: 18px;
-    box-shadow: 0 0 0 3px rgba(36, 223, 30, 0.3);
     cursor: pointer;  
 }
 

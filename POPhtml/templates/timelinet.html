@@ -24,12 +24,13 @@
                     {% for i in tasks %}
                         <li>
                             <h3>{{i[1]}}</h3>
+                            <p>{{i[5].strftime("%d-%m-%y")}}</p>
                             <p class="hide task_content">{{i[2]}}</p>
                             <form id="remove_task_form" action="/poptask" method="POST" class="hide">
                                 <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
                                 <input type="submit" value="Ta bort">
                             </form>
-                            <button class="btn {{i[3]}}" type="button">{{i[5].strftime("%d-%m-%y")}}</button>
+                            <img class="btn" src="/static/IMG/balloon_{{i[3]}}.png" alt="balloon">
                         </li>
                         <div style="clear: both;"></div>
                     {% endfor %} 
