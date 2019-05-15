@@ -159,16 +159,22 @@ footer {
 
 }
 
-.Röd {
-    background-color: #E84646;
-}
-
 .Grön {
-    background-color: #A6D6A9;
+    animation-name: sway;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
 }
 
 .Gul {
-    background-color: #FBF49C;
+    animation-name: sway;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+
+.Röd {
+    animation-name: sway;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
 }
 
 #ordbok {
@@ -284,11 +290,20 @@ footer {
     border-radius: 18px;
     position: absolute;
     top: 0px;
-    right: -140px;
+    right: -141px;
     font-size: 16px;
     border-radius: 18px;
     cursor: pointer;  
 }
+
+@keyframes sway {
+    0%, 100% {
+        transform: translate(2px, -2px) rotate(0deg);
+    }
+    50% {
+        transform: translate(0px, 3px) rotate(-3deg);
+    }
+  }
 
 .leftbtn{
     margin: 0;

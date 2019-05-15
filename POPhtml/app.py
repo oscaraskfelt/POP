@@ -219,10 +219,7 @@ def task_remove():
         task_id = request.form['task_id']
         remove_task.pop_task(task_id)
 
-        popper = request.cookies.get('user_id')
-        popper_name = request.cookies.get('popper_name')
-        data = task.get_tasks_per_user(popper)
-        return render_template('timelinet.html', user=popper_name, tasks=data)
+        return redirect(url_for('tidslinje'))
     else:
         return render_template('error.html', error="Logga in först")
 
