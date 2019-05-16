@@ -9,6 +9,7 @@ $(document).ready(() => {
         $('#login_butt').toggleClass('buttwidegray')
         $("#reg_form").addClass('hide');
         $("#reg_form").removeClass('block');
+        $("#register_butt").removeClass('buttwidegray')
     });
 
     //Visar registreringsform
@@ -17,6 +18,7 @@ $(document).ready(() => {
         $('#register_butt').toggleClass('buttwidegray')
         $("#login_form").addClass('hide');
         $("#login_form").removeClass('block');
+        $('#login_butt').removeClass('buttwidegray')
     });
 
     // Validerar att användarnamn finns
