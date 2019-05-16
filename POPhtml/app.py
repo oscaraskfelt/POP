@@ -51,7 +51,7 @@ def check_login():
         return render_template('error.html', error=message, title="ERROR")
 
 
-@app.route('/welcome_user/<pagename>')
+@app.route('/welcome_user/<pagename>/')
 def welcome_user(pagename):
     if logged_in_status() == True:
         popper = request.cookies.get('user_id')
@@ -85,8 +85,8 @@ def check_signup():
         return render_template('error.html', error="Eposten redan registrerad")
 
 
-@app.route('/calendar')
-@app.route('/kalender')
+@app.route('/calendar/')
+@app.route('/kalender/')
 def kalender():
     '''Returnerar kalendervy'''
     if logged_in_status() == True:
@@ -98,8 +98,8 @@ def kalender():
         return render_template('error.html', error="Vänligen logga in först")
 
 
-@app.route('/timeline')
-@app.route('/tidslinje')
+@app.route('/timeline/')
+@app.route('/tidslinje/')
 def tidslinje():
     '''Returnerar vy över tidslinje'''
     if logged_in_status() == True:
@@ -171,13 +171,13 @@ def edit_data():
         return render_template('error.html', error="Logga in först")
 
 
-@app.route('/reset')
+@app.route('/reset/')
 def reset_page():
     '''Returnerar formulär för att ange epost till lösenordsåterställning'''
     return render_template('reset.html')
 
 
-@app.route('/reset_pw', methods=["POST"])
+@app.route('/reset_pw/', methods=["POST"])
 def send_reset_email():
     '''Hämtar epostadress och skrickar en HTML-länk för att skapa nytt lösenord'''
     try:
@@ -193,7 +193,7 @@ def send_reset_email():
         return render_template('error.html', error=message)
 
 
-@app.route('/reset/<user>')
+@app.route('/reset/<user>/')
 def reset_handler(user):
     '''Hanterar lösenordsåterställning'''
     add_cookie = make_response(render_template('new_password.html'))
@@ -233,7 +233,7 @@ def logged_in_status():
         return False
 
 
-@app.route('/settings/<pagename>') 
+@app.route('/settings/<pagename>/') 
 def settings(pagename):
     if logged_in_status() == True:
         popper = request.cookies.get('user_id')
