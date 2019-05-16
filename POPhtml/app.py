@@ -141,6 +141,36 @@ def add_data():
         return render_template('error.html', error="Logga in först")
 
 
+@app.route('/edit_task', methods=["POST"])
+def edit_data():
+    '''Redigerar data i databasen'''
+    if logged_in_status() == True:
+        try:
+            edit_title = request.form['edit_task_header']
+            edit_content = request.form['edit_task_content']
+            edit_prio = request.form['edit_task_prio']
+            edit_enddate = request.form['edit_task_enddate']
+            task_id = request.form['task_id']
+
+            origin_path = request.referrer.split("/")[3]
+            task.edit_task(edit_title, edit_content, edit_prio, edit_enddate, task_id)
+            if origin_path == 'timeline' or origin_path == 'tidslinje':
+                return redirect(url_for('tidslinje'))
+            elif origin_path =='calendar' or origin_path == 'kalender':
+                return redirect(url_for('kalender'))
+            elif origin_path == 'settings':
+                popper = request.cookies.get('user_id')
+                return redirect(url_for('settings', pagename=popper))
+            else:
+                popper = request.cookies.get('user_id')
+                return redirect(url_for('welcome_user', pagename=popper))
+        except:
+            popper = request.cookies.get('user_id')
+            return redirect(url_for('welcome_user', pagename=popper))
+    else:
+        return render_template('error.html', error="Logga in först")
+
+
 @app.route('/reset')
 def reset_page():
     '''Returnerar formulär för att ange epost till lösenordsåterställning'''

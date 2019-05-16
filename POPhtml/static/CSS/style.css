@@ -87,6 +87,28 @@ footer {
     margin: -45px -45px 0;
 }
 
+#task_form_edit {
+    background-color: #f5f5f5;
+    width: 40%;
+    height: 40%;
+    border: 1px solid #afafafff;
+    box-shadow: 1px 0.5px 0.5px 0.5px #888;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 1;
+    padding: 50px;
+}
+
+#task_form_edit *{
+    display: block;
+    max-width: 100%;
+}
+
 /*********************************** GENERAL ***********************************/
 .hide {
     display: none;
