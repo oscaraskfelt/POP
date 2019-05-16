@@ -1,6 +1,7 @@
 $('.btn').on('click', event => {
   $(event.currentTarget).siblings('.task_content').toggle();
   $(event.currentTarget).siblings('#remove_task_form').toggle();
+  $(event.currentTarget).siblings('.edit_butt').toggle();
 })
 
 /*

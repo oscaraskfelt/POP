@@ -53,3 +53,15 @@ def get_tasks_passed_deadline(popper):
     return tasks
 
 
+def edit_task(title, content, prio, enddate, ide):
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    cursor = conn.cursor()
+    cursor.execute('''UPDATE task SET 
+                        title = %s,
+                        content = %s,
+                        prio = %s,
+                        slutdatum = %s 
+                        WHERE id = %s;''', (title, content, prio, enddate, ide,))
+    conn.commit()
+    cursor.close()
+
