@@ -246,10 +246,24 @@ def settings(pagename):
 @app.route('/poptask', methods=["POST"])
 def task_remove():
     if logged_in_status() == True:
-        task_id = request.form['task_id']
-        remove_task.pop_task(task_id)
+        try:
+            task_id = request.form['task_id']
+            remove_task.pop_task(task_id)
 
-        return redirect(url_for('tidslinje'))
+            origin_path = request.referrer.split("/")[3]
+            if origin_path == 'timeline' or origin_path == 'tidslinje':
+                return redirect(url_for('tidslinje'))
+            elif origin_path == 'calendar' or origin_path == 'kalender':
+                return redirect(url_for('kalender'))
+            elif origin_path == 'settings':
+                popper = request.cookies.get('user_id')
+                return redirect(url_for('settings', pagename=popper))
+            else:
+                popper = request.cookies.get('user_id')
+                return redirect(url_for('welcome_user', pagename=popper))
+        except:
+            popper = request.cookies.get('user_id')
+            return redirect(url_for('welcome_user', pagename=popper))
     else:
         return render_template('error.html', error="Logga in först")
 
