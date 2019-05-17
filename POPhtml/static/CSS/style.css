@@ -127,6 +127,23 @@ footer {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 0.85em;
 }
+.gdpr_style {
+    background-color: #A6D6A9;
+    width: 40%;
+    height: 40%;
+    border: 1px solid #afafafff;
+    box-shadow: 1px 0.5px 0.5px 0.5px #888;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 1;
+    padding: 50px;
+    overflow: scroll;
+}
 
 .backbutt {
     background-color: #A6D6A9;
@@ -145,6 +162,7 @@ footer {
     font-size: 0.95em;
 
 }
+
 
 
 .Röd {
@@ -419,6 +437,13 @@ header{
     color: #A6ADB4;
 }
 
+/* The alert message box */
+.alert-link {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+  }
 
 /**************************** INDEX - BALLOONS *********************/
 

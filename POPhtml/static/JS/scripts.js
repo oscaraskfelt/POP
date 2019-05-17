@@ -2,6 +2,7 @@
     email_validation = false;
     password_validation = false;
     user_name = false;
+    gdpr_check = false;
 
     //Visar inloggningsform
     $('#login_butt').on('click', function(){
@@ -16,6 +17,7 @@
         $("#login_form").addClass('hide');
         $("#login_form").removeClass('block');
     });
+
 
     // Validerar att användarnamn finns
     $('#popper_name').on('keyup', function(){
@@ -72,9 +74,9 @@
         };
     });
 
-    // Validerar användarnamn, epost-, lösenordformat är korrekt
+    // Validerar användarnamn, epost-, lösenordformat är korrekt och att användaren har godkännt villkoren.
     function validate(){
-        if (email_validation == true && password_validation == true && user_name == true){
+        if (email_validation == true && password_validation == true && user_name == true && gdpr_check == true){
             $('#reg_submit').attr('disabled', false);
         }
         else {
@@ -82,6 +84,33 @@
         }
     }
 
+    //Checkboxen för villkor måste vara checked
+        $ ('input[type = "checkbox"]').click (function() {
+            if ($(this).prop ("checked") == true){
+                gdpr_check = true; 
+                validate();
+            }
+                else {
+                    gdpr_check = false;
+                    validate();
+                }
+           
+        });
+
+    //Villkoren poppar upp när anvndaren klickar på "villkor"
+    $('.gdpr_style').hide()
+    $('#conditions').on('click', function() {
+        $('.gdpr_style').toggle()
+    })
+
+    $('#close_gdpr').on('click', function(){
+        $('.gdpr_style').hide()
+    })
+
+    function gdpr(){
+
+    }
+ 
     // Visar och döljer lösenord för inloggning
     $('#showpwd').on('click', function() {
         
