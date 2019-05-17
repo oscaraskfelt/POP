@@ -139,6 +139,18 @@ footer {
     color: white;
 }
 
+.altbutt {
+    border-radius: 15px;
+    box-shadow: 0.5px 0.5px 0.5px #000;
+    width: 20%;
+    height: 30px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: #4D9C8C;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;   
+}
+
 .small_butt {
     border-radius: 15px;
     box-shadow: 0.5px 0.5px 0.5px #000;
@@ -389,7 +401,7 @@ footer {
     width: 50%;
 }
 
-/******************************* Settings Birger ****************************/
+/******************************* Settings ****************************/
 
 #setting_container {
     left: 20%;
