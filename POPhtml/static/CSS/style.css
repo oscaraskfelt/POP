@@ -485,40 +485,48 @@ header{
 
 #header {
     grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    display: grid;
+    grid-template-areas: "loggo plus home timeline calendar settings logout";
+    grid-template-columns: 500px 150px 100px 150px 150px 150px 150px;
+    /*justify-content: space-between;
+    flex-direction: row;*/
     border-bottom: 4px solid #fff;
 }
 
 #header_title {
-    flex-basis: 40%;
+    grid-area: loggo;
+    /*flex-basis: 40%;*/
     color: #85cc9f;
     text-shadow: 0.5px 0.5px 1px #333;
 }
 
 #task {
-    flex-basis: 10%;
+    grid-area: plus;
+    /* flex-basis: 10%; */
     margin-top: 10px;
 }
 
 #welcome_user {
-    flex-basis: 10%;
-    
+    grid-area: home;
+     /* flex-basis: 10%; */    
 }
 
 #go_timeline {
-    flex-basis: 10%;
+    grid-area: timeline;
+    /* flex-basis: 10%; */
     margin-top: 20px;
 }
 
 #go_calender {
-    flex-basis: 10%;
+    grid-area: calendar;
+    /* flex-basis: 10%; */
     margin-top: 20px;
 }
 
 #log_out {
-    flex-basis: 10%;
+    grid-area: logout;
+    justify-self: end;
+    /* flex-basis: 10%; */
     margin-top: 10px;
 }
 
