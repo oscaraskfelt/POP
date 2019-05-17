@@ -76,6 +76,10 @@ footer {
     max-width: 100%;
 }
 
+#add_task_form > label {
+    margin: 10px 0px 5px 0px;
+}
+
 .plus {
     width: 50px;
     cursor: pointer;
@@ -87,12 +91,22 @@ footer {
     margin: -45px -45px 0;
 }
 
+#new_task_content, #new_task_header, #new_task_enddate {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(231, 231, 231);
+}
+
+#new_task_prio {
+    background: rgb(231, 231, 231);
+}
+
 #task_form_edit {
     background-color: #f5f5f5;
     width: 40%;
     height: 40%;
     border: 1px solid #afafafff;
-    box-shadow: 1px 0.5px 0.5px 0.5px #888;
+    box-shadow: 1px 0.5px 0.5px 0.5px;
     padding: 10px;
     border-radius: 10px;
     position: fixed;
@@ -107,6 +121,20 @@ footer {
 #task_form_edit *{
     display: block;
     max-width: 100%;
+}
+
+#task_form_edit > label {
+    margin: 10px 0px 5px 0px;
+}
+
+#edit_task_content, #edit_task_header, #edit_task_enddate {
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(231, 231, 231);
+}
+
+#edit_task_prio {
+    background: rgb(231, 231, 231);
 }
 
 /*********************************** GENERAL ***********************************/
@@ -498,12 +526,13 @@ header{
     /*flex-basis: 40%;*/
     color: #85cc9f;
     text-shadow: 0.5px 0.5px 1px #333;
+    margin: 0px;
 }
 
 #task {
     grid-area: plus;
     /* flex-basis: 10%; */
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 #welcome_user {
@@ -530,8 +559,12 @@ header{
     margin-top: 10px;
 }
 
+#log_out > form {
+    margin-left: 30px;
+}
+
 #header a {
-    margin-top: 20px; 
+    margin-top: 32px; 
 }
 
 #header a {
@@ -543,11 +576,15 @@ header{
     font-weight: bold;
 }
 
+#header_title > a > img {
+    margin: 0.5em 0px 0px 2em;
+}
+
 #log_out input{
     border-radius: 15px;
     box-shadow: 0.5px 0.5px 0.5px #000;
     height: 30px;
-    margin: 8px;
+    margin: 15px;
     cursor: pointer;
     background-color: #A6D6A9;
     font-family: 'Roboto Condensed', sans-serif;
