@@ -55,7 +55,7 @@ class CALENDAR {
         }
         let activeMonth = calendar.active['month'] 
         let activeYear = (calendar.active['year']).toString()
-
+    
         for (var prop in tasks){
             let day = tasks[prop][5].split(" ")[1]
             let month = tasks[prop][5].split(" ")[2]
@@ -63,6 +63,7 @@ class CALENDAR {
             let title = tasks[prop][1]
             let content = tasks[prop][2]
             let taskId = tasks[prop][0]
+            let taskPrio = tasks[prop][3]
 
             if (month == "Jan"){
                 month = 0
@@ -102,7 +103,7 @@ class CALENDAR {
             }
             
             if ( activeDay == day && activeMonth == month && year == activeYear){
-            eventList.push([title, content, taskId])
+            eventList.push([title, content, taskId, taskPrio])
             };
 
         
@@ -121,7 +122,10 @@ class CALENDAR {
         let eventTemplate = "";
         eventList.forEach(item => {
             eventTemplate +=    `<li>
-                                    <h4 class="task_title">${item[0]}</h4>
+                                    <h4 class="task_title">                                    
+                                    <img class="prio_${item[3]}" src="/static/IMG/mini_${item[3]}.png" alt="balloon">
+                                    ${item[0]}  
+                                    </h4>
                                     <div class="hide task_content">
                                         <p>${item[1]}</p>
                                         <button class="edit_butts buttwide butt" value="${item[2]}" name="id_task">Redigera task</button>
@@ -344,7 +348,6 @@ function edit_task() {
         $("#edit_form").toggleClass('visible');
         $('.edit_plus').toggleClass('rotate');
         var fired_button = $(this).val();
-        console.log("fired butt", fired_button)
     
         for (var prop in tasks){
             if (tasks[prop][0] == fired_button){
@@ -370,7 +373,6 @@ function edit_task() {
          
                 $('#edit_task_enddate').val(fulldate);
                 $('#task_id').val(fired_button);
-                console.log("blää")
             }
         }
     });

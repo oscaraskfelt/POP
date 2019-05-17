@@ -228,6 +228,27 @@ footer {
     animation-iteration-count: infinite;
 }
 
+.prio_Grön {
+    height: 40px;
+    width: auto;
+    position: relative;
+    top: 13px;
+}
+
+.prio_Gul {
+    height: 40px;
+    width: auto;
+    position: relative;
+    top: 13px;
+}
+
+.prio_Röd {
+    height: 40px;
+    width: auto;
+    position: relative;
+    top: 13px;
+}
+
 #ordbok {
     margin: 50px 0 0 0;
 }

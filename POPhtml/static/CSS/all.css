@@ -107,11 +107,13 @@ body {
   padding-left: 30px;
   list-style: none; 
   }
+/*
 .calendar .current-day-events ul li::before {
   content: '-';
   position: absolute;
   left: 3px; 
   }
+  */
 .calendar h1.calendar-left-side-day {
   font-size: 92px; 
   }
@@ -219,9 +221,10 @@ body {
   }
 
   .task_title {
-    margin:10px;
+    margin-bottom:10px;
     text-shadow: 0.4px 0.4px #333;
     cursor: pointer;
+    margin-left: -32px;
   }
 
   .task_content {
@@ -237,3 +240,4 @@ body {
   .task_content .butt{
     margin: 4px;
   }
+
