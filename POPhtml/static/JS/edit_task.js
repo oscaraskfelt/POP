@@ -1,6 +1,5 @@
 this.eventList = tasks || {};
 let eventList = []
-console.log(tasks)
 
 $(".edit_butt").click(function() {
     var fired_button = $(this).val();
