@@ -1,7 +1,3 @@
-this.eventList = tasks || {};
-let eventList = []
-console.log(tasks)
-
 $(".edit_butt").click(function() {
     var fired_button = $(this).val();
     console.log(fired_button)
@@ -30,8 +26,6 @@ $(".edit_butt").click(function() {
             
             $('#edit_task_enddate').val(fulldate);
             $('#task_id').val(fired_button);
-            
-
         }
     }
 });

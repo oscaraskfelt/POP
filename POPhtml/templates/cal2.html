@@ -53,10 +53,10 @@
                     </div>
                 </div>
             </main>
-            <div class="hide">{{tasks}}</div>
-            <script>
-                let tasks = JSON.parse('{{tasks|tojson}}'); 
-            </script>
+            <aside>
+                {% include 'edit_task.html' %} 
+            </aside>  
+            
         </div>
     </body>
 </html>
