@@ -79,7 +79,29 @@ body {
 
 .calendar .current-day-events {
   height: 215px; 
+  overflow-y: scroll;
   }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100; 
+  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.466); 
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888; 
+}
 
 .calendar .current-day-events ul {
   padding-left: 30px;
@@ -93,9 +115,7 @@ body {
 .calendar h1.calendar-left-side-day {
   font-size: 92px; 
   }
-.calendar .add-event-day {
-  border-bottom: 1px solid white; 
-  }
+
 .calendar .add-event-day .add-event-day-field {
   border: none;
   background: transparent;
@@ -196,4 +216,24 @@ body {
     width: calc(460px / 7);
     height: 30px;
     line-height: 30px; 
+  }
+
+  .task_title {
+    margin:10px;
+    text-shadow: 0.4px 0.4px #333;
+    cursor: pointer;
+  }
+
+  .task_content {
+    background: #3f3f3f31; 
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .task_content p{
+    margin-bottom: 10px;
+  }
+
+  .task_content .butt{
+    margin: 4px;
   }

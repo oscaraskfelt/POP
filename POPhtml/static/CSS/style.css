@@ -271,7 +271,7 @@ footer {
     line-height: normal;
     position: relative;
     width: 50%;
-    height: 150px;
+    min-height: 150px;
     padding: 20px 40px;
     box-sizing: border-box;
 }

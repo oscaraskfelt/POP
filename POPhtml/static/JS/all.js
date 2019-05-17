@@ -19,7 +19,6 @@ class CALENDAR {
         };
 
         this.eventList = tasks || {};
-        //console.log("1: ", this.eventList)
         this.date = +new Date();
         this.options.maxDays = 37;
         this.init();
@@ -40,6 +39,8 @@ class CALENDAR {
         this.drawYearAndCurrentDay();
         this.drawEvents();
 
+        showContent();
+        edit_task()
     }
 
     drawEvents() {
@@ -61,6 +62,7 @@ class CALENDAR {
             let year = tasks[prop][5].split(" ")[3]
             let title = tasks[prop][1]
             let content = tasks[prop][2]
+            let taskId = tasks[prop][0]
 
             if (month == "Jan"){
                 month = 0
@@ -99,28 +101,39 @@ class CALENDAR {
                 month = 11
             }
             
-            //console.log("år: ", year)
-            //console.log("dag: ", day)
-            //console.log("månad: ", month)
-            //console.log("task: ", title)
-            //console.log("content: ", content)
             if ( activeDay == day && activeMonth == month && year == activeYear){
-            eventList.push(title)
+            eventList.push([title, content, taskId])
             };
 
         
         };
         if (eventList === undefined || eventList.length == 0){
-            eventList.push("Du har inga tasks idag! Prokrastinera!")
-        }
-        //console.log("2: ", calendar.active)
-        //console.log("!: ", eventList)
+            eventList.push(["Du har inga tasks idag! Prokrastinera!"])
+            let eventTemplate = "";
+        eventList.forEach(item => {
+            eventTemplate +=    `<li>
+                                    <h4>${item}</h4>
+                                </li>`;
+            });
+        this.elements.eventList.innerHTML = eventTemplate;
+            }
+        else{
         let eventTemplate = "";
         eventList.forEach(item => {
-            eventTemplate += `<li>${item}</li>`;
-        });
-
+            eventTemplate +=    `<li>
+                                    <h4 class="task_title">${item[0]}</h4>
+                                    <div class="hide task_content">
+                                        <p>${item[1]}</p>
+                                        <button class="edit_butts buttwide butt" value="${item[2]}" name="id_task">Redigera task</button>
+                                        <form id="remove_task_form" action="/poptask" method="POST">
+                                            <input type="text" class="hide" value="${item[2]}" name="task_id" />
+                                            <input class="buttwide butt" type="submit" value="Ta bort">
+                                       </form>
+                                    </div>
+                                </li>`;
+            });
         this.elements.eventList.innerHTML = eventTemplate;
+        }
     }
 
     drawYearAndCurrentDay() {
@@ -319,3 +332,46 @@ class CALENDAR {
         id: "calendar"
     })
 })();
+
+function showContent() {
+    $('.task_title').on('click', function(){
+    $(this).siblings('.task_content').toggleClass('hide');
+}); 
+}
+
+function edit_task() {
+    $(".edit_butts").on('click', function() {
+        $("#edit_form").toggleClass('visible');
+        $('.edit_plus').toggleClass('rotate');
+        var fired_button = $(this).val();
+        console.log("fired butt", fired_button)
+    
+        for (var prop in tasks){
+            if (tasks[prop][0] == fired_button){
+                $('#edit_task_header').val(tasks[prop][1]);
+                $('#edit_task_content').val(tasks[prop][2]);
+    
+                prio = tasks[prop][3];
+                ($(`#edit_task_prio option[value=${prio}]`).attr("selected", true));
+    
+                date = new Date(tasks[prop][5]).getDate();
+                month = new Date(tasks[prop][5]).getMonth()+1;
+                year = new Date(tasks[prop][5]).getFullYear();
+               
+                if (date<10){
+                    date = '0' + date;
+                }
+    
+                if (month<10){
+                    month = '0' + month;
+                }
+    
+                fulldate = year + '-' + month + '-' + date;
+         
+                $('#edit_task_enddate').val(fulldate);
+                $('#task_id').val(fired_button);
+                console.log("blää")
+            }
+        }
+    });
+}

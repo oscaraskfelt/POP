@@ -17,6 +17,7 @@ $(document).ready(() => {
 
     $('.edit_plus').on('click', function(){
         $('#edit_form').toggleClass('visible');
+        $('.edit_plus').toggleClass('rotate');
     });
 
 
