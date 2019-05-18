@@ -53,6 +53,7 @@ body {
   height: 490px;
   border-radius: 10px;
   overflow: hidden; 
+  margin-top: 10%
 }
 .calendar .calendar-left-side-day-of-week, .calendar .current-day-events ul, .calendar .add-event-day, .calendar .calendar-change-year, .calendar .calendar-days li {
   position: relative; 

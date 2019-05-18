@@ -1,6 +1,7 @@
 <header id="header">
     <div id="header_title">
-        <a href="/welcome_user/{{user}}"><img height="75px" src="/static/IMG/POP_logga.png"></a>
+        <a href="/welcome_user/{{user}}" id="logga"><img height="75px" src="/static/IMG/POP_logga.png"></a>
+        <p>Halloj, {{user}}!</p>
     </div>
     <div id="task">
         {% include '_new_task.html'%}
