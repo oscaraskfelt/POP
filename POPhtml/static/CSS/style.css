@@ -66,7 +66,7 @@ footer {
     margin-top: -50px;
     margin-left: -100px;
     z-index: 1;
-    padding: 50px;
+    padding: 15px 30px 80px 30px;
 }
 
 #task_form *{
@@ -79,14 +79,15 @@ footer {
 }
 
 .plus {
-    width: 50px;
+    width: 35px;
     cursor: pointer;
+    align-self: center;
 }
 
 .inside_plus {
     float: right;
-    width: 10%;
-    margin: -45px -45px 0;
+    width: 6%;
+    margin: -43px -41px 0;
 }
 
 #new_task_content, #new_task_header, #new_task_enddate {
@@ -95,11 +96,29 @@ footer {
     background-color: rgb(231, 231, 231);
 }
 
-#new_task_prio {
-    background: rgb(231, 231, 231);
+#new_task_content, #new_task_header {
+    width: 95%
 }
 
-#task_form_edit {
+#new_task_content {
+    border-style: inset;
+    border-width: 2px;
+    height: 60px;
+    resize: none;
+}
+
+#new_task_prio {
+    background: rgb(231, 231, 231);
+    width: 142.72px;
+    border-style: inset;
+    border-width: 1px;
+}
+
+#add_task_item {
+    float: right;
+}
+
+#edit_form {
     background-color: #f5f5f5;
     width: 40%;
     height: 40%;
@@ -113,10 +132,10 @@ footer {
     margin-top: -50px;
     margin-left: -100px;
     z-index: 1;
-    padding: 50px;
+    padding: 15px 30px 80px 30px;
 }
 
-#task_form_edit *{
+#edit_form *{
     display: block;
     max-width: 100%;
 }
@@ -131,8 +150,26 @@ footer {
     background-color: rgb(231, 231, 231);
 }
 
+#edit_task_content, #edit_task_header {
+    width: 95%
+}
+
+#edit_task_content {
+    border-style: inset;
+    border-width: 2px;
+    height: 60px;
+    resize: none;
+}
+
 #edit_task_prio {
     background: rgb(231, 231, 231);
+    width: 142.72px;
+    border-style: inset;
+    border-width: 1px;
+}
+
+#edit_task_item {
+    float: right;
 }
 
 /*********************************** GENERAL ***********************************/
@@ -523,15 +560,26 @@ header{
 }
 
 #header_title {
-    grid-area: loggo;
+    display: flex;
+    flex-basis: 40%;
     color: #85cc9f;
     text-shadow: 0.5px 0.5px 1px #333;
     margin: 0px;
 }
 
+#header_title > p {
+    display: inline;
+    align-self: center;
+    margin-left: 6%;
+}
+
+#header_title > #logga {
+    margin: 0;
+}
+
 #task {
-    grid-area: plus;
-    margin-top: 15px;
+    display: flex;
+    flex-basis: 10%;
 }
 
 #welcome_user {
@@ -828,6 +876,7 @@ header{
 .deadline_list {
     list-style: none;
     padding: 0;
+    margin-top: 0;
 }
 
 .deadline_list_l {
@@ -848,6 +897,28 @@ header{
 
 .deadline_list_l > p {
     padding-left: 35px;
+}
+
+aside > h4 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#create_task {
+    padding: 0 10%;
+    display: flex;
+    height: 30px;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#create_task > #plus_aside {
+    width: 30px;
+}
+
+#_create_task {
+    display: inline;
+    align-self: center;
 }
 
 /**************************** RESET ****************************/

@@ -1,6 +1,5 @@
 $(".edit_butt").click(function() {
     var fired_button = $(this).val();
-    console.log(fired_button)
 
     for (var prop in tasks){
         if (tasks[prop][0] == fired_button){

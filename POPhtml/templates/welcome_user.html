@@ -18,9 +18,7 @@
         <div id="container">
             {% include '_header.html' %}
             <main>
-                {% if msg == "1" %}
-                    <p>Du är inloggad!</p>
-                {% elif msg == "2" %}
+                {% if msg == "2" %}
                     <p>Du har blivit registrerad!</p>
                 {% elif msg == "3" %}
                     <p>Go for it!</p>
@@ -31,8 +29,7 @@
                 <a href="/settings/{{pagename}}">Gå till inställningar</a>
             </main>
             <aside>
-                <img class="plus" src="/static/IMG/plus.png" alt="plus">
-                <h4>Deadlines:</h4>
+                <h4>Deadlines</h4>
                 <ul class="deadline_list">
                     {% for i in tasks %}
                         <li class="deadline_list_l">
@@ -51,7 +48,11 @@
                         </li>
                     {% endfor %}
                 </ul>
-            </aside>
+                <div id="create_task">
+                    <p id="_create_task">Skapa en ny task</p>
+                    <img class="plus" id="plus_aside" src="/static/IMG/plus.png" alt="plus">
+                </div>
+                </aside>
         </div>
     </body>
 </html>

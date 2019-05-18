@@ -1,13 +1,13 @@
 <img class="plus" src="/static/IMG/plus.png" alt="plus"> 
 <div id="task_form" class="visible">      
     <form id="add_task_form" action="/new_task" method="POST">
-        <img class="plus inside_plus" src="/static/IMG/plus.png" alt="plus">
+        <img class="plus inside_plus" src="/static/IMG/plus_exit.png" alt="plus">
         <h3>Skapa task</h3>
             <label for="new_task_header">Uppgiftsnamn</label>
             <input type="text" id="new_task_header" name="new_task_header" required/>
             <label for="new_task_content">Vad som ska göras</label>
-            <input type="text" id="new_task_content" name="task_content" required/>
-            <label for="new_task_content">Prioritering</label>
+            <textarea id="new_task_content" name="task_content" required></textarea>
+            <label for="new_task_prio">Prioritering</label>
             <select id="new_task_prio" name="task_prio">
                 <option value="Grön">Grön</option>
                 <option value="Gul">Gul</option>
