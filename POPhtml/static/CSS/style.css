@@ -88,9 +88,14 @@ footer {
     float: right;
     width: 6%;
     margin: -43px -41px 0;
+    cursor: pointer;
 }
 
-#new_task_content, #new_task_header, #new_task_enddate {
+#new_task_content, 
+#new_task_header, 
+#new_task_enddate,
+#new_task_prio,
+#edit_task_prio {
     border-radius: 5px;
     padding: 5px;
     background-color: rgb(231, 231, 231);
@@ -108,7 +113,6 @@ footer {
 }
 
 #new_task_prio {
-    background: rgb(231, 231, 231);
     width: 142.72px;
     border-style: inset;
     border-width: 1px;
@@ -170,6 +174,18 @@ footer {
 
 #edit_task_item {
     float: right;
+}
+
+.opt_grön {
+    background: #85cc9f88;
+}
+
+.opt_gul {
+    background: #fbf49c88;
+}
+
+.opt_röd {
+    background: #e8464688;
 }
 
 /*********************************** GENERAL ***********************************/
@@ -318,6 +334,23 @@ footer {
 
 #ordbok > p {
     margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f100; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(136, 136, 136, 0.466); 
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888; 
 }
 
 /**************************** SAGAS IMPORT *********************/
@@ -643,7 +676,7 @@ header{
 /* The alert message box */
 .alert-link {
     padding: 20px;
-    background-color: #f44336; /* Red */
+    background-color: #f44336;
     color: white;
     margin-bottom: 15px;
   }
