@@ -580,9 +580,13 @@ footer {
     color: white;
 }
 
+#uppdaterapw {
+    margin-left: 58%;
+}
+
 .settings_content {
     grid-area: right;
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 #setting_container > .butt {
@@ -646,14 +650,14 @@ footer {
 }
 
 .settings_content > input {
-    width: 60%;
+    width: 80%;
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     padding: 5px;
 }
 
-.settings_content #pw_reg {
-    width: 60%;
+.settings_content #pw_reg, .settings_content #new_user_name {
+    width: 80%;
     background-color: rgb(231, 231, 231);
     border-radius: 5px;
     padding: 5px;

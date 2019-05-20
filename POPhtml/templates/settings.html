@@ -22,16 +22,16 @@
                 <div id="setting_container">
                     <button class="butt setting_choice" id="settprofile" type="button">Profil</button>
                     <div class="block settings_content">
-                        <label for="user_name">Användarnamn:</label>
-                        <input type="text" name="user_name" id="new_user_name" required value="{{data[0][1]}}">
                         <label for="epost">Epost</label>
-                        <input type="text" name="epost" id="new_epost" required value="{{data[0][0]}}">
+                        <input type="text" name="epost" id="new_epost" required value="{{data[0][0]}}" disabled>
                         <form action="/update_pw" method="POST">
+                            <label for="user_name">Användarnamn:</label>
+                            <input type="text" name="user_name" id="new_user_name" required value="{{data[0][1]}}">
                             <label for="pw_reg">Byt lösenord</label>
                             <input type="password" name="pw_reg" id="pw_reg" required value="{{data[0][2]}}">
                             <img src="/static/IMG/eye.png" alt="öga" id="showpw">
                             <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
-                            <input type="submit" value="Uppdatera lösenord" id="uppdaterapw" class="altbutt">
+                            <input type="submit" value="Spara ändringar" id="uppdaterapw" class="butt">
                         </form>
                     </div> 
                     <div id="settnotiser">
