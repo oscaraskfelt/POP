@@ -12,6 +12,7 @@
         <script src="/static/JS/scripts.js" defer></script>
         <script type="text/javascript" src="/static/JS/task.js" defer></script>
         <script src="/static/JS/highlight.js" defer></script>
+        <script src="/static/JS/edit_task.js" defer></script>
 
     </head>
     <body>
@@ -29,21 +30,20 @@
                 <a href="/settings/{{pagename}}">Gå till inställningar</a>
             </main>
             <aside>
-                <h4>Deadlines</h4>
+                <h4 id="deadli">Deadlines</h4>
                 <ul class="deadline_list">
                     {% for i in tasks %}
-                        <li class="deadline_list_l">
+                        <li class="deadline_list_l" value="{{i[6]}}">
                             <img src="/static/IMG/{{i[1]}}.png">
-                            <p>{{i[0]}}</p>
+                            <p><strong>{{i[0]}}</strong></p>
                             <p>{{i[4].strftime("%d-%m-%y")}}</p>
                             <p><em>Passerat med {{i[5]}} dagar</em></p>
                         </li>
                     {% endfor %}
-
                     {% for i in data %}
-                        <li class="deadline_list_l">
+                        <li class="deadline_list_l" value={{i[0]}}>
                             <img src="/static/IMG/{{i[3]}}.png">
-                            <p>{{i[1]}}</p>
+                            <p><strong>{{i[1]}}</strong></p>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                         </li>
                     {% endfor %}
@@ -52,7 +52,12 @@
                     <p id="_create_task">Skapa en ny task</p>
                     <img class="plus" id="plus_aside" src="/static/IMG/plus.png" alt="plus">
                 </div>
-                </aside>
+            </aside>
         </div>
+        {% include '_show_task.html' %}
+        <script>
+            let tasks = JSON.parse('{{tasks|tojson}}'); 
+            let data = JSON.parse('{{data|tojson}}');
+        </script>
     </body>
 </html>
