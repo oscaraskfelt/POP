@@ -38,10 +38,10 @@
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                             <div class="hide task_content">
                             <p> {{i[2]}} </p>
-                            <button class="edit_butt" value="{{i[0]}}" name="id_task">Redigera task</button>
+                            <button class="edit_butt buttwide butt" value="{{i[0]}}" name="id_task">Redigera task</button>
                             <form id="remove_task_form" action="/poptask" method="POST" class="">
                                 <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
-                                <input type="submit" value="Ta bort">
+                                <input type="submit" value="Ta bort" class="butt altbutt">
                             </form>
                             </div>
                             <img height="133px" class="btn {{i[3]}}" src="/static/IMG/balloon_{{i[3]}}.png" alt="balloon">
