@@ -551,8 +551,9 @@ footer {
     min-height: 300px;
     padding: 30px;
     background-color: rgb(240, 240, 240);
-    border-radius: 3px;
-    box-shadow: 1px 1px 5px 5px rgb(180, 180, 180) ;
+    border-radius: 10px;
+    box-shadow: 1px 0.5px 0.5px 0.5px;
+    border: 1px solid #afafafff;
 }
 
 .divbutt {
@@ -613,8 +614,10 @@ footer {
     /*Hides pop-up when there is no "active" class*/
     visibility:hidden;
     position:absolute;
-    background:#ffffff;
-    border: 3px solid #666666;
+    background-color: rgb(237,237,237);
+    border-radius: 10px;
+    box-shadow: 1px 0.5px 0.5px 0.5px;
+    border: 1px solid #afafafff;
     width: 50%;
     height: 25%;
     left: 25%;
@@ -634,6 +637,26 @@ footer {
 .popup-content.active {
     /*Shows pop-up content when "active" class is present */
     visibility:visible;
+}
+
+.settings_content label {
+    margin-top: 20px;
+    margin-bottom: 9px;
+
+}
+
+.settings_content > input {
+    width: 60%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.settings_content #pw_reg {
+    width: 60%;
+    background-color: rgb(231, 231, 231);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 
@@ -835,6 +858,10 @@ header{
     top: 25px;
     left: 55%;
     margin-left: -27px;
+}
+
+#task_placeholder_balloon {
+    height: 133px;
 }
 
 /*BALLOON 1 4*/
