@@ -20,27 +20,27 @@
             <main>
                 <h1>Inställningar</h1>
                 <div id="setting_container">
-                    <button class="butt setting_choice" type="button">Profil</button>
+                    <button class="butt setting_choice" id="settprofile" type="button">Profil</button>
                     <div class="block settings_content">
-                        <label for="user_name" class=" settings_content">Användarnamn:</label>
+                        <label for="user_name">Användarnamn:</label>
                         <input type="text" name="user_name" id="new_user_name" required value="{{data[0][1]}}">
-                        <label for="epost" class="settings_content">Epost</label>
+                        <label for="epost">Epost</label>
                         <input type="text" name="epost" id="new_epost" required value="{{data[0][0]}}">
                         <form action="/update_pw" method="POST">
-                            <label for="pw_reg" class="settings_content">Byt lösenord</label>
+                            <label for="pw_reg">Byt lösenord</label>
                             <input type="password" name="pw_reg" id="pw_reg" required value="{{data[0][2]}}">
                             <img src="/static/IMG/eye.png" alt="öga" id="showpw">
                             <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
-                            <input type="submit" value="Uppdatera lösenord" class="altbutt">
+                            <input type="submit" value="Uppdatera lösenord" id="uppdaterapw" class="altbutt">
                         </form>
                     </div> 
-                    <div>
-                        <button class="butt setting_choice" type="button">Notiser</button>
-                        <p class="hide settings_content">Vill du få notiser skickade till din mail?</p>
+                    <div id="settnotiser">
+                        <button class="divbutt" type="button">Notiser</button>
+                        <p id="notiscontent" class="hide settings_content">Vill du få notiser skickade till din mail?</p>
                     </div>
-                    <div class="log_out_btn">   
+                    <div id="settlogout" class="log_out_btn">   
                         <form action="/log_out" method="POST">
-                            <input type="submit"  class="butt" value="Logga ut">
+                            <input type="submit" class="altdivbutt" value="Logga ut">
                         </form>
                     </div>
                     <div class="popup-overlay">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <!--Content shown when popup is not displayed-->
-                    <button class="butt openpopup">Ta bort användare</button>    
+                    <button id="setttabortkonto" class="altdivbutt openpopup">Ta bort användare</button>    
                 </div>  
             </main>
         </div>
