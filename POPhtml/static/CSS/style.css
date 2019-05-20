@@ -583,7 +583,7 @@ header{
     grid-area: header;
     display: grid;
     grid-template-areas: "loggo plus home timeline calendar settings logout";
-    grid-template-columns: 600px 150px 100px 150px 150px 150px 200px;
+    grid-template-columns: 40% 10% 10% 10% 10% 10% 10%;
     border-bottom: 4px solid #fff;
     background: rgb(237,237,237);
     background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
@@ -593,6 +593,7 @@ header{
 }
 
 #header_title {
+    grid-area: loggo;
     display: flex;
     flex-basis: 40%;
     color: #85cc9f;
@@ -910,15 +911,16 @@ header{
     list-style: none;
     padding: 0;
     margin-top: 0;
+    cursor: pointer;
 }
 
 .deadline_list_l {
     box-sizing: border-box;
     overflow: hidden;
     margin: 5px; 
-    background-color: rgb(228, 227, 227);
+    background: rgba(237, 237, 237, 0.582);
     border-radius: 5px;
-    box-shadow: 1px 0.5px 0.5px 0.5px #888;
+    box-shadow: 1px 0.5px 2px 0.5px rgba(136, 136, 136, 0.89);
 }
 
 .deadline_list_l > img {
@@ -1040,4 +1042,21 @@ footer > #ballcont {
 footer > #ballcont > .balloon {
     padding-top: 0;
     margin: 0 0 0 27%;
+}
+
+#show_form {
+    background-color: #f5f5f5;
+    width: 20%;
+    height: 10%;
+    border: 1px solid #afafafff;
+    box-shadow: 1px 0.5px 0.5px 0.5px #888;
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    top: 40%;
+    left: 30%;
+    margin-top: -50px;
+    margin-left: -100px;
+    z-index: 1;
+    padding: 15px 30px 80px 30px;
 }

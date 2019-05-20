@@ -47,7 +47,7 @@ def get_tasks_passed_deadline(popper):
     conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
     cursor = conn.cursor()
 
-    cursor.execute('''select title, prio, content, popper, slutdatum, DATE_PART('day', now() - slutdatum)::integer from task where popper = %s and slutdatum < (now() - interval '1 day') order by slutdatum;''', (popper,))
+    cursor.execute('''select title, prio, content, popper, slutdatum, DATE_PART('day', now() - slutdatum)::integer, id from task where popper = %s and slutdatum < (now() - interval '1 day') order by slutdatum;''', (popper,))
     tasks = cursor.fetchall()
     cursor.close()
     return tasks
