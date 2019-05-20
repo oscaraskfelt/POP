@@ -142,7 +142,7 @@ footer {
 .altbutt {
     border-radius: 15px;
     box-shadow: 0.5px 0.5px 0.5px #000;
-    width: 20%;
+    width: 25%;
     height: 30px;
     margin: 8px;
     cursor: pointer;
@@ -404,12 +404,75 @@ footer {
 /******************************* Settings ****************************/
 
 #setting_container {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 17% 17% 49% 17%;
+    grid-template-areas: 
+    "profil right"
+    "notiser right"
+    "loggaut right"
+    "tabortkonto right";
     left: 20%;
     right: 20%;
+    min-height: 300px;
     padding: 30px;
     background-color: rgb(240, 240, 240);
     border-radius: 3px;
     box-shadow: 1px 1px 5px 5px rgb(180, 180, 180) ;
+}
+
+.divbutt {
+    border-radius: 15px;
+    box-shadow: 0.5px 0.5px 0.5px #000;
+    width: 100%;
+    height: 30px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: #A6D6A9;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+.altdivbutt {
+    border-radius: 15px;
+    box-shadow: 0.5px 0.5px 0.5px #000;
+    width: 100%;
+    height: 30px;
+    margin: 8px;
+    cursor: pointer;
+    background-color: #4D9C8C;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+.settings_content {
+    grid-area: right;
+    margin-left: 30%;
+}
+
+#setting_container > .butt {
+    width: 100%;
+}
+
+#settprofile {
+    grid-area: profil;
+}
+
+#settnotiser {
+    grid-area: notiser;
+}
+
+#settlogout {
+    grid-area: loggaut;
+    margin-top: 62%;
+}
+
+#setttabortkonto {
+    grid-area: tabortkonto;
+}
+
+#notiscontent {
+    grid-area: right;
 }
 
 .popup-overlay{
@@ -438,6 +501,8 @@ footer {
     /*Shows pop-up content when "active" class is present */
     visibility:visible;
 }
+
+
 
 /**************************** HEADER *********************/
 
