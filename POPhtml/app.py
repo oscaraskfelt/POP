@@ -299,8 +299,13 @@ def update_user():
         popper_name = request.cookies.get('popper_name')
         id = request.cookies.get('user_id')
         new_pw = request.form['pw_reg']
+        new_popper_name = request.form['user_name']
+
+        reset.reset_user_name(new_popper_name, id)
 
         reset.reset_password(new_pw, id)
-        return redirect(url_for('settings', pagename=popper_name))
+        updated_cookie = make_response(redirect(url_for('settings', pagename=popper_name)))
+        updated_cookie.set_cookie('popper_name', new_popper_name) 
+        return updated_cookie
     else:
         return render_template('error.html', error="Logga in först")
