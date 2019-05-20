@@ -20,6 +20,7 @@ $(document).ready(() => {
         $('.edit_plus').toggleClass('rotate');
     });
 
+    if (typeof class_a === 'object'){
     var task1 = 0
     for (i in tasks){
         task1 = task1 + 1
@@ -51,8 +52,67 @@ $(document).ready(() => {
                                                                     <p>${data[prop][2]}</p>`
             }
         }
-
-
     })
+    }
+
+let title = false;
+let content = false;
+let date = true;
+
+    $('.form_task_header').on('keyup', function(){
+        var format = /^\s*$/;
+        var task_name = $(this).val();
+            
+        if(!format.test(task_name)) {
+            $('.form_task_header').css('backgroundColor', '#85cc9f88');
+            title = true;
+            validate()
+        }
+        else {
+            $('.form_task_header').css('backgroundColor', '#e8464618');
+            title = false;
+            validate()
+        }
+    });
+
+    $('.form_task_content').on('keyup', function(){
+        var format = /^\s*$/;
+        var task_content = $(this).val();
+            
+        if(!format.test(task_content)) {
+            $('.form_task_content').css('backgroundColor', '#85cc9f88');
+            content = true;
+            validate()
+        }
+        else {
+            $('.form_task_content').css('backgroundColor', '#e8464618');
+            content = false;
+            validate()
+        }
+    });
+
+    $('.form_task_enddate').on('change', function(){
+        var task_enddate = $(this).val();
+
+        if (task_enddate.split("-")[0] >= "2000") {
+            $('.form_task_enddate').css('backgroundColor', '#85cc9f88');
+            date = true;
+            validate()
+        }
+        else {
+            $('.form_task_enddate').css('backgroundColor', '#e8464618');   
+            date = false;
+            validate()
+        }
+    });
+
+    function validate() {
+        if(title === true && content === true && date === true){
+            $('.task_butt').attr('disabled', false);
+        }
+        else {
+            $('.task_butt').attr('disabled', true);
+        }
+    }
 
 });

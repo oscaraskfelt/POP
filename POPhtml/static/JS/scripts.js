@@ -29,12 +29,12 @@ $(document).ready(() => {
         var popper_name = $(this).val();
             
         if(!format.test(popper_name)) {
-            $('#popper_name').css('backgroundColor', '#1cc930');
+            $('#popper_name').css('backgroundColor', '#85cc9f88');
             user_name = true;
             validate();
         }
         else {
-            $('#popper_name').css('backgroundColor', '#f9f9f9');
+            $('#popper_name').css('backgroundColor', '#e8464618');
             user_name = false;
             validate();
         }
@@ -46,13 +46,13 @@ $(document).ready(() => {
         var email = $(this).val();
 
         if(format.test(email)) {
-            $('#reg').css('backgroundColor', '#1cc930');
+            $('#reg').css('backgroundColor', '#85cc9f88');
             email_validation = true;
             validate();  
             $('#mail_info').hide(500)               
         }
         else {
-            $('#reg').css('backgroundColor', '#f9f9f9');
+            $('#reg').css('backgroundColor', '#e8464618');
             email_validation = false;  
             validate();
             $('#mail_info').show(500)
@@ -65,13 +65,13 @@ $(document).ready(() => {
         var pw = $(this).val();
 
         if(format.test(pw)) {
-            $('#pw_reg').css('backgroundColor', '#1cc930');
+            $('#pw_reg').css('backgroundColor', '#85cc9f88');
             password_validation = true;
             validate();
             $('#pw_info').hide(500)
         }
         else {
-            $('#pw_reg').css('backgroundColor', '#f9f9f9');
+            $('#pw_reg').css('backgroundColor', '#e8464618');
             password_validation = false;
             validate();
             $('#pw_info').show(500)
