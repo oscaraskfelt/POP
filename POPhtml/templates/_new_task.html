@@ -4,9 +4,9 @@
         <img class="plus inside_plus" src="/static/IMG/plus_exit.png" alt="plus">
         <h3>Skapa task</h3>
             <label for="new_task_header">Uppgiftsnamn</label>
-            <input class="form_task_header" type="text" id="new_task_header" name="new_task_header" required/>
+            <input type="text" id="new_task_header" name="new_task_header" required/>
             <label for="new_task_content">Vad som ska göras</label>
-            <textarea class="form_task_content" id="new_task_content" name="task_content" required></textarea>
+            <textarea id="new_task_content" name="task_content" required></textarea>
             <label for="new_task_prio">Prioritering</label>
             <select id="new_task_prio" name="task_prio">
                 <option class="opt_grön" value="Grön">Grön</option>
@@ -14,7 +14,7 @@
                 <option class="opt_röd" value="Röd">Röd</option>
             </select>
             <label for="new_task_enddate">Deadline</label>
-            <input class="form_task_enddate" type="date" name="new_task_enddate" id="new_task_enddate"/>
+            <input type="date" name="new_task_enddate" id="new_task_enddate"/>
             <input type="submit" id="add_task_item" value="Add task" class="butt task_butt" disabled/>
     </form>
 </div>

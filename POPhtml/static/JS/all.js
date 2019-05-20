@@ -343,6 +343,7 @@ function showContent() {
 }); 
 }
 
+//Här hade det varit fint att lägga en import från edit_task.js istället
 function edit_task() {
     $(".edit_butts").on('click', function() {
         $("#edit_form").toggleClass('visible');
@@ -375,5 +376,65 @@ function edit_task() {
                 $('#task_id').val(fired_button);
             }
         }
+        
+        let title = true;
+        let content = true;
+        let enddate = true;
+        
+        $('#edit_task_header').on('keyup', function(){
+            var format = /^\s*$/;
+            var task_content = $(this).val();
+                
+            if(!format.test(task_content)) {
+                $('#edit_task_header').css('backgroundColor', '#85cc9f88');
+                title = true;
+                validate()
+            }
+            else {
+                $('#edit_task_header').css('backgroundColor', '#e8464618');
+                title = false;
+                validate()
+            }
+        });
+        
+        $('#edit_task_content').on('keyup', function(){
+            var format = /^\s*$/;
+            var task_content = $(this).val();
+                
+            if(!format.test(task_content)) {
+                $('#edit_task_content').css('backgroundColor', '#85cc9f88');
+                content = true;
+                validate()
+            }
+            else {
+                $('#edit_task_content').css('backgroundColor', '#e8464618');
+                content = false;
+                validate()
+            }
+        });
+        
+        $('#edit_task_enddate').on('change', function(){
+            var task_enddate = $(this).val();
+        
+            if (task_enddate.split("-")[0] >= "2000") {
+                $('#edit_task_enddate').css('backgroundColor', '#85cc9f88');     
+                enddate = true;       
+                validate()
+            }
+            else {
+                $('#edit_task_enddate').css('backgroundColor', '#e8464618');
+                enddate = false;
+                validate()
+            }
+        });
+
+        function validate() {
+            if(title === true && content === true && enddate === true){
+                $('.task_butt').attr('disabled', false);
+            }
+            else {
+                $('.task_butt').attr('disabled', true);
+            }
+        }  
     });
 }
