@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <!-- Om title skickas med från backend visas det i title-taggen, annars bara POP-->
+        {% if title%}
+        <title>POP | {{title}}</title>
+        {% else %}
+        <title>POP</title>
+        {% endif %}
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            
+        <link rel="stylesheet" href="/static/CSS/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/CSS/all.css">
+        <link rel="stylesheet" href="/static/CSS/style.css" type="text/css">
+        <link rel="icon" href="/static/IMG/pop_balloon.jpg">
+    
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/JS/task.js" defer></script>
+        <script async src="/static/JS/all.js"></script>
+        <script src="/static/JS/highlight.js" defer></script>
+    </head>
+    <body>
+        <div id="container">
+            {% include '_header.html' %}
+        </div>
+        <main class="index_head">
+            <div id="about_text">
+                <p><strong>Om oss</strong></p>
+                <p><em>Här kommer lite text om oss... 5 studenter på IA programmet </em></p>
+            </div>
+        </main>
+            <aside>
+                <div id="ballcont">
+                    <div class="balloon">
+                        <div>
+                            <span class="balloon_span">P</span>
+                        </div>
+                        <div>
+                            <span class="balloon_span">O</span>
+                        </div>
+                        <div>
+                            <span class="balloon_span">P</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+       
+    </body>
+           
+    
+</html>

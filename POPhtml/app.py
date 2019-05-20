@@ -243,6 +243,18 @@ def settings(pagename):
         return render_template('error.html', error="Logga in först")
 
 
+@app.route('/aboutus/')
+def about_us():
+    '''Returnerar Om oss sidan'''
+    if logged_in_status() == True:
+        popper = request.cookies.get('user_id')
+        popper_name = request.cookies.get('popper_name')
+        data = task.get_tasks_per_user(popper)
+        return render_template('about_us.html', user=popper_name, tasks=data, pagename=popper_name)
+    else:
+        return render_template('error.html', error="Logga in först")
+
+
 @app.route('/poptask', methods=["POST"])
 def task_remove():
     if logged_in_status() == True:
