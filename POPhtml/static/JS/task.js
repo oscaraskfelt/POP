@@ -20,20 +20,20 @@ $(document).ready(() => {
         $('.edit_plus').toggleClass('rotate');
     });
 
-    if (typeof class_a === 'object'){
-    var task1 = 0
-    for (i in tasks_dead){
-        task1 = task1 + 1
-    }
+    if (typeof tasks_dead === 'object'){
+        var task1 = 0
+        for (i in tasks_dead){
+            task1 = task1 + 1
+        }
 
-    var task2 = 0
-    for (i in data){
-        task2 = task2 + 1
-    }
+        var task2 = 0
+        for (i in data){
+            task2 = task2 + 1
+        }
 
-    var totalt = task1 + task2
-
-    document.getElementById("deadli").innerHTML = "Deadlines (" + totalt + ")";
+        var totalt = task1 + task2
+        document.getElementById("deadli").innerHTML = "Deadlines (" + totalt + ")";
+    };
 
     $(".deadline_list_l").click(function(){
         var task_id = $(this).val();
@@ -52,12 +52,11 @@ $(document).ready(() => {
                                                                     <p>${data[prop][2]}</p>`
             }
         }
-    })
-    }
+    });
 
-let title = false;
-let content = false;
-let date = true;
+    let title = false;
+    let content = false;
+    let date = true;
 
     $('#new_task_header').on('keyup', function(){
         var format = /^\s*$/;
@@ -113,5 +112,5 @@ let date = true;
         else {
             $('.task_butt').attr('disabled', true);
         }
-    }
+    };
 });
