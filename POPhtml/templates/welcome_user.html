@@ -21,8 +21,6 @@
             <main>
                 {% if msg == "2" %}
                     <p>Du har blivit registrerad!</p>
-                {% elif msg == "3" %}
-                    <p>Go for it!</p>
                 {% endif %}
 
                 <a href="/tidslinje">Gå till tidslinjen</a>
@@ -56,7 +54,7 @@
         </div>
         {% include '_show_task.html' %}
         <script>
-            let tasks = JSON.parse('{{tasks|tojson}}'); 
+            let tasks_dead = JSON.parse('{{tasks|tojson}}'); 
             let data = JSON.parse('{{data|tojson}}');
         </script>
     </body>
