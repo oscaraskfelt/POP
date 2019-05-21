@@ -21,7 +21,7 @@ $(document).ready(() => {
     });
 
     var task1 = 0
-    for (i in tasks){
+    for (i in tasks_dead){
         task1 = task1 + 1
     }
 
@@ -38,10 +38,10 @@ $(document).ready(() => {
         var task_id = $(this).val();
         $("#show_form").toggleClass('visible');
 
-        for (var prop in tasks){
-            if (tasks[prop][6] == task_id){
-                document.getElementById("show_form").innerHTML = `<h3>${tasks[prop][0]}</h3>
-                                                                    <p>${tasks[prop][2]}</p>`
+        for (var prop in tasks_dead){
+            if (tasks_dead[prop][6] == task_id){
+                document.getElementById("show_form").innerHTML = `<h3>${tasks_dead[prop][0]}</h3>
+                                                                    <p>${tasks_dead[prop][2]}</p>`
             }
         }
 
@@ -51,8 +51,5 @@ $(document).ready(() => {
                                                                     <p>${data[prop][2]}</p>`
             }
         }
-
-
     })
-
 });
