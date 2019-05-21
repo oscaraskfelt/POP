@@ -1162,3 +1162,9 @@ footer > #ballcont > .balloon {
     padding: 15px 30px 80px 30px;
 }
 /**************************** about_us *********************/
+
+#index_link{
+    text-decoration: none; 
+    color: #4D9C8C; 
+    font-weight: bold; 
+}
