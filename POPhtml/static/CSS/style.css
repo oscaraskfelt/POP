@@ -675,7 +675,7 @@ header{
     grid-area: header;
     display: grid;
     grid-template-areas: "loggo plus home timeline calendar about settings logout";
-    /*grid-template-columns: 40% 10% 10% 10% 10% 10% 10% 10%;*/
+    grid-template-columns: 30% 10% 10% 10% 10% 10% 10% 10%;
     border-bottom: 4px solid #fff;
     background: rgb(237,237,237);
     background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
