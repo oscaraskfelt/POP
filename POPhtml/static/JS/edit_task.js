@@ -1,36 +1,46 @@
-editor(".edit_butt")
+$('.edit_plus').on('click', function(){
+    $('#edit_form').toggleClass('visible');
+    $('.edit_plus').toggleClass('rotate');
+    $('#edit_task_header').css('backgroundColor', 'rgb(231, 231, 231)');
+    $('#edit_task_content').css('backgroundColor', 'rgb(231, 231, 231)');
+    $('#edit_task_enddate').css('backgroundColor', 'rgb(231, 231, 231)')
+});
 
-function editor(butt){ 
-    $(butt).click(function() {
+edit_task()
+
+function edit_task() {
+    $(".edit_butt").on('click', function() {
+        $("#edit_form").toggleClass('visible');
+        $('.edit_plus').toggleClass('rotate');
         var fired_button = $(this).val();
-
+    
         for (var prop in tasks){
             if (tasks[prop][0] == fired_button){
                 $('#edit_task_header').val(tasks[prop][1]);
                 $('#edit_task_content').val(tasks[prop][2]);
-
+    
                 prio = tasks[prop][3];
                 ($(`#edit_task_prio option[value=${prio}]`).attr("selected", true));
-
+    
                 date = new Date(tasks[prop][5]).getDate();
                 month = new Date(tasks[prop][5]).getMonth()+1;
                 year = new Date(tasks[prop][5]).getFullYear();
-
+               
                 if (date<10){
                     date = '0' + date;
                 }
-
+    
                 if (month<10){
                     month = '0' + month;
                 }
-
+    
                 fulldate = year + '-' + month + '-' + date;
-                
+         
                 $('#edit_task_enddate').val(fulldate);
                 $('#task_id').val(fired_button);
             }
         }
-
+        
         let title = true;
         let content = true;
         let enddate = true;
@@ -80,7 +90,7 @@ function editor(butt){
                 enddate = false;
                 validate()
             }
-        });
+        }); 
 
         function validate() {
             if(title === true && content === true && enddate === true){
@@ -89,6 +99,6 @@ function editor(butt){
             else {
                 $('.task_butt').attr('disabled', true);
             }
-        } 
+        }  
     });
-};
+}

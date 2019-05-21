@@ -9,17 +9,6 @@ $(document).ready(() => {
         $('.plus').toggleClass('rotate');
     });
 
-    /* Pop-up för redigering av task */
-    $('.edit_butt').on('click', function() {
-        $("#edit_form").toggleClass('visible');
-        $('.edit_plus').toggleClass('rotate');
-    });
-
-    $('.edit_plus').on('click', function(){
-        $('#edit_form').toggleClass('visible');
-        $('.edit_plus').toggleClass('rotate');
-    });
-
     if (typeof class_a === 'object'){
     var task1 = 0
     for (i in tasks){
