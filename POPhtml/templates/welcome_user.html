@@ -13,7 +13,6 @@
         <script type="text/javascript" src="/static/JS/task.js" defer></script>
         <script src="/static/JS/highlight.js" defer></script>
         <script src="/static/JS/edit_task.js" defer></script>
-
     </head>
     <body>
         <div id="container">
@@ -21,8 +20,6 @@
             <main>
                 {% if msg == "2" %}
                     <p>Du har blivit registrerad!</p>
-                {% elif msg == "3" %}
-                    <p>Go for it!</p>
                 {% endif %}
 
             </main>
@@ -53,7 +50,7 @@
         </div>
         {% include '_show_task.html' %}
         <script>
-            let tasks = JSON.parse('{{tasks|tojson}}'); 
+            let tasks_dead = JSON.parse('{{tasks|tojson}}'); 
             let data = JSON.parse('{{data|tojson}}');
         </script>
     </body>

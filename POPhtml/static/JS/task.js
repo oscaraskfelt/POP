@@ -9,20 +9,9 @@ $(document).ready(() => {
         $('.plus').toggleClass('rotate');
     });
 
-    /* Pop-up för redigering av task */
-    $('.edit_butt').on('click', function() {
-        $("#edit_form").toggleClass('visible');
-        $('.edit_plus').toggleClass('rotate');
-    });
-
-    $('.edit_plus').on('click', function(){
-        $('#edit_form').toggleClass('visible');
-        $('.edit_plus').toggleClass('rotate');
-    });
-
-    if (typeof class_a === 'object'){
+    if (typeof tasks_dead === 'object'){
     var task1 = 0
-    for (i in tasks){
+    for (i in tasks_dead){
         task1 = task1 + 1
     }
 
@@ -31,18 +20,23 @@ $(document).ready(() => {
         task2 = task2 + 1
     }
 
-    var totalt = task1 + task2
+        var task2 = 0
+        for (i in data){
+            task2 = task2 + 1
+        }
 
-    document.getElementById("deadli").innerHTML = "Deadlines (" + totalt + ")";
+        var totalt = task1 + task2
+        document.getElementById("deadli").innerHTML = "Deadlines (" + totalt + ")";
+    };
 
     $(".deadline_list_l").click(function(){
         var task_id = $(this).val();
         $("#show_form").toggleClass('visible');
 
-        for (var prop in tasks){
-            if (tasks[prop][6] == task_id){
-                document.getElementById("show_form").innerHTML = `<h3>${tasks[prop][0]}</h3>
-                                                                    <p>${tasks[prop][2]}</p>`
+        for (var prop in tasks_dead){
+            if (tasks_dead[prop][6] == task_id){
+                document.getElementById("show_form").innerHTML = `<h3>${tasks_dead[prop][0]}</h3>
+                                                                    <p>${tasks_dead[prop][2]}</p>`
             }
         }
 
@@ -52,12 +46,11 @@ $(document).ready(() => {
                                                                     <p>${data[prop][2]}</p>`
             }
         }
-    })
-    }
+    });
 
-let title = false;
-let content = false;
-let date = true;
+    let title = false;
+    let content = false;
+    let date = true;
 
     $('#new_task_header').on('keyup', function(){
         var format = /^\s*$/;
@@ -113,5 +106,5 @@ let date = true;
         else {
             $('.task_butt').attr('disabled', true);
         }
-    }
+    };
 });

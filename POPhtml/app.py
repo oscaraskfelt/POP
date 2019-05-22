@@ -296,16 +296,19 @@ def user_remove():
 @app.route('/update_pw', methods=["POST"])
 def update_user():
     if logged_in_status() == True:
-        popper_name = request.cookies.get('popper_name')
-        id = request.cookies.get('user_id')
-        new_pw = request.form['pw_reg']
-        new_popper_name = request.form['user_name']
+        try:
+            popper_name = request.cookies.get('popper_name')
+            id = request.cookies.get('user_id')
+            new_pw = request.form['pw_reg']
+            new_popper_name = request.form['user_name']
 
-        reset.reset_user_name(new_popper_name, id)
-
-        reset.reset_password(new_pw, id)
-        updated_cookie = make_response(redirect(url_for('settings', pagename=popper_name)))
-        updated_cookie.set_cookie('popper_name', new_popper_name) 
-        return updated_cookie
+            reset.reset_user_name(new_popper_name, id)
+            reset.reset_password(new_pw, id)
+            
+            updated_cookie = make_response(redirect(url_for('settings', pagename=new_popper_name)))
+            updated_cookie.set_cookie('popper_name', new_popper_name) 
+            return updated_cookie
+        except:
+            return render_template('error.html', error="För långt användarnamn!! dumbass.")
     else:
         return render_template('error.html', error="Logga in först")
