@@ -21,23 +21,53 @@
         <script async src="/static/JS/all.js"></script>
         <script src="/static/JS/highlight.js" defer></script>
     </head>
-    <body>
-        <div id="container1">
+    <body >
+        <div id="about_container">
             {% include '_header.html' %}
-        </div>
-        <main class="index_head">
-            <div id="about_text">
-                <p><strong>Om oss</strong></p>
-                <p><em>Vi som har skapat POP är 5 studenter som läser till <a id="index_link" href="https://edu.mah.se/sv/program/tgiaa"> Informationsarkitekt </a>på Malmö universitet. </em></p>
-                <p><em>Vi har läst kursen <a id="index_link" href="https://edu.mau.se/DA336A">Systemutveckling och Projekt 1 </a> under VT-19 där vi som projekt påbörjade POP. </em></p>
-                <p><em>Vi läser vår andra termin på första året och vi som skapat POP heter Birger, Diana, Oscar, Saga och Zandra.</em></p> 
-                <p><em>Tanken bakom POP är ett planeringsvertyg som hjälper studenter få en bättre överblick över sina studier</em> </p>
-                <p><em>Det ska vara kul att planera och POP kan vara en hjälpande hand för den som känner att de har problem med prokastinering</em></p>
-                <img height="200px" alt="MAU logga" src="/static/IMG/mau2.jpg">
-            </div>
-        </main>
-            <!--<aside>
-                <div id="ballcont">
+        
+            <main id="a_main"> 
+                <p class="p2"><strong>Om oss</strong></p>
+                <p class="p2"><em>Vi som har skapat POP är 5 studenter som läser till <a id="index_link" href="https://edu.mah.se/sv/program/tgiaa"> Informationsarkitekt </a>på Malmö universitet. </em></p>
+                <p class="p2"><em>Vi har läst kursen <a id="index_link" href="https://edu.mau.se/DA336A">Systemutveckling och Projekt 1 </a> under VT-19 där vi som projekt påbörjade POP. </em></p>
+                <p class="p2"><em>Vi läser vår andra termin på första året och vi som skapat POP heter Birger, Diana, Oscar, Saga och Zandra.</em></p> 
+                <p class="p2"><em>Tanken bakom POP är ett planeringsvertyg som hjälper studenter få en bättre överblick över sina studier</em> </p>
+                <p class="p2"><em>Det ska vara kul att planera och POP kan vara en hjälpande hand för den som känner att de har problem med prokastinering</em></p>
+                <p class="p2"><em>Ni kan kontakta oss på POP via <a id="index_link" href="mailto:pop.pop.it1@gmail.com"> E-post </a> eller till oss personligen: </em></p>
+                <div>
+                        <div class="row">
+                            <div class="column">
+                                <img height="100px" alt="Birger" src="/static/IMG/profil.png">
+                                <figcaption> Birger </figcaption>
+                                <a class="p_link" href="mailto:birger.norrman@gmail.com">Gmail</a>
+                            </div>
+                            <div class="column">
+                                <img class="p_img" height="100px" alt="Diana" src="/static/IMG/profil.png">
+                                <figcaption> Diana </figcaption>
+                                <a class="p_link" href="https://www.linkedin.com/in/diana-klaar-199537162">Linkedin</a>
+                                
+                            </div>
+                            <div class="column">
+                                <img class="p_img" height="100px" alt="Oscar" src="/static/IMG/profil.png">
+                                <figcaption> Oscar </figcaption>
+                                <a class="p_link" href="https://www.linkedin.com/in/oscar-askfelt-088535146">Linkedin</a>
+                            </div>
+                            <div class="column">
+                                <img class="p_img" height="100px" alt="Saga" src="/static/IMG/profil.png">
+                                <figcaption>Saga </figcaption>
+                                <a class="p_link" href="https://www.linkedin.com/in/saga-west-144512181">Linkedin</a>
+                            </div>
+                            <div class="column">
+                                <img class="p_img" height="100px" alt="Zandra" src="/static/IMG/profil.png">
+                                <figcaption> Zandra </figcaption>
+                                <a class="p_link" href="https://www.linkedin.com/in/zandra-nilsson-b3099a75">Linkedin</a>
+                            </div>
+                        </div>
+                </div>
+            </main>
+
+            <aside id="adout_aside">
+                <img id="img_mau" height="150px" alt="MAU logga" src="/static/IMG/mau2.jpg">
+                <!--<div id="ballcont">
                     <div class="balloon">
                         <div>
                             <span class="balloon_span">P</span>
@@ -49,8 +79,8 @@
                             <span class="balloon_span">P</span>
                         </div>
                     </div>
-                </div>
-            </aside>-->
+                </div> -->
+            </aside>
         </div>
     </body>
 </html>

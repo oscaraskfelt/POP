@@ -1162,9 +1162,52 @@ footer > #ballcont > .balloon {
     padding: 15px 30px 80px 30px;
 }
 /**************************** about_us *********************/
+#about_container {
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+    grid-auto-rows: auto;
+    grid-template-areas: 
+        "header header header"
+        "main main aside"
+        "footer footer footer"
+        ;  
+}
+#a_main{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #A6ADB4;
+    margin: 50px 0 0 100px;
+    
+}
+.p2{
+    grid-area: main;
+}
+
+
+#about_aside {
+    grid-area: aside;
+}
 
 #index_link{
     text-decoration: none; 
     color: #4D9C8C; 
     font-weight: bold; 
+}
+#img_about{
+    padding-top: 20px;
+}
+.column {
+    float: left;
+    width: 15%;
+    padding: 5px;
+    text-align: center; 
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .p_link{
+    text-decoration: none; 
+    color: #4D9C8C;  
 }
