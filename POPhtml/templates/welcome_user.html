@@ -21,13 +21,7 @@
         <div id="container">
             {% include '_header.html' %}
             <main>
-                {% if msg == "2" %}
-                    <p>Du har blivit registrerad!</p>
-                {% endif %}
-
-
                 {% include '_kalender.html' %}
-
             </main>
             <aside>
                 <h4 id="deadli">Deadlines</h4>
@@ -52,6 +46,9 @@
                     <p id="_create_task">Skapa en ny task</p>
                     <img class="plus" id="plus_aside" src="/static/IMG/plus.png" alt="plus">
                 </div>
+                {% if msg == "2" %}
+                    <p id="registrerad">Du har blivit registrerad!</p>
+                {% endif %}
             </aside>
         </div>
         {% include '_show_task.html' %}
