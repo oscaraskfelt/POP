@@ -674,8 +674,8 @@ header{
 #header {
     grid-area: header;
     display: grid;
-    grid-template-areas: "loggo plus home timeline calendar about settings logout";
-    grid-template-columns: 30% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-areas: "loggo plus home timeline about settings logout";
+    grid-template-columns: 30% 10% 10% 10% 10% 10% 10%;
     border-bottom: 4px solid #fff;
     background: rgb(237,237,237);
     background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(246,246,246,1) 53%, rgba(255,255,255,1) 100%);
@@ -1148,7 +1148,7 @@ footer > #ballcont > .balloon {
 #show_form {
     background-color: #f5f5f5;
     width: 20%;
-    height: 10%;
+    min-height: 10%;
     border: 1px solid #afafafff;
     box-shadow: 1px 0.5px 0.5px 0.5px #888;
     padding: 10px;
