@@ -77,7 +77,7 @@ class CALENDAR {
             else if (month == "Apr"){
                 month = 3
             }
-            else if (month == "Maj"){
+            else if (month == "May"){
                 month = 4
             }
             else if (month == "Jun"){
@@ -92,7 +92,7 @@ class CALENDAR {
             else if (month == "Sep"){
                 month = 8
             }
-            else if (month == "Okt"){
+            else if (month == "Oct"){
                 month = 9
             }
             else if (month == "Nov"){
@@ -203,7 +203,7 @@ class CALENDAR {
     }
 
     drawMonths() {
-        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
+        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
         let monthTemplate = "";
         let calendar = this.getCalendar();
         availableMonths.forEach((month, idx) => {
