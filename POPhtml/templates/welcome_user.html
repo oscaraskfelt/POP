@@ -5,10 +5,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="stylesheet" href="/static/CSS/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/CSS/all.css">
         <link href="/static/CSS/style.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="/static/IMG/pop_balloon.jpg">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
+       
         <script src="/static/JS/scripts.js" defer></script>
         <script type="text/javascript" src="/static/JS/task.js" defer></script>
         <script src="/static/JS/highlight.js" defer></script>
@@ -22,11 +25,14 @@
                     <p>Du har blivit registrerad!</p>
                 {% endif %}
 
+
+                {% include '_kalender.html' %}
+
             </main>
             <aside>
                 <h4 id="deadli">Deadlines</h4>
                 <ul class="deadline_list">
-                    {% for i in tasks %}
+                    {% for i in deadline %}
                         <li class="deadline_list_l" value="{{i[6]}}">
                             <img src="/static/IMG/{{i[1]}}.png">
                             <p><strong>{{i[0]}}</strong></p>
@@ -49,9 +55,11 @@
             </aside>
         </div>
         {% include '_show_task.html' %}
+        {% include 'edit_task.html' %}
         <script>
-            let tasks_dead = JSON.parse('{{tasks|tojson}}'); 
+            let tasks_dead = JSON.parse('{{deadline|tojson}}'); 
             let data = JSON.parse('{{data|tojson}}');
         </script>
+        <script async src="/static/JS/all.js"></script>
     </body>
 </html>

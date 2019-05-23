@@ -50,11 +50,12 @@ body {
   background: #fafafa;
   width: 840px;
   height: 520px;
-  margin-top: 20px;
   border-radius: 10px;
   overflow: hidden; 
   box-shadow: 1px 0.5px 0.5px 0.5px #888;
-  margin-top: 10%
+  margin-top: 5%;
+  margin-left: 10%;
+
 }
 .calendar .calendar-left-side-day-of-week, .calendar .current-day-events ul, .calendar .add-event-day, .calendar .calendar-change-year, .calendar .calendar-days li {
   position: relative; 
