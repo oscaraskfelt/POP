@@ -99,6 +99,6 @@ function edit_task() {
             else {
                 $('.task_butt').attr('disabled', true);
             }
-        }  
+        }; 
     });
 }
