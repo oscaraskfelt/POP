@@ -49,116 +49,79 @@
             <div id="start_form" class="aside2">
                 <button id="login_butt" class="butt buttwide">Logga in</button>
                 <button id="register_butt" class="butt buttwide">Registrera dig</button>
-                <!-- <div class="log">
-                    <form id="login_form" class="hide" action="/login" method="POST">
-                        <caption>Logga in</caption>
-                        <a href="/reset">Glömt lösenord?</a>
-                        <label for="username">E-post:</label>
-                        <input id="username" name="username" type="text">
-                        <label for="passw">Lösenord:</label>
-                        <input type="password" id="passw" name="passw" psswd-shown="false" required>
-                        <img src="/static/IMG/eye.png" alt="öga" id="showpwd">
-                        <input type="submit" value="Logga in" class="butt">
-                    </form>
-                </div> -->
         <form class="log" class="hide" action="/login" method="POST">
             <div class='bold-line'></div>
             <div class='container'>
                 <div class='window'>
                     <div class='overlay'></div>
-                    <div class='content'>
+                    <div class='index_content'>
                         <div class='welcome'>Logga in</div>
                         <div class='input-fields'>
                             <input id="username" name="username" type='email' placeholder='E-post' class='input-line full-width'>
                             <input id="passw" name="passw" psswd-shown="false" required type='password' placeholder='Lösenord' class='input-line full-width'>
                             <img src="/static/IMG/eye.png" alt="öga" id="showpwd">
-
                         </div>                           
                         <input type="submit" value="Logga in" class='ghost-round full-width' class="butt">
-                        <a href="/reset">Glömt lösenord?</a>
-                        </div>
+                        <a id="pw_forgotten" href="/reset">Glömt lösenord?</a>
                     </div>
                 </div>
-            </form>
-
-                <!-- <div class="reg">
-                    <form id="reg_form" class="hide" action="/signup" method="POST">
-                        <caption>Registrera dig</caption>
-                        <label for="popper_name">Användarnamn:</label>
-                        <input id="popper_name" type="text" name="popper_name" required>
-                        <label for="reg_epost">E-post:</label>
-                        <input id="reg" type="email" name="reg_epost" required>
-                        <p id="mail_info" class="info">Det måste vara en giltig epost-adress (exempel@exempel.se)</p>
-                        <label for="pw_reg">Lösenord:</label>
-                        <input id="pw_reg" type="password" name="pw_reg" required>
-                        <img src="/static/IMG/eye.png" alt="öga" id="showpw">
-                        <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
-                        <input type="checkbox" name="godkänn" value="Jag godkänner"> 
-                        <button type="button" class="block" id="conditions">Läs villkoren</button>
-                        <input type="submit" id="reg_submit" value="Registrera" disabled class="butt">
-                    </form>    
-                    </div>        -->
-                    
-             <form class="reg" id="reg_form" class="hide" action="/signup" method="POST">
-                <div class='bold-line'></div>
-                     <div class='container'>
-                        <div class='window'>
-                            <div class='overlay'></div>
-                            <div class='content'>
-                            <div class='welcome'>Registrera dig</div>
-                                <div class='input-fields'>
-                                    <label for="popper_name"></label>
-                                    <input id="popper_name" name="popper_name" required type='text' placeholder='Användarnamn' class='input-line full-width'>
-                                    <label for="reg_epost"></label>
-                                           
-                                    <input id="reg" name="reg_epost" required type='email'
-                                    placeholder='E-post' class='input-line full-width'>
-
-                                    <p id="mail_info" class="info">Det måste vara en giltig epost-adress (exempel@exempel.se)</p>
-
-                                     <label for="pw_reg"></label>
-                                     <input class='input-line full-width' id="pw_reg" type="password" name="pw_reg" required placeholder='Password'>
-                                     <img src="/static/IMG/eye.png" alt="öga" id="showpw">
-                                     <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
-                                     <input type="checkbox" name="godkänn" value="Jag godkänner"> 
-                                     <button type="button" class="block" id="conditions">Läs villkoren</button>
-                                </div>                           
-                                     <input type="submit" id="reg_submit" value="Registrera" class='ghost-round full-width' disabled class="butt">
-                                </div>
-                        </div>
-                    </div>
-            </form>   
-            <div class="gdpr_style">
-                <p>
-                    <strong>Information som sparas</strong>
-                    För användarkontot kommer användarens email, val av användarnamn samt lösenord att sparas. Däremot behöver användaren inte skriva in ett användarnamn som stämmer överens med dess korrekta fullständiga namn. 
-                </p>
-                <p>
-                    Utöver detta kommer även den information som användaren skapar en task i tjänsten med att sparas. 
-                </p>
-                <p>
-                    <strong>Hanteringen av information</strong>
-                    Informationen kommer ej att säljas vidare till någon tredje part. 
-                </p>
-
-                <p> 
-                    <strong>Hur länge informationen sparas </strong>
-                    Användarens kontouppgifter kommer att sparas från registreringen fram till att hen tar beslutet att avsluta kontot i tjänsten. När användaren bekräftat borttagningen av kontot kommer all information som sparats att tas bort.
-                </p>
-                <p>
-                    Vad gäller informationen som sparas för de tasks användaren skapar så kommer denna information att tas bort när användaren tar beslutet att radera dessa. 
-                </p>
-                <p>
-                    Kontaktuppgifter
-                    POP
-                    Nordenskiöldsgatan 1
-                    211 19 Malmö, Sverige
-                </p>
-                <button type="button" id="close_gdpr">Stäng</button>  
             </div>
+        </form>         
+        <form class="reg" id="reg_form" class="hide" action="/signup" method="POST">
+            <div class='bold-line'></div>
+            <div class='container'>
+                <div class='window'>
+                    <div class='overlay'></div>
+                    <div class='index_content'>
+                        <div class='welcome'>Registrera dig</div>
+                        <div class='input-fields'>
+                            <label for="popper_name"></label>
+                            <input id="popper_name" name="popper_name" required type='text' placeholder='Användarnamn' class='input-line full-width'>
+                            <label for="reg_epost"></label>
+                            <input id="reg" name="reg_epost" required type='email' placeholder='E-post' class='input-line full-width'>
+                            <p id="mail_info" class="info">Det måste vara en giltig epost-adress (exempel@exempel.se)</p>
+                            <label for="pw_reg"></label>
+                            <input class='input-line full-width' id="pw_reg" type="password" name="pw_reg" required placeholder='Lösenord'>
+                            <img src="/static/IMG/eye.png" alt="öga" id="showpw">
+                            <p id="pw_info" class="info">Lösenordet ska vara åtta tecken långt, bestå av både stora och små bokstäver samt minst en siffra</p>
+                            <input type="checkbox" name="godkänn" value="Jag godkänner">Jag godkänner 
+                            <button type="button" class="block butt altbutt" id="conditions" style="width: 100px">Läs villkoren</button>
+                        </div>                           
+                        <input type="submit" id="reg_submit" value="Registrera" class='ghost-round full-width' disabled class="butt">
+                    </div>
+                </div>
+            </div>
+        </form>   
+        <div class="gdpr_style">
+            <p>
+                <strong>Information som sparas</strong>
+                För användarkontot kommer användarens email, val av användarnamn samt lösenord att sparas. Däremot behöver användaren inte skriva in ett användarnamn som stämmer överens med dess korrekta fullständiga namn. 
+            </p>
+            <p>
+                Utöver detta kommer även den information som användaren skapar en task i tjänsten med att sparas. 
+            </p>
+            <p>
+                <strong>Hanteringen av information</strong>
+                Informationen kommer ej att säljas vidare till någon tredje part. 
+            </p>
+
+            <p> 
+                <strong>Hur länge informationen sparas </strong>
+                Användarens kontouppgifter kommer att sparas från registreringen fram till att hen tar beslutet att avsluta kontot i tjänsten. När användaren bekräftat borttagningen av kontot kommer all information som sparats att tas bort.
+            </p>
+            <p>
+                Vad gäller informationen som sparas för de tasks användaren skapar så kommer denna information att tas bort när användaren tar beslutet att radera dessa. 
+            </p>
+            <p>
+                Kontaktuppgifter
+                POP
+                Nordenskiöldsgatan 1
+                211 19 Malmö, Sverige
+            </p>
+            <button type="button" id="close_gdpr">Stäng</button>  
+        </div>
         </div>
       </main>
     </div>
   </body>
-
 </html>

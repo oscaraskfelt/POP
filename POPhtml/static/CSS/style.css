@@ -382,6 +382,11 @@ footer {
     background: #888; 
 }
 
+#pw_forgotten {
+    text-decoration: none;
+    color: #fafafa;
+}
+
 /**************************** SAGAS IMPORT *********************/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
@@ -552,7 +557,7 @@ footer {
     box-shadow: 0.5px 0.5px 0.5px 0.5px #333;
     padding: 10px;
     border-radius: 10px;
-    width: 50%;
+    width: 99%;
 }
 
 #email_exists {
@@ -1377,7 +1382,7 @@ button:focus {
 
 }
 
-.content {
+.index_content {
   padding-left: 25px;
   padding-right: 25px;
   display: -webkit-box;
@@ -1388,6 +1393,7 @@ button:focus {
   -ms-flex-flow: column;
   flex-flow: column;
   z-index: 5;
+  min-height: 600px;
 }
 
 .welcome {
@@ -1439,7 +1445,7 @@ button:focus {
   background: -webkit-linear-gradient(#8CA6DB, #B993D6);
   background: linear-gradient(rgb(123, 197, 129), rgb(163, 221, 189)); 
   filter: alpha(opacity=85);
-  height: 560px;
+  min-height: 630px;
   position: absolute;
   width: 360px;
   z-index: 1;
