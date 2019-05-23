@@ -1252,6 +1252,9 @@ footer > #ballcont > .balloon {
     text-decoration: none; 
     color: #4D9C8C;  
 }
+.p_img{
+    border-radius: 50%; 
+}
 /**************************** inlogg *********************/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
 body,
