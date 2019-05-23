@@ -4,7 +4,35 @@ $(document).ready(() => {
     user_name = false;
     gdpr_check = false;
 
+
     //Visar inloggningsform
+    $('.log').hide()
+    $('#login_butt').on('click', function() {
+        $('.log').toggle()
+    })
+
+    $('#close_login').on('click', function(){
+        $('.log').hide()
+    })
+
+    function show_login(){
+
+    }
+
+    $('.reg').hide()
+    $('#register_butt').on('click', function() {
+        $('.reg').toggle()
+    })
+
+    $('#reg_submit').on('click', function(){
+        $('.reg').hide()
+    })
+
+    function show_reg(){
+
+    }
+
+
     $('#login_butt').on('click', function(){
         $("#login_form").toggleClass('hide block');
         $('#login_butt').toggleClass('buttwidegray')
