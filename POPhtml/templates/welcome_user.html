@@ -30,7 +30,7 @@
                 <h4 id="deadli">Deadlines</h4>
                 <ul class="deadline_list">
                     {% for i in tasks %}
-                        <li class="deadline_list_l" value="{{i[6]}}">
+                        <li class="deadline_list_l" value="{{i[6]}}" id="tasks_dead">
                             <img src="/static/IMG/{{i[1]}}.png">
                             <p><strong>{{i[0]}}</strong></p>
                             <p>{{i[4].strftime("%d-%m-%y")}}</p>
@@ -38,7 +38,7 @@
                         </li>
                     {% endfor %}
                     {% for i in data %}
-                        <li class="deadline_list_l" value={{i[0]}}>
+                        <li class="deadline_list_l" value={{i[0]}} id="tasks_data">
                             <img src="/static/IMG/{{i[3]}}.png">
                             <p><strong>{{i[1]}}</strong></p>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>

@@ -53,7 +53,7 @@ def check_login():
 
 @app.route('/welcome_user/<pagename>/')
 def welcome_user(pagename):
-    if logged_in_status() == True:
+    if logged_in_status() == True and validate_login(pagename) == True:
         popper = request.cookies.get('user_id')
         popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_near_deadline(popper)
@@ -89,9 +89,10 @@ def check_signup():
 @app.route('/kalender/')
 def kalender():
     '''Returnerar kalendervy'''
-    if logged_in_status() == True:
+    popper_name = request.cookies.get('popper_name')
+
+    if logged_in_status() == True and validate_login(popper_name) == True:
         popper = request.cookies.get('user_id')
-        popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
         return render_template('cal2.html', tasks=data, user=popper_name, pagename=popper_name)
     else:
@@ -102,9 +103,10 @@ def kalender():
 @app.route('/tidslinje/')
 def tidslinje():
     '''Returnerar vy över tidslinje'''
-    if logged_in_status() == True:
+    popper_name = request.cookies.get('popper_name')
+
+    if logged_in_status() == True and validate_login(popper_name) == True:
         popper = request.cookies.get('user_id')
-        popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_per_user(popper)
         return render_template('timelinet.html', user=popper_name, tasks=data, pagename=popper_name)
     else:
@@ -114,10 +116,12 @@ def tidslinje():
 @app.route('/new_task', methods=["POST"])
 def add_data():
     '''Lägger till data från databas och returnerar till ursprungssidan annars welcome_user'''
-    if logged_in_status() == True:
+    popper_name = request.cookies.get('popper_name')
+
+    if logged_in_status() == True and validate_login(popper_name) == True:
         try:
             task_title = request.form['new_task_header']
-            task_content = request.form['task_content']
+            task_content = request.form['task_content'].replace("\r\n", " ")
             task_prio = request.form['task_prio']
             task_enddate = request.form['new_task_enddate']
             user = request.cookies.get('user_id')
@@ -129,13 +133,13 @@ def add_data():
             elif origin_path =='calendar' or origin_path == 'kalender':
                 return redirect(url_for('kalender'))
             elif origin_path == 'settings':
-                popper = request.cookies.get('user_id')
+                popper = request.cookies.get('popper_name')
                 return redirect(url_for('settings', pagename=popper))
             else:
-                popper = request.cookies.get('user_id')
+                popper = request.cookies.get('popper_name')
                 return redirect(url_for('welcome_user', pagename=popper))
         except:
-            popper = request.cookies.get('user_id')
+            popper = request.cookies.get('popper_name')
             return redirect(url_for('welcome_user', pagename=popper))
     else:
         return render_template('error.html', error="Logga in först")
@@ -144,10 +148,11 @@ def add_data():
 @app.route('/edit_task', methods=["POST"])
 def edit_data():
     '''Redigerar data i databasen'''
+    
     if logged_in_status() == True:
         try:
             edit_title = request.form['edit_task_header']
-            edit_content = request.form['edit_task_content']
+            edit_content = request.form['edit_task_content'].replace("\r\n", " ")
             edit_prio = request.form['edit_task_prio']
             edit_enddate = request.form['edit_task_enddate']
             task_id = request.form['task_id']
@@ -159,13 +164,13 @@ def edit_data():
             elif origin_path =='calendar' or origin_path == 'kalender':
                 return redirect(url_for('kalender'))
             elif origin_path == 'settings':
-                popper = request.cookies.get('user_id')
+                popper = request.cookies.get('popper_name')
                 return redirect(url_for('settings', pagename=popper))
             else:
-                popper = request.cookies.get('user_id')
+                popper = request.cookies.get('popper_name')
                 return redirect(url_for('welcome_user', pagename=popper))
         except:
-            popper = request.cookies.get('user_id')
+            popper = request.cookies.get('popper_name')
             return redirect(url_for('welcome_user', pagename=popper))
     else:
         return render_template('error.html', error="Logga in först")
@@ -233,9 +238,16 @@ def logged_in_status():
         return False
 
 
+def validate_login(popper):
+    validate_popper = request.cookies.get('popper_name')
+    if validate_popper == popper:
+        return True
+    else:
+        return False
+
 @app.route('/settings/<pagename>/') 
 def settings(pagename):
-    if logged_in_status() == True:
+    if logged_in_status() == True and validate_login(pagename) == True:
         popper = request.cookies.get('user_id')
         data = sign_in.get_one_user(popper)
         return render_template('settings.html', pagename=pagename, user=pagename, data=data)
@@ -268,13 +280,13 @@ def task_remove():
             elif origin_path == 'calendar' or origin_path == 'kalender':
                 return redirect(url_for('kalender'))
             elif origin_path == 'settings':
-                popper = request.cookies.get('user_id')
+                popper = request.cookies.get('popper_name')
                 return redirect(url_for('settings', pagename=popper))
             else:
-                popper = request.cookies.get('user_id')
+                popper = request.cookies.get('popper_name')
                 return redirect(url_for('welcome_user', pagename=popper))
         except:
-            popper = request.cookies.get('user_id')
+            popper = request.cookies.get('popper_name')
             return redirect(url_for('welcome_user', pagename=popper))
     else:
         return render_template('error.html', error="Logga in först")

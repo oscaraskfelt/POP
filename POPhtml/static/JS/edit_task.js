@@ -89,6 +89,6 @@ function editor(butt){
             else {
                 $('.task_butt').attr('disabled', true);
             }
-        } 
+        }; 
     });
 };

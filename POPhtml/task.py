@@ -18,6 +18,7 @@ def get_tasks_per_user(popper):
     cursor.execute('''select * from task where popper = %s order by slutdatum''', (popper,))
     data = cursor.fetchall()
     cursor.close()
+    
     return data
 
 
@@ -39,7 +40,8 @@ def get_tasks_near_deadline(popper):
     cursor.execute('''select * from task where popper = %s and slutdatum between (now() - interval '1 day') and (now() + interval '3 day') order by slutdatum;''', (popper,))
     data = cursor.fetchall()
     cursor.close()
-    return data 
+
+    return data
 
 
 def get_tasks_passed_deadline(popper):
@@ -50,6 +52,7 @@ def get_tasks_passed_deadline(popper):
     cursor.execute('''select title, prio, content, popper, slutdatum, DATE_PART('day', now() - slutdatum)::integer, id from task where popper = %s and slutdatum < (now() - interval '1 day') order by slutdatum;''', (popper,))
     tasks = cursor.fetchall()
     cursor.close()
+
     return tasks
 
 
