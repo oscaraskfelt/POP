@@ -37,14 +37,14 @@ body {
   /* Disable Android and iOS callouts*/ 
 }
 
-/*.calendar, .calendar .add-event-day .add-event-day-field-btn, .calendar .calendar-days li:after {
+.calendar, .calendar .add-event-day .add-event-day-field-btn, .calendar .calendar-days li:after {
   position: absolute;
   right: 0;
   left: 0;
   top: 0;
   bottom: 0;
   margin: auto; 
-}*/
+}
 
 .calendar {
   background: #fafafa;

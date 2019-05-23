@@ -1,4 +1,4 @@
-const AVAILABLE_WEEK_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const AVAILABLE_WEEK_DAYS = ['Söndag', 'Måndag', 'Tisdag', 'Onsdag', 'Torsdag', 'Fredag', 'Lördag'];
 const localStorageName = 'calendar-events';
 
 class CALENDAR {
@@ -77,7 +77,7 @@ class CALENDAR {
             else if (month == "Apr"){
                 month = 3
             }
-            else if (month == "May"){
+            else if (month == "Maj"){
                 month = 4
             }
             else if (month == "Jun"){
@@ -92,7 +92,7 @@ class CALENDAR {
             else if (month == "Sep"){
                 month = 8
             }
-            else if (month == "Oct"){
+            else if (month == "Okt"){
                 month = 9
             }
             else if (month == "Nov"){
@@ -203,7 +203,7 @@ class CALENDAR {
     }
 
     drawMonths() {
-        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
         let monthTemplate = "";
         let calendar = this.getCalendar();
         availableMonths.forEach((month, idx) => {
