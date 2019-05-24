@@ -793,7 +793,7 @@ header{
     width: 738px;
     margin: 0 80px;
     padding-top: 80px;
-    position: relative;
+    position: absolute;
 }
 
 .balloon > div {
@@ -1162,3 +1162,16 @@ footer > #ballcont > .balloon {
     padding: 15px 30px 80px 30px;
 }
 /**************************** about_us *********************/
+
+
+/**************************** Balloons *********************/
+#popcircle {
+    border-radius: 50%;
+    border: 3px solid black;
+    width: 42px;
+    height: 64px;
+    left: 109%;
+    top: 23px;
+    position: absolute;
+    z-index: -1;
+}
