@@ -10,9 +10,12 @@
         <link rel="icon" href="/static/IMG/pop_balloon.jpg">
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="/static/JS/timeline.js" async></script>
         <script type="text/javascript" src="/static/JS/task.js" defer></script>
         <script type="text/javascript" src="/static/JS/edit_task.js" defer></script>
+        <script type="text/javascript" src="/static/JS/balloons.js" defer></script>
         <script src="/static/JS/highlight.js" defer></script>
     </head>
 
@@ -37,14 +40,17 @@
                             <h3>{{i[1]}}</h3>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                             <div class="hide task_content">
-                            <p> {{i[2]}} </p>
-                            <button class="edit_butt buttwide butt" value="{{i[0]}}" name="id_task">Redigera task</button>
-                            <form id="remove_task_form" action="/poptask" method="POST" class="">
-                                <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
-                                <input type="submit" value="Ta bort" class="butt altbutt">
-                            </form>
+                                <p> {{i[2]}} </p>
+                                <button class="edit_butt buttwide butt" value="{{i[0]}}" name="id_task">Redigera task</button>
+                                <form id="remove_task_form" action="/poptask" method="POST" class="">
+                                    <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
+                                    <input type="submit" value="Ta bort" class="ta_bort butt altbutt">
+                                </form>
                             </div>
-                            <img height="133px" class="btn {{i[3]}}" src="/static/IMG/balloon_{{i[3]}}.png" alt="balloon">
+                            <div class="btn {{i[3]}}">
+                                <img height="133px" id="bubble1" src="/static/IMG/balloon_{{i[3]}}.png" alt="balloon">
+                            </div>
+                            <div id="popcircle"></div>
                         </li>
                         <div style="clear: both;"></div>
                     {% endfor %} 
