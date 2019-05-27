@@ -53,9 +53,9 @@ def check_login():
 
 @app.route('/welcome_user/<pagename>/')
 def welcome_user(pagename):
+    popper_name = request.cookies.get('popper_name').strip()
     if logged_in_status() == True and validate_login(pagename) == True:
         popper = request.cookies.get('user_id')
-        popper_name = request.cookies.get('popper_name')
         data = task.get_tasks_near_deadline(popper)
         deadline_tasks = task.get_tasks_passed_deadline(popper)
         tasks = task.get_tasks_per_user(popper)
@@ -90,7 +90,7 @@ def check_signup():
 @app.route('/kalender/')
 def kalender():
     '''Returnerar kalendervy'''
-    popper_name = request.cookies.get('popper_name')
+    popper_name = request.cookies.get('popper_name').strip()
 
     if logged_in_status() == True and validate_login(popper_name) == True:
         popper = request.cookies.get('user_id')
@@ -104,7 +104,7 @@ def kalender():
 @app.route('/tidslinje/')
 def tidslinje():
     '''Returnerar vy över tidslinje'''
-    popper_name = request.cookies.get('popper_name')
+    popper_name = request.cookies.get('popper_name').strip()
 
     if logged_in_status() == True and validate_login(popper_name) == True:
         popper = request.cookies.get('user_id')
@@ -240,7 +240,7 @@ def logged_in_status():
 
 
 def validate_login(popper):
-    validate_popper = request.cookies.get('popper_name')
+    validate_popper = request.cookies.get('popper_name').strip()
     if validate_popper == popper:
         return True
     else:
@@ -248,10 +248,12 @@ def validate_login(popper):
 
 @app.route('/settings/<pagename>/') 
 def settings(pagename):
+    popper_name = request.cookies.get('popper_name').strip()
+    print(type(popper_name))
     if logged_in_status() == True and validate_login(pagename) == True:
         popper = request.cookies.get('user_id')
         data = sign_in.get_one_user(popper)
-        return render_template('settings.html', pagename=pagename, user=pagename, data=data)
+        return render_template('settings.html', pagename=pagename, user=popper_name, data=data)
     else:
         return render_template('error.html', error="Logga in först")
 
