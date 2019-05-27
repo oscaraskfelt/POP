@@ -18,6 +18,8 @@ def get_tasks_per_user(popper):
     cursor.execute('''select * from task where popper = %s order by slutdatum''', (popper,))
     data = cursor.fetchall()
     cursor.close()
+
+    print(data)
     
     return data
 

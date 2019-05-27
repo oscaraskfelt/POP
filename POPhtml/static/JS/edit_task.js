@@ -3,7 +3,7 @@ $('.edit_plus').on('click', function(){
     $('.edit_plus').toggleClass('rotate');
     $('#edit_task_header').css('backgroundColor', 'rgb(231, 231, 231)');
     $('#edit_task_content').css('backgroundColor', 'rgb(231, 231, 231)');
-    $('#edit_task_enddate').css('backgroundColor', 'rgb(231, 231, 231)')
+    $('#edit_task_enddate').css('backgroundColor', 'rgb(231, 231, 231)');
 });
 
 edit_task()
