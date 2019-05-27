@@ -387,9 +387,8 @@ footer {
     color: #fafafa;
 }
 
-/**************************** SAGAS IMPORT *********************/
+/**************************** Tidslinje *********************/
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 #timeline-body {
     margin: 0;
     padding: 0;
@@ -940,7 +939,7 @@ header{
 /* BAllOON 2 5*/
 @-webkit-keyframes balloon2 {
     0%, 100% {
-        -webkit-transform: translateY(0) rotate(6eg);
+        -webkit-transform: translateY(0) rotate(6deg);
     }
     50% {
         -webkit-transform: translateY(-30px) rotate(-8deg);
@@ -973,7 +972,7 @@ header{
 /* BAllOON 0*/
 @-webkit-keyframes balloon3 {
     0%, 100% {
-        -webkit-transform: translate(0, -10px) rotate(6eg);
+        -webkit-transform: translate(0, -10px) rotate(6deg);
     }
     50% {
         -webkit-transform: translate(-20px, 30px) rotate(-8deg);
@@ -981,7 +980,7 @@ header{
 }
 @-moz-keyframes balloon3 {
     0%, 100% {
-        -moz-transform: translate(0, -10px) rotate(6eg);
+        -moz-transform: translate(0, -10px) rotate(6deg);
     }
     50% {
         -moz-transform: translate(-20px, 30px) rotate(-8deg);
@@ -989,7 +988,7 @@ header{
 }
 @-o-keyframes balloon3 {
     0%, 100% {
-        -o-transform: translate(0, -10px) rotate(6eg);
+        -o-transform: translate(0, -10px) rotate(6deg);
     }
     50% {
         -o-transform: translate(-20px, 30px) rotate(-8deg);
@@ -997,7 +996,7 @@ header{
 }
 @keyframes balloon3 {
     0%, 100% {
-        transform: translate(0, -10px) rotate(6eg);
+        transform: translate(0, -10px) rotate(6deg);
     }
     50% {
         transform: translate(-20px, 30px) rotate(-8deg);
@@ -1006,7 +1005,7 @@ header{
 /* BAllOON 3*/
 @-webkit-keyframes balloon4 {
     0%, 100% {
-        -webkit-transform: translate(10px, -10px) rotate(-8eg);
+        -webkit-transform: translate(10px, -10px) rotate(-8deg);
     }
     50% {
         -webkit-transform: translate(-15px, 20px) rotate(10deg);
@@ -1014,7 +1013,7 @@ header{
 }
 @-moz-keyframes balloon4 {
     0%, 100% {
-        -moz-transform: translate(10px, -10px) rotate(-8eg);
+        -moz-transform: translate(10px, -10px) rotate(-8deg);
     }
     50% {
         -moz-transform: translate(-15px, 10px) rotate(10deg);
@@ -1022,7 +1021,7 @@ header{
 }
 @-o-keyframes balloon4 {
     0%, 100% {
-        -o-transform: translate(10px, -10px) rotate(-8eg);
+        -o-transform: translate(10px, -10px) rotate(-8deg);
     }
     50% {
         -o-transform: translate(-15px, 10px) rotate(10deg);
@@ -1030,7 +1029,7 @@ header{
 }
 @keyframes balloon4 {
     0%, 100% {
-        transform: translate(10px, -10px) rotate(-8eg);
+        transform: translate(10px, -10px) rotate(-8deg);
     }
     50% {
         transform: translate(-15px, 10px) rotate(10deg);
@@ -1247,6 +1246,7 @@ footer > #ballcont > .balloon {
 #img_about{
     padding-top: 20px;
 }
+/**************************** pop'a ballongen *********************/
 .column {
     float: left;
     width: 15%;
@@ -1266,8 +1266,7 @@ footer > #ballcont > .balloon {
 .p_img{
     border-radius: 50%; 
 }
-/**************************** inlogg *********************/
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
+
 body,
 html {
   margin: 0;
@@ -1286,9 +1285,6 @@ button:focus {
   color: rgba(255, 255, 255, 0.65);
 }
 
-::-webkit-input-placeholder .input-line:focus +::input-placeholder {
-  color: #fff;
-}
 
 .highlight {
   color: rgba(255, 255, 255, 0.8);
@@ -1489,7 +1485,6 @@ button:focus {
 #registrerad {
     text-align: center;
 }
-/**************************** about_us *********************/
 
 
 /**************************** Balloons *********************/
@@ -1512,3 +1507,21 @@ button:focus {
 
 
 }
+/**************************** Responsiv *********************/
+
+ /**@media screen and (max-width:480px)  { 
+    .aside2, #index_head, main, footer { 
+        display: block; 
+        width: 100%; 
+        margin:2px; 
+        padding: 2px;
+            
+    }  
+    
+     .buttwide { 
+         width: 100%; 
+
+     }
+    } 
+    ****/
+    
