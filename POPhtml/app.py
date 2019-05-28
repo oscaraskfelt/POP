@@ -38,7 +38,6 @@ def check_login():
     user = sign_in.check_user(username, password)
     name = sign_in.get_user_name(username)
     
-    
     if user == True:
         add_cookie = make_response(redirect(url_for('welcome_user', pagename=name)))
         add_cookie.set_cookie('user_id', username)
@@ -53,6 +52,7 @@ def check_login():
 
 @app.route('/welcome_user/<pagename>/')
 def welcome_user(pagename):
+    '''Hämtar information för startsidan'''
     popper_name = request.cookies.get('popper_name').strip()
     if logged_in_status() == True and validate_login(pagename) == True:
         popper = request.cookies.get('user_id')
@@ -149,7 +149,6 @@ def add_data():
 @app.route('/edit_task', methods=["POST"])
 def edit_data():
     '''Redigerar data i databasen'''
-    
     if logged_in_status() == True:
         try:
             edit_title = request.form['edit_task_header']
@@ -226,12 +225,14 @@ def page_not_found(e):
 
 @app.route('/log_out', methods=["POST"])
 def log_out():
+    '''Loggar ut användaren'''
     log_out = make_response(redirect(url_for('login')))
     log_out.set_cookie('logged_in', "False")
     return log_out
 
 
 def logged_in_status():
+    '''Kontrollerar om användaren är inloggad eller inte'''
     logged_in = request.cookies.get('logged_in')
     if logged_in == "True":
         return True
@@ -240,14 +241,17 @@ def logged_in_status():
 
 
 def validate_login(popper):
+    '''Kontrollerar att url stämmer överens med användarnamn'''
     validate_popper = request.cookies.get('popper_name').strip()
     if validate_popper == popper:
         return True
     else:
         return False
 
+
 @app.route('/settings/<pagename>/') 
 def settings(pagename):
+    '''Hämtar användardata och renderar inställningssidan'''
     popper_name = request.cookies.get('popper_name').strip()
     print(type(popper_name))
     if logged_in_status() == True and validate_login(pagename) == True:
@@ -272,6 +276,7 @@ def about_us():
 
 @app.route('/poptask', methods=["POST"])
 def task_remove():
+    '''Hämtar rätt task och kör funktionen för att radera task''' 
     if logged_in_status() == True:
         try:
             task_id = request.form['task_id']
@@ -297,6 +302,7 @@ def task_remove():
 
 @app.route('/remove_user', methods=["POST"])
 def user_remove():
+    '''Kör funktion för att radera användare och redirectar till loginsidan'''
     if logged_in_status() == True:
         user_id = request.cookies.get('user_id')
         remove_user.delete_user(user_id)
@@ -310,6 +316,7 @@ def user_remove():
 
 @app.route('/update_pw', methods=["POST"])
 def update_user():
+    '''Uppdaterar användarinformation när användaren submittar i inställningar'''
     if logged_in_status() == True:
         try:
             popper_name = request.cookies.get('popper_name')
@@ -324,6 +331,6 @@ def update_user():
             updated_cookie.set_cookie('popper_name', new_popper_name) 
             return updated_cookie
         except:
-            return render_template('error.html', error="För långt användarnamn!! dumbass.")
+            return render_template('error.html', error="För långt användarnamn!")
     else:
         return render_template('error.html', error="Logga in först")
