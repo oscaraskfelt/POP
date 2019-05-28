@@ -1238,7 +1238,7 @@ footer > #ballcont > .balloon {
     grid-area: aside;
 }
 
-#index_link{
+.index_link{
     text-decoration: none; 
     color: #4D9C8C; 
     font-weight: bold; 
@@ -1246,7 +1246,7 @@ footer > #ballcont > .balloon {
 #img_about{
     padding-top: 20px;
 }
-/**************************** pop'a ballongen *********************/
+
 .column {
     float: left;
     width: 15%;
@@ -1254,12 +1254,12 @@ footer > #ballcont > .balloon {
     text-align: center; 
   }
   
-  .row::after {
+.row::after {
     content: "";
     clear: both;
     display: table;
   }
-  .p_link{
+.p_link{
     text-decoration: none; 
     color: #4D9C8C;  
 }
@@ -1267,6 +1267,7 @@ footer > #ballcont > .balloon {
     border-radius: 50%; 
 }
 
+/**************************** pop'a ballongen *********************/
 body,
 html {
   margin: 0;
