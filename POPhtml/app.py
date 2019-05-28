@@ -122,7 +122,7 @@ def add_data():
     if logged_in_status() == True and validate_login(popper_name) == True:
         try:
             task_title = request.form['new_task_header']
-            task_content = request.form['task_content'].replace("\r\n", " ")
+            task_content = request.form['task_content'].replace("\r\n", "\\n")
             task_prio = request.form['task_prio']
             task_enddate = request.form['new_task_enddate']
             user = request.cookies.get('user_id')
@@ -153,7 +153,7 @@ def edit_data():
     if logged_in_status() == True:
         try:
             edit_title = request.form['edit_task_header']
-            edit_content = request.form['edit_task_content'].replace("\r\n", " ")
+            edit_content = request.form['edit_task_content'].replace("\r\n", "\\n")
             edit_prio = request.form['edit_task_prio']
             edit_enddate = request.form['edit_task_enddate']
             task_id = request.form['task_id']
