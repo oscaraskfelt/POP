@@ -40,11 +40,10 @@ $(document).ready(() => {
                 if (tasks_dead[prop][6] == task_id){
                     document.getElementById("show_form").innerHTML = `<img class="inside_plus edit_plus show_form_plus" src="/static/IMG/plus_exit.png" alt="plus">
                                                                         <h3>${tasks_dead[prop][0]}</h3>
-                                                                        <p>${tasks_dead[prop][2]}</p>
+                                                                        <p>${tasks_dead[prop][2].replace(/\n/g, '<br>')}</p>
                                                                         <button class="edit_butt buttwide butt" id="show_edit" value="${tasks_dead[prop][6]}" name="id_task">Redigera task</button>`
                 };
             };
-            console.log(task_id)
             $(".show_form_plus").toggleClass('rotate');
             $(".show_form_plus").on("click", function() {
                 $("#show_form").toggleClass('visible');
@@ -55,7 +54,6 @@ $(document).ready(() => {
                 $("#edit_form").toggleClass('visible');
                 $('.edit_plus').toggleClass('rotate');
                 var fired_button = task_id;
-                console.log(fired_button)
             
                 for (var prop in tasks_dead){
                     if (tasks_dead[prop][6] == fired_button){
@@ -149,7 +147,7 @@ $(document).ready(() => {
             if (data[prop][0] == task_id){
                     document.getElementById("show_form").innerHTML = `<img class="inside_plus edit_plus show_form_plus" src="/static/IMG/plus_exit.png" alt="plus">
                                                                         <h3>${data[prop][1]}</h3>
-                                                                        <p>${data[prop][2]}</p>
+                                                                        <p>${data[prop][2].replace(/\n/g, '<br>')}</p>
                                                                         <button class="edit_butt buttwide butt" id="show_edit" value="${data[prop][0]}" name="id_task">Redigera task</button>`
                 };
             };

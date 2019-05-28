@@ -8,6 +8,7 @@ def get_tasks():
     cursor.execute('''select * from task''')
     data = cursor.fetchall()
     cursor.close()
+    
     return data
 
 
@@ -19,8 +20,6 @@ def get_tasks_per_user(popper):
     data = cursor.fetchall()
     cursor.close()
 
-    print(data)
-    
     return data
 
 

@@ -127,7 +127,7 @@ class CALENDAR {
                                     ${item[0]}  
                                     </h4>
                                     <div class="hide task_content">
-                                        <p>${item[1]}</p>
+                                        <p>${item[1].replace(/\n/g, '<br>')}</p>
                                         <button class="edit_butt buttwide butt" value="${item[2]}" name="id_task">Redigera task</button>
                                         <form id="remove_task_form" action="/poptask" method="POST">
                                             <input type="text" class="hide" value="${item[2]}" name="task_id" />
