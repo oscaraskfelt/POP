@@ -189,12 +189,12 @@ $(document).ready(() => {
 
     //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
     $(".openpopup").on("click", function(){
-        $(".popup-overlay, .popup-content").addClass("active");
+        $(".popup-overlay, .close_popup, .popup-content").addClass("active");
     });
-  
+
     //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
-    $(".closepopup, .popup-overlay").on("click", function(){
-        $(".popup-overlay, .popup-content").removeClass("active");
+    $(".closepopup, .close_popup, .popup-overlay").on("click", function(){
+        $(".popup-overlay, .close_popup, .popup-content").removeClass("active");
     });
 
 });
