@@ -387,6 +387,21 @@ footer {
     color: #fafafa;
 }
 
+.close_popup {
+    grid-area: main;
+    opacity: 0.4;
+    width: 100%;
+    height:85%;
+    top: 85px;
+    right: 0px;
+    left: 0px;
+    z-index: 0;
+    position: absolute;
+    visibility: hidden;
+}
+.close_popup.active{
+    visibility: visible;
+}
 /**************************** Tidslinje *********************/
 
 #timeline-body {
@@ -659,6 +674,7 @@ footer {
     height: 25%;
     left: 25%;
     top: 40%;
+    z-index: 1;
 }
 .popup-overlay.active{
     /*displays pop-up when "active" class is present*/
@@ -1499,15 +1515,20 @@ button:focus {
     position: absolute;
     z-index: -1;
 }
+
 #poppin {
     transform: rotate(60deg);
     position: absolute;
     left: 140%;
     top: 23px;
     opacity: 0;
-
-
+    height: 50px;
 }
+
+#bubble1 {
+    height: 133px;
+}
+
 /**************************** Responsiv *********************/
 
  /**@media screen and (max-width:480px)  { 

@@ -40,9 +40,7 @@
                             <h3>{{i[1]}}</h3>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                             <div class="hide task_content">
-                                {% autoescape false %}
-                                    <p>{{ i[2].replace("\\n", "<br>")}}</p>
-                                {% endautoescape %}
+                                <p> {{i[2]}} </p>
                                 <button class="edit_butt buttwide butt" value="{{i[0]}}" name="id_task">Redigera task</button>
                                 <form id="remove_task_form" action="/poptask" method="POST" class="">
                                     <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
@@ -50,10 +48,10 @@
                                 </form>
                             </div>
                             <div class="btn {{i[3]}}">
-                                <img height="133px" id="bubble1" src="/static/IMG/balloon_{{i[3]}}.png" alt="balloon">
+                                <img id="bubble1" src="/static/IMG/balloon_{{i[3]}}.png" alt="balloon">
                             </div>
                             <div id="popcircle"></div>
-                            <img height="50px" id="poppin" src="/static/IMG/Red_push_pin.png">
+                            <img id="poppin" src="/static/IMG/Red_push_pin.png">
                         </li>
                         <div style="clear: both;"></div>
                     {% endfor %} 
