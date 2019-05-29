@@ -1510,19 +1510,38 @@ button:focus {
 }
 /**************************** Responsiv *********************/
 
- /**@media screen and (max-width:480px)  { 
-    .aside2, #index_head, main, footer { 
-        display: block; 
-        width: 100%; 
-        margin:2px; 
-        padding: 2px;
-            
-    }  
+@media screen and (max-width:480px) {
+    #container {
+        margin:0; 
+        display: grid;
+        grid-template-columns: 400px;
+        grid-auto-rows: auto;
+        align-items: center;
+        grid-template-areas: 
+            "aside2"
+            "header"
+            "main"
+            "aside"
+            "footer"
+            ;  
     
-     .buttwide { 
-         width: 100%; 
+        
+    }
+    #ballcont{
+    grid-area: "aside";
+    }
+    .index_head{
+        font-size: 1.5em;
+    }
 
-     }
-    } 
-    ****/
-    
+
+    .buttwide {
+        grid-area: "aside2";
+        width: 90%;
+        margin: 50px 0 0 100px;
+        height: 60px;
+        font-size: 1.5em;
+        
+
+    }
+}
