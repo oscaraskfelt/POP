@@ -95,7 +95,7 @@ def kalender():
     if logged_in_status() == True and validate_login(popper_name) == True:
         popper = request.cookies.get('user_id')
         data = task.get_tasks_per_user(popper)
-        return render_template('cal2.html', tasks=data, user=popper_name, pagename=popper_name)
+        return render_template('Kalender.html', tasks=data, user=popper_name, pagename=popper_name)
     else:
         return render_template('error.html', error="Vänligen logga in först")
 
