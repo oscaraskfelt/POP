@@ -188,13 +188,17 @@ $(document).ready(() => {
     });
 
     //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
-    $(".openpopup").on("click", function(){
-        $(".popup-overlay, .close_popup, .popup-content").addClass("active");
+    $(".openpopup, .closepopup, .close_popup_sett").on("click", function(){
+        $(".popup-overlay, .close_popup_sett, .popup-content").toggleClass("visible");
     });
 
-    //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
-    $(".closepopup, .close_popup, .popup-overlay").on("click", function(){
-        $(".popup-overlay, .close_popup, .popup-content").removeClass("active");
-    });
+    // //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
+    // $(".openpopup").on("click", function(){
+    //     $(".popup-overlay, .close_popup, .popup-content").addClass("active");
+    // });
 
+    // //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+    // $(".closepopup, .close_popup, .popup-overlay").on("click", function(){
+    //     $(".popup-overlay, .close_popup, .popup-content").removeClass("active");
+    // });
 });

@@ -4,8 +4,8 @@ $(document).ready(() => {
 
     $('#new_task_enddate').attr("value", currentDate);
 
-    $('.plus').on('click', function(){
-        $("#task_form").toggleClass('visible');
+    $('.plus, .close_popup_new_task').on('click', function(){
+        $("#task_form, .close_popup_new_task").toggleClass('visible');
         $('.plus').toggleClass('rotate');
     });
 
