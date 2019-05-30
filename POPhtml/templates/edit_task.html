@@ -5,28 +5,28 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-
-<div id="edit_form" class="visible">    
-    <form id="task_form_edit" action="/edit_task" method="POST">
-        <img class="inside_plus edit_plus" src="/static/IMG/plus_exit.png" alt="plus">
-        <h3>Redigera task</h3>  
-        <label for="edit_task_header">Uppgiftsnamn</label>
-        <input type="text" id="edit_task_header" name="edit_task_header" required/>
-        <label for="edit_task_content">Vad som ska göras</label>
-        <textarea id="edit_task_content" name="edit_task_content" required></textarea>
-        <label for="edit_task_prio">Prioritering</label>
-        <select id="edit_task_prio" name="edit_task_prio">
-            <option class="opt_grön" value="Grön">Låg</option>
-            <option class="opt_gul" value="Gul">Mellan</option>
-            <option class="opt_röd" value="Röd">Hög</option>
-        </select>
-        <label for="edit_task_enddate">Deadline</label>
-        <input type="date" name="edit_task_enddate" id="edit_task_enddate"/>
-        <input type="hidden" value="hej" name="task_id" id="task_id">
-        <input type="submit" id="edit_task_item" value="Ändra task" class="butt task_butt"/>
-    </form>
-</div>
-<script>
-    let tasks = JSON.parse('{{tasks|tojson}}');
-</script>
+    <div class="close_popup_edit_task visible"></div>
+    <div id="edit_form" class="visible">    
+        <form id="task_form_edit" action="/edit_task" method="POST">
+            <img class="inside_plus edit_plus" src="/static/IMG/plus_exit.png" alt="plus">
+            <h3>Redigera task</h3>  
+            <label for="edit_task_header">Uppgiftsnamn</label>
+            <input type="text" id="edit_task_header" name="edit_task_header" required/>
+            <label for="edit_task_content">Vad som ska göras</label>
+            <textarea id="edit_task_content" name="edit_task_content" required></textarea>
+            <label for="edit_task_prio">Prioritering</label>
+            <select id="edit_task_prio" name="edit_task_prio">
+                <option class="opt_grön" value="Grön">Låg</option>
+                <option class="opt_gul" value="Gul">Mellan</option>
+                <option class="opt_röd" value="Röd">Hög</option>
+            </select>
+            <label for="edit_task_enddate">Deadline</label>
+            <input type="date" name="edit_task_enddate" id="edit_task_enddate"/>
+            <input type="hidden" value="hej" name="task_id" id="task_id">
+            <input type="submit" id="edit_task_item" value="Ändra task" class="butt task_butt"/>
+        </form>
+    </div>
+    <script>
+        let tasks = JSON.parse('{{tasks|tojson}}');
+    </script>
 </html>

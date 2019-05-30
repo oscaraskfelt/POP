@@ -1,5 +1,5 @@
-$('.edit_plus').on('click', function(){
-    $('#edit_form').toggleClass('visible');
+$('.edit_plus, .close_popup_edit_task').on('click', function(){
+    $('#edit_form, .close_popup_edit_task').toggleClass('visible');
     $('.edit_plus').toggleClass('rotate');
     $('#edit_task_header').css('backgroundColor', 'rgb(231, 231, 231)');
     $('#edit_task_content').css('backgroundColor', 'rgb(231, 231, 231)');
@@ -10,7 +10,7 @@ edit_task()
 
 function edit_task() {
     $(".edit_butt").on('click', function() {
-        $("#edit_form").toggleClass('visible');
+        $("#edit_form, .close_popup_edit_task").toggleClass('visible');
         $('.edit_plus').toggleClass('rotate');
         var fired_button = $(this).val();
     

@@ -164,7 +164,7 @@ footer {
     left: 30%;
     margin-top: -50px;
     margin-left: -100px;
-    z-index: 1;
+    z-index: 3;
     padding: 15px 30px 80px 30px;
 }
 
@@ -228,6 +228,10 @@ footer {
 }
 
 .visible {
+    visibility: hidden;
+}
+
+.close-pop-sett {
     visibility: hidden;
 }
 
@@ -387,7 +391,7 @@ footer {
     color: #fafafa;
 }
 
-.close_popup {
+.close_popup_sett {
     grid-area: main;
     opacity: 0.4;
     width: 100%;
@@ -397,11 +401,32 @@ footer {
     left: 0px;
     z-index: 0;
     position: absolute;
-    visibility: hidden;
 }
-.close_popup.active{
-    visibility: visible;
+
+.close_popup_new_task {
+    grid-area: main;
+    opacity: 0.4;
+    width: 100%;
+    height:85%;
+    top: 85px;
+    right: 0px;
+    left: 0px;
+    z-index: 9;
+    position: absolute;
 }
+
+.close_popup_edit_task {
+    grid-area: main;
+    opacity: 0.4;
+    width: 100%;
+    height:85%;
+    top: 85px;
+    right: 0px;
+    left: 0px;
+    z-index: 2;
+    position: absolute;
+}
+
 /**************************** Tidslinje *********************/
 
 #timeline-body {
@@ -664,7 +689,6 @@ footer {
 
 .popup-overlay{
     /*Hides pop-up when there is no "active" class*/
-    visibility:hidden;
     position:absolute;
     background-color: rgb(237,237,237);
     border-radius: 10px;
@@ -675,21 +699,7 @@ footer {
     left: 25%;
     top: 40%;
     z-index: 1;
-}
-.popup-overlay.active{
-    /*displays pop-up when "active" class is present*/
-    visibility:visible;
     text-align:center;
-}
-
-.popup-content {
-    /*Hides pop-up content when there is no "active" class */
-    visibility:hidden;
-}
-
-.popup-content.active {
-    /*Shows pop-up content when "active" class is present */
-    visibility:visible;
 }
 
 .settings_content label {
@@ -711,7 +721,6 @@ footer {
     border-radius: 5px;
     padding: 5px;
 }
-
 
 
 /**************************** HEADER *********************/
