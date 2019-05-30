@@ -14,7 +14,6 @@ body {
         ;  
 }
 
-
 .log {
     width: 30%;
     height: 40%;
@@ -26,7 +25,6 @@ body {
     z-index: 1;
     padding: 50px;
     border-radius: 15px;
-    
 }
 
 .reg {
@@ -40,7 +38,6 @@ body {
     margin-top: -50px;
     z-index: 1;
     padding: 50px;
-
 }
 
 main {
@@ -278,6 +275,7 @@ footer {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 0.85em;
 }
+
 .gdpr_style {
     background-color: #A6D6A9;
     width: 40%;
@@ -314,6 +312,7 @@ footer {
     width: 15%;
     height: 30px;
 }
+
 #container > header > button > a {
     text-decoration: none;
     color: white;
@@ -428,7 +427,6 @@ footer {
 }
 
 /**************************** Tidslinje *********************/
-
 #timeline-body {
     margin: 0;
     padding: 0;
@@ -451,12 +449,12 @@ footer {
     background: #c5c5c5;
 }
 
-.timeline ul{
+.timeline ul {
     margin: 0;
     padding: 0;
 }
 
-.timeline ul li{
+.timeline ul li {
     list-style: none;
     line-height: normal;
     position: relative;
@@ -478,11 +476,11 @@ footer {
     clear: both;
 }
 
-.content{
+.content {
     padding-bottom: 20px;
 }
 
-.timeline ul li:nth-child(odd):before{
+.timeline ul li:nth-child(odd):before {
     content: '';
     position: absolute;
     top: 24px;
@@ -494,7 +492,7 @@ footer {
     box-shadow: 0 0 0 3px rgba(233,33,99,0.2);
 }
 
-.timeline ul li:nth-child(even):before{
+.timeline ul li:nth-child(even):before {
     content: '';
     position: absolute;
     top: 24px;
@@ -506,14 +504,14 @@ footer {
     box-shadow: 0 0 0 3px rgba(233,33,99,0.2);
 }
 
-.timeline ul li h3{
+.timeline ul li h3 {
     margin: 0;
     padding: 0;
     font-weight: 600;
     color: rgba(233,33,99,1);
 }
 
-.timeline ul li p{
+.timeline ul li p {
     margin: 10px 0 0;
     padding: 0;
 }
@@ -524,7 +522,7 @@ footer {
     font-size: 14px;
 }
 
-.btn{
+.btn {
     margin: 0;
     padding: 8px 16px;
     font-size: 14px;
@@ -546,7 +544,7 @@ footer {
     }
   }
 
-.leftbtn{
+.leftbtn {
     margin: 0;
     padding: 8px 16px;
     font-size: 14px;
@@ -588,7 +586,6 @@ footer {
 }
 
 /**************************** INFO FÖR VALIDERING *********************/
-
 .info{
     display: none;
     color: #fafafa;
@@ -609,7 +606,6 @@ footer {
 }
 
 /******************************* Settings ****************************/
-
 #setting_container {
     display: grid;
     grid-template-columns: 20% auto;
@@ -722,9 +718,7 @@ footer {
     padding: 5px;
 }
 
-
 /**************************** HEADER *********************/
-
 header{
     grid-area: header;
 }
@@ -835,7 +829,6 @@ header{
   }
 
 /**************************** INDEX - BALLOONS *********************/
-
 #ballcont {
     width: 800px;
     height: 420px;
@@ -1070,14 +1063,12 @@ header{
 }
 
 /**************************** Deadline-lista - Welcome_user *********************/
-
 .deadline_list {
     list-style: none;
     padding: 0;
     margin-top: 0;
     cursor: pointer;
 }
-
 
 .deadline_list_l {
     box-sizing: border-box;
@@ -1150,13 +1141,11 @@ aside > h4 {
 }
 
 /**************************** RESET ****************************/
-
 #reset_main{
     grid-area: main;
     display: grid;
     width: 100%;
     padding: 10px;
-    
     grid-template-columns: 50% auto 10%;
     grid-template-areas: 
         ". form  .";
@@ -1185,7 +1174,6 @@ aside > h4 {
 }
 
 /**************************** RESET/<user> *********************/
-
 #new_pwd_center {
     font-family: 'Roboto Condensed', sans-serif;
     color: #A6ADB4;
@@ -1248,16 +1236,17 @@ footer > #ballcont > .balloon {
         "footer footer footer"
         ;  
 }
+
 #a_main{
     font-family: 'Roboto Condensed', sans-serif;
     color: #A6ADB4;
     margin: 50px 0 0 100px;
     
 }
+
 .p2{
     grid-area: main;
 }
-
 
 #about_aside {
     grid-area: aside;
@@ -1268,6 +1257,7 @@ footer > #ballcont > .balloon {
     color: #4D9C8C; 
     font-weight: bold; 
 }
+
 #img_about{
     padding-top: 20px;
 }
@@ -1276,18 +1266,20 @@ footer > #ballcont > .balloon {
     float: left;
     width: 15%;
     padding: 5px;
-    text-align: center; 
-  }
+    text-align: center;
+}
   
 .row::after {
     content: "";
     clear: both;
     display: table;
-  }
+}
+
 .p_link{
     text-decoration: none; 
     color: #4D9C8C;  
 }
+
 .p_img{
     border-radius: 50%; 
 }
@@ -1409,7 +1401,6 @@ button:focus {
   -ms-flex-pack: center;
   justify-content: center;
   height: 50%;
-
 }
 
 .index_content {
@@ -1512,7 +1503,6 @@ button:focus {
     text-align: center;
 }
 
-
 /**************************** Balloons *********************/
 #popcircle {
     border-radius: 50%;
@@ -1539,7 +1529,6 @@ button:focus {
 }
 
 /**************************** Responsiv *********************/
-
 @media screen and (max-width:480px) {
     #container {
         margin:0; 
