@@ -426,6 +426,18 @@ footer {
     position: absolute;
 }
 
+.close_popup_edit_deadline_task {
+    grid-area: main;
+    opacity: 0.4;
+    width: 100%;
+    height:85%;
+    top: 85px;
+    right: 0px;
+    left: 0px;
+    z-index: 1;
+    position: absolute;
+}
+
 /**************************** Tidslinje *********************/
 #timeline-body {
     margin: 0;
@@ -1125,7 +1137,7 @@ aside > h4 {
     left: 30%;
     margin-top: -50px;
     margin-left: -100px;
-    z-index: 1;
+    z-index: 2;
     padding: 15px 5px 10px 30px;
 }
 
