@@ -36,7 +36,7 @@
                     {% endfor %}
                     {% for i in data %}
                         <li class="deadline_list_l" value={{i[0]}} id="tasks_data">
-                            <img src="/static/IMG/{{i[3]}}.png">
+                            <img src="/static/IMG/{{i[3]}}.png" alt="color">
                             <p><strong>{{i[1]}}</strong></p>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                         </li>
