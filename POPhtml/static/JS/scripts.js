@@ -15,10 +15,6 @@ $(document).ready(() => {
         $('.log').hide()
     })
 
-    function show_login(){
-
-    }
-
     $('.reg').hide()
     $('#register_butt').on('click', function() {
         $('.reg').toggle()
@@ -27,11 +23,6 @@ $(document).ready(() => {
     $('#reg_submit').on('click', function(){
         $('.reg').hide()
     })
-
-    function show_reg(){
-
-    }
-
 
     $('#login_butt').on('click', function(){
         $("#login_form").toggleClass('hide block');
@@ -49,7 +40,6 @@ $(document).ready(() => {
         $("#login_form").removeClass('block');
         $('#login_butt').removeClass('buttwidegray')
     });
-
 
     // Validerar att användarnamn finns
     $('#popper_name').on('keyup', function(){
@@ -122,11 +112,10 @@ $(document).ready(() => {
                 gdpr_check = true; 
                 validate();
             }
-                else {
-                    gdpr_check = false;
-                    validate();
-                }
-           
+            else {
+                gdpr_check = false;
+                validate();
+            }
         });
 
     //Villkoren poppar upp när anvndaren klickar på "villkor"
@@ -138,10 +127,6 @@ $(document).ready(() => {
     $('#close_gdpr').on('click', function(){
         $('.gdpr_style').hide()
     })
-
-    function gdpr(){
-
-    }
  
     // Visar och döljer lösenord för inloggning
     $('#showpwd').on('click', function() {
@@ -156,7 +141,8 @@ $(document).ready(() => {
             
             $('#showpwd').attr('src','/static/IMG/hide.png');
             
-        }else {
+        }
+        else {
             
             $('#passw').removeAttr('type');
             $('#passw').attr('type', 'password');
@@ -192,13 +178,4 @@ $(document).ready(() => {
         $(".popup-overlay, .close_popup_sett, .popup-content").toggleClass("visible");
     });
 
-    // //appends an "active" class to .popup and .popup-content when the "Open" button is clicked
-    // $(".openpopup").on("click", function(){
-    //     $(".popup-overlay, .close_popup, .popup-content").addClass("active");
-    // });
-
-    // //removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
-    // $(".closepopup, .close_popup, .popup-overlay").on("click", function(){
-    //     $(".popup-overlay, .close_popup, .popup-content").removeClass("active");
-    // });
 });
