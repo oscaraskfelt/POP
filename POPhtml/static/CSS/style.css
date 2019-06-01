@@ -75,6 +75,7 @@ footer {
 .aside2 {
     grid-area: aside2;
     font-family: 'Roboto', sans-serif;
+    z-index: 1;
 }
 
 /************************************** TASKFORM ****************************************/
@@ -252,6 +253,7 @@ footer {
     border-radius: 15px;
     box-shadow: 0.5px 0.5px 0.5px #000;
     width: 25%;
+    min-width: 65px;
     height: 30px;
     margin: 8px;
     cursor: pointer;
@@ -274,6 +276,7 @@ footer {
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 0.85em;
+    min-width: 108px;
 }
 
 .gdpr_style {
@@ -839,6 +842,7 @@ header{
     color: white;
     margin-bottom: 15px;
   }
+
 
 /**************************** INDEX - BALLOONS *********************/
 #ballcont {
@@ -1518,13 +1522,16 @@ button:focus {
 /**************************** Balloons *********************/
 #popcircle {
     border-radius: 50%;
-    border: 3px solid black;
     width: 42px;
     height: 64px;
     left: 109%;
     top: 23px;
     position: absolute;
     z-index: -1;
+}
+
+.circle_color_switch {
+    border: 3px solid black;
 }
 
 #poppin {
@@ -1566,7 +1573,7 @@ button:focus {
     }
 
 
-    .buttwide {
+    .index_butt {
         grid-area: "aside2";
         width: 90%;
         margin: 50px 0 0 100px;
@@ -1575,4 +1582,37 @@ button:focus {
         
 
     }
+}
+
+@media screen and (max-width:1000px) {
+    #header {
+        grid-template-columns: 37% 9% 7% 11% 9% 20% 7%;
+    }
+}
+
+@media screen and (max-width:800px) {
+    #poppin {
+        display: none;
+    }
+}
+
+@media screen and (max-width:750px) {
+
+    #header_title {
+        grid-area: loggo;
+    }
+
+    #header_title > #logga {
+        width: 100%;
+    }
+
+    #header_title > #logga > img {
+        margin-left: 30%;
+        height: 150px;
+    }
+
+    #header_title > p {
+        display: none;
+    }
+
 }

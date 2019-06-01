@@ -1,5 +1,6 @@
 $(".ta_bort").click(function() {
     $(this).parents("form").parents("div").siblings("#poppin").animate({left: '115%'});
+    $(this).parents("form").parents("div").siblings("#popcircle").toggleClass("circle_color_switch");
     $(this).parents("form").parents("div").siblings(".btn").hide();
     $(this).parents("form").parents("div").siblings("#popcircle").hide("explode", {
         pieces: 50
