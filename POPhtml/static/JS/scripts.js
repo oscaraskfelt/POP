@@ -8,6 +8,7 @@ $(document).ready(() => {
     //Visar inloggningsform
     $('.log').hide()
     $('#login_butt').on('click', function() {
+        $('.reg').hide()
         $('.log').toggle()
     })
 
@@ -15,8 +16,13 @@ $(document).ready(() => {
         $('.log').hide()
     })
 
+<<<<<<< HEAD
+=======
+    //Visar registreringsform
+>>>>>>> stylesaga
     $('.reg').hide()
     $('#register_butt').on('click', function() {
+        $('.log').hide()
         $('.reg').toggle()
     })
 
@@ -24,6 +30,7 @@ $(document).ready(() => {
         $('.reg').hide()
     })
 
+<<<<<<< HEAD
     $('#login_butt').on('click', function(){
         $("#login_form").toggleClass('hide block');
         $('#login_butt').toggleClass('buttwidegray')
@@ -41,6 +48,8 @@ $(document).ready(() => {
         $('#login_butt').removeClass('buttwidegray')
     });
 
+=======
+>>>>>>> stylesaga
     // Validerar att användarnamn finns
     $('#popper_name').on('keyup', function(){
         var format = /^\s*$/;
@@ -118,7 +127,7 @@ $(document).ready(() => {
             }
         });
 
-    //Villkoren poppar upp när anvndaren klickar på "villkor"
+    //Villkoren poppar upp när användaren klickar på "villkor"
     $('.gdpr_style').hide()
     $('#conditions').on('click', function() {
         $('.gdpr_style').toggle()
@@ -127,6 +136,10 @@ $(document).ready(() => {
     $('#close_gdpr').on('click', function(){
         $('.gdpr_style').hide()
     })
+<<<<<<< HEAD
+=======
+    
+>>>>>>> stylesaga
  
     // Visar och döljer lösenord för inloggning
     $('#showpwd').on('click', function() {
