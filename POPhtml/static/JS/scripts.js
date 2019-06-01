@@ -16,10 +16,7 @@ $(document).ready(() => {
         $('.log').hide()
     })
 
-<<<<<<< HEAD
-=======
     //Visar registreringsform
->>>>>>> stylesaga
     $('.reg').hide()
     $('#register_butt').on('click', function() {
         $('.log').hide()
@@ -30,26 +27,6 @@ $(document).ready(() => {
         $('.reg').hide()
     })
 
-<<<<<<< HEAD
-    $('#login_butt').on('click', function(){
-        $("#login_form").toggleClass('hide block');
-        $('#login_butt').toggleClass('buttwidegray')
-        $("#reg_form").addClass('hide');
-        $("#reg_form").removeClass('block');
-        $("#register_butt").removeClass('buttwidegray')
-    });
-
-    //Visar registreringsform
-    $('#register_butt').on('click', function(){
-        $("#reg_form").toggleClass('hide block');
-        $('#register_butt').toggleClass('buttwidegray')
-        $("#login_form").addClass('hide');
-        $("#login_form").removeClass('block');
-        $('#login_butt').removeClass('buttwidegray')
-    });
-
-=======
->>>>>>> stylesaga
     // Validerar att användarnamn finns
     $('#popper_name').on('keyup', function(){
         var format = /^\s*$/;
@@ -136,11 +113,7 @@ $(document).ready(() => {
     $('#close_gdpr').on('click', function(){
         $('.gdpr_style').hide()
     })
-<<<<<<< HEAD
-=======
     
->>>>>>> stylesaga
- 
     // Visar och döljer lösenord för inloggning
     $('#showpwd').on('click', function() {
         

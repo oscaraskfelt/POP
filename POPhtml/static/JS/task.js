@@ -44,10 +44,7 @@ $(document).ready(() => {
                                                                         <button class="edit_butt buttwide butt" id="show_edit" value="${tasks_dead[prop][6]}" name="id_task">Redigera task</button>`
                 };
             };
-<<<<<<< HEAD
-=======
 
->>>>>>> stylesaga
             $(".show_form_plus").toggleClass('rotate');
             $(".show_form_plus").on("click", function() {
                 $("#show_form, .close_popup_edit_deadline_task").toggleClass('visible');
@@ -58,11 +55,8 @@ $(document).ready(() => {
                 $("#edit_form").toggleClass('visible');
                 $('.edit_plus').toggleClass('rotate');
                 var fired_button = task_id;
-<<<<<<< HEAD
             
-=======
 
->>>>>>> stylesaga
                 for (var prop in tasks_dead){
                     if (tasks_dead[prop][6] == fired_button){
                         $('#edit_task_header').val(tasks_dead[prop][0]);
