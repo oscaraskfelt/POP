@@ -6,6 +6,7 @@ import reg_user
 import reset
 import remove_task
 import remove_user
+
 app = Flask("POPhtml", static_url_path='/static')
 app = Flask(__name__.split('.')[0])
 app.config.update(
@@ -20,6 +21,48 @@ app.config.update(
 )
 mail = Mail(app)
 
+ #importeringar för notifikationer
+import threading
+import psycopg2
+
+#funktion som gör en thread som kör i bakgrunden för att skicka påminnelser
+def set_interval(func, sec):
+    def func_wrapper():
+        set_interval(func, sec)
+        func()
+    t = threading.Timer(sec, func_wrapper)
+    t.start()
+    return t
+
+#funktion som kollar varje inlagd påminnelse och ser om den är inom 3 dagar.
+#om den är inom tre dagar aktiveras send_notification som skickar ett mail med påminnelse
+def send_reminders_to_poppers():
+    '''Hämtar de tasks som har deadline de 3 närmsta dagarna'''
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT title, slutdatum, popper FROM task WHERE slutdatum between (now() - interval '1 day') and (now() + interval '3 day')")
+    tasks = cursor.fetchall()
+    cursor.close()
+
+    for task in tasks:
+        title = task[0]
+        date = task[1]
+        email = task[2]
+        send_notification(email, date, title)
+
+#funktion som skickar ut påminnelsemail
+def send_notification(user_mail, date, title):
+    with app.app_context():
+        '''Skickar email med påminnelse'''
+        msg = Message(subject=["{}".format(title)], recipients=["{}".format(user_mail)], sender="pop.pop.it1@gmail.com")
+        msg.body = "Du har en deadline den {0} för {1}!".format(date, title)
+        mail.send(msg)     
+    return msg
+
+# aktivering av threading-funktionen som skickar ut påminnelser.
+# den aktiveras med ett intervall på 1 gång om dagen, dvs 86400 sekunder
+set_interval(send_reminders_to_poppers, 86400)
 
 @app.route('/')
 def login():

@@ -44,7 +44,7 @@ $(document).ready(() => {
                                                                         <button class="edit_butt buttwide butt" id="show_edit" value="${tasks_dead[prop][6]}" name="id_task">Redigera task</button>`
                 };
             };
-            console.log(task_id)
+
             $(".show_form_plus").toggleClass('rotate');
             $(".show_form_plus").on("click", function() {
                 $("#show_form").toggleClass('visible');
@@ -55,8 +55,7 @@ $(document).ready(() => {
                 $("#edit_form").toggleClass('visible');
                 $('.edit_plus').toggleClass('rotate');
                 var fired_button = task_id;
-                console.log(fired_button)
-            
+
                 for (var prop in tasks_dead){
                     if (tasks_dead[prop][6] == fired_button){
                         $('#edit_task_header').val(tasks_dead[prop][0]);
@@ -84,9 +83,9 @@ $(document).ready(() => {
                     }
                 }
                 
-                let title = true;
-                let content = true;
-                let enddate = true;
+            let title = true;
+            let content = true;
+            let enddate = true;
                 
                 $('#edit_task_header').on('keyup', function(){
                     var format = /^\s*$/;
@@ -144,9 +143,10 @@ $(document).ready(() => {
                     }
                 }  
             });
-        }else if (id == "tasks_data"){
+        }
+        else if (id == "tasks_data"){
             for (var prop in data){
-            if (data[prop][0] == task_id){
+                if (data[prop][0] == task_id){
                     document.getElementById("show_form").innerHTML = `<img class="inside_plus edit_plus show_form_plus" src="/static/IMG/plus_exit.png" alt="plus">
                                                                         <h3>${data[prop][1]}</h3>
                                                                         <p>${data[prop][2]}</p>

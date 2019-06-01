@@ -8,6 +8,7 @@ $(document).ready(() => {
     //Visar inloggningsform
     $('.log').hide()
     $('#login_butt').on('click', function() {
+        $('.reg').hide()
         $('.log').toggle()
     })
 
@@ -15,41 +16,16 @@ $(document).ready(() => {
         $('.log').hide()
     })
 
-    function show_login(){
-
-    }
-
+    //Visar registreringsform
     $('.reg').hide()
     $('#register_butt').on('click', function() {
+        $('.log').hide()
         $('.reg').toggle()
     })
 
     $('#reg_submit').on('click', function(){
         $('.reg').hide()
     })
-
-    function show_reg(){
-
-    }
-
-
-    $('#login_butt').on('click', function(){
-        $("#login_form").toggleClass('hide block');
-        $('#login_butt').toggleClass('buttwidegray')
-        $("#reg_form").addClass('hide');
-        $("#reg_form").removeClass('block');
-        $("#register_butt").removeClass('buttwidegray')
-    });
-
-    //Visar registreringsform
-    $('#register_butt').on('click', function(){
-        $("#reg_form").toggleClass('hide block');
-        $('#register_butt').toggleClass('buttwidegray')
-        $("#login_form").addClass('hide');
-        $("#login_form").removeClass('block');
-        $('#login_butt').removeClass('buttwidegray')
-    });
-
 
     // Validerar att användarnamn finns
     $('#popper_name').on('keyup', function(){
@@ -129,7 +105,7 @@ $(document).ready(() => {
            
         });
 
-    //Villkoren poppar upp när anvndaren klickar på "villkor"
+    //Villkoren poppar upp när användaren klickar på "villkor"
     $('.gdpr_style').hide()
     $('#conditions').on('click', function() {
         $('.gdpr_style').toggle()
@@ -138,10 +114,7 @@ $(document).ready(() => {
     $('#close_gdpr').on('click', function(){
         $('.gdpr_style').hide()
     })
-
-    function gdpr(){
-
-    }
+    
  
     // Visar och döljer lösenord för inloggning
     $('#showpwd').on('click', function() {
