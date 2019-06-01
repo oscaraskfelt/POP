@@ -156,11 +156,11 @@ $(document).ready(() => {
             };
             $(".show_form_plus").toggleClass('rotate');
             $(".show_form_plus").on("click", function() {
-                $("#show_form").toggleClass('visible');
+                $("#show_form, .close_popup_edit_deadline_task").toggleClass('visible');
             });
 
             $("#show_edit").on('click', function() {
-                $("#show_form").toggleClass('visible');
+                $("#show_form, .close_popup_edit_deadline_task, .close_popup_edit_task").toggleClass('visible');
                 $("#edit_form").toggleClass('visible');
                 $('.edit_plus').toggleClass('rotate');
                 var fired_button = task_id;

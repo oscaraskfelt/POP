@@ -395,7 +395,6 @@ footer {
 
 .close_popup_sett {
     grid-area: main;
-    opacity: 0.4;
     width: 100%;
     height:85%;
     top: 85px;
@@ -407,7 +406,6 @@ footer {
 
 .close_popup_new_task {
     grid-area: main;
-    opacity: 0.4;
     width: 100%;
     height:85%;
     top: 85px;
@@ -419,7 +417,6 @@ footer {
 
 .close_popup_edit_task {
     grid-area: main;
-    opacity: 0.4;
     width: 100%;
     height:85%;
     top: 85px;
@@ -431,7 +428,6 @@ footer {
 
 .close_popup_edit_deadline_task {
     grid-area: main;
-    opacity: 0.4;
     width: 100%;
     height:85%;
     top: 85px;
