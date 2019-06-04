@@ -40,7 +40,9 @@
                             <h3>{{i[1]}}</h3>
                             <p>{{i[5].strftime("%d-%m-%y")}}</p>
                             <div class="hide task_content">
-                                <p> {{i[2]}} </p>
+                                {% autoescape false %}
+                                    <p>{{ i[2].replace("\\n", "<br>")}}</p>
+                                {% endautoescape %}
                                 <button class="edit_butt buttwide butt" value="{{i[0]}}" name="id_task">Redigera task</button>
                                 <form id="remove_task_form" action="/poptask" method="POST" class="">
                                     <input type="text" class="hide" value="{{i[0]}}" name="task_id" />
