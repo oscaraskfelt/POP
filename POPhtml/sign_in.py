@@ -3,7 +3,7 @@ import psycopg2
 
 def get_user():
     '''Hämtar info om alla användare i databasen'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute("select * from popper;")
     user = cursor.fetchall()
@@ -41,7 +41,7 @@ def check_email(user_email):
 
 def get_one_user(id):
     '''Hämtar info om alla användare i databasen'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute("select * from popper where epost = %s;", (id,))
     user = cursor.fetchall()

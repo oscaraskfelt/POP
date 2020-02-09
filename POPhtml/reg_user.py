@@ -3,7 +3,7 @@ import psycopg2
 
 def get_epost():
     '''Hämtar alla resultat från kolumn epost användare från db'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute('''select epost from popper''')
     epost = cursor.fetchall()
@@ -21,7 +21,7 @@ def epost_validation(epost, new_epost):
 
 def reg_user(epost, popper_name, losenord):
     '''Registrerar användare'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute('''INSERT INTO popper (epost, popper_name, losenord)
                         VALUES (%s, %s, %s )''', (epost, popper_name, losenord,))

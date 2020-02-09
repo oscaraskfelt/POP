@@ -17,7 +17,7 @@ app.config.update(
     MAIL_USE_SSL = True,
     MAIL_DEFAULT_SENDER = 'pop.pop.it1@gmail.com',
     MAIL_USERNAME = 'pop.pop.it1@gmail.com',
-    MAIL_PASSWORD = 'Poppers1'
+    MAIL_PASSWORD = 'password'
 )
 mail = Mail(app)
 
@@ -38,7 +38,7 @@ def set_interval(func, sec):
 #om den är inom tre dagar aktiveras send_notification som skickar ett mail med påminnelse
 def send_reminders_to_poppers():
     '''Hämtar de tasks som har deadline de 3 närmsta dagarna'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
 
     cursor.execute("SELECT title, slutdatum, popper FROM task WHERE slutdatum between (now() - interval '1 day') and (now() + interval '3 day')")

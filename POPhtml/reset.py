@@ -5,7 +5,7 @@ import psycopg2
 
 def reset_password(password, user):
     '''Skickar query för att uppdatera lösenord'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute('''UPDATE popper SET losenord = %s where epost = %s ''', (password, user,))
     cursor.close()
@@ -24,7 +24,7 @@ def send_email(user_mail):
 
 def reset_user_name(new_popper_name, user):
     '''Skickar query för att uppdatera användarnamn'''
-    conn = psycopg2.connect(dbname='pop', user='ai8812', password='wtrikq2c', host='pgserver.mah.se')
+    conn = psycopg2.connect(dbname='pop', user='ai8812', password='password', host='pgserver.mah.se')
     cursor = conn.cursor()
     cursor.execute('''UPDATE popper SET popper_name = %s where epost = %s ''', (new_popper_name, user,))
     cursor.close()
